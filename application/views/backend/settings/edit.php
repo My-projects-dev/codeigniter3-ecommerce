@@ -14,9 +14,9 @@
                 <form action="<?= base_url('backend/settings/edit/'.$item->id); ?>" method="post">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">Key</label>
-                            <input type="text" name="kkey" class="form-control" value="<?= $item->kkey; ?>" placeholder="Enter key">
-                            <?php echo form_error('kkey','<span class = text-danger >','</span>'); ?>
+                            <label for="key">Key</label>
+                            <input type="text" name="key" class="form-control" value="<?= $item->key; ?>" placeholder="Enter key">
+                            <?php echo form_error('key','<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="value">Value</label>

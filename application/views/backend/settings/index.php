@@ -36,7 +36,7 @@
                                 <tbody>
                                 <?php foreach($lists as $item) : ?>
                                         <tr>
-                                            <td><?= $item->kkey; ?></td>
+                                            <td><?= $item->key; ?></td>
                                             <td><?= $item->value; ?></td>
                                             <td><?= ($item->status == 1) ? "Aktiv" : "Passiv"; ?></td>
                                             <td style="display:flex;column-gap:5px;">

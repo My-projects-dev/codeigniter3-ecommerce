@@ -29,14 +29,6 @@
                             <?php echo form_error('content','<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="is_menu">Is menu</label>
-                            <br>
-                            <select class="custom-select form-control" id="is_menu" name="is_menu">
-                                <option value="0" <?php echo  ($item->is_menu == 0) ? 'selected' : ''  ?>>Non-Active</option>
-                                <option value="1" <?php echo ($item->is_menu == 1) ? 'selected' : ''  ?>>Active</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="Status">Status</label>
                             <br>
                             <select class="custom-select form-control" id="Status" name="status">

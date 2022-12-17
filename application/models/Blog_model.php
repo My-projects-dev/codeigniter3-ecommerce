@@ -1,11 +1,11 @@
 <?php
 
-class Admins_model extends CI_Model {
+class Blog_model extends CI_Model {
 
-    protected $table = 'admins';
+    protected $table = 'blog';
 
     public function insert($data){
-    
+
         $this->db->insert($this->table, $data);
 
         return $this->db->insert_id();

@@ -27,7 +27,7 @@ class Settings extends CI_Controller
         if ($this->input->post()) {
             $this->load->library('form_validation');
 
-            $this->form_validation->set_rules('kkey', 'Key', 'trim|required');
+            $this->form_validation->set_rules('key', 'Key', 'trim|required');
             $this->form_validation->set_rules('value', 'Value', 'trim|required');
 
             $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
@@ -35,7 +35,7 @@ class Settings extends CI_Controller
             if ($this->form_validation->run()) {
 
                 $request_data = [
-                    'kkey' => $this->security->xss_clean($this->input->post('kkey')),
+                    'key' => $this->security->xss_clean($this->input->post('key')),
                     'value' => $this->security->xss_clean($this->input->post('value')),
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
@@ -64,7 +64,7 @@ class Settings extends CI_Controller
 
             $this->load->library('form_validation');
 
-            $this->form_validation->set_rules('kkey', 'Key', 'required');
+            $this->form_validation->set_rules('key', 'Key', 'required');
             $this->form_validation->set_rules('value', 'Value', 'required');
 
             $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
@@ -72,7 +72,7 @@ class Settings extends CI_Controller
             if ($this->form_validation->run()) {
 
                 $request_data = [
-                    'kkey' => $this->security->xss_clean($this->input->post('kkey')),
+                    'key' => $this->security->xss_clean($this->input->post('key')),
                     'value' => $this->security->xss_clean($this->input->post('value')),
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];

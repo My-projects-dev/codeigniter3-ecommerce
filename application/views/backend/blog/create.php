@@ -11,17 +11,22 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="<?= base_url('backend/settings/create'); ?>" method="post">
+                <form action="<?= base_url('backend/blog/create'); ?>" method="post" enctype="multipart/form-data">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="key">Key</label>
-                            <input type="text" name="key" class="form-control" placeholder="Enter key">
-                            <?php echo form_error('key', '<span class = text-danger >','</span>'); ?>
+                            <label for="title">Title</label>
+                            <input type="text" name="title" class="form-control">
+                            <?php echo form_error('title', '<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="value">Value</label>
-                            <input type="text" name="value" class="form-control" placeholder="Enter value">
-                            <?php echo form_error('value','<span class = text-danger >','</span>'); ?>
+                            <label for="description">Description</label>
+                            <input type="text" name="description" class="form-control">
+                            <?php echo form_error('description', '<span class = text-danger >','</span>'); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="logo">Image</label>
+                            <input type="file" name="image" class="form-control">
+                            <?php echo form_error('image','<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="Status">Status</label>

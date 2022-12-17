@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="users">
-      <change afterPath="$PROJECT_DIR$/application/controllers/backend/Orders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/controllers/backend/Payment_methods.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Payment_methods_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/order/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/payment_methods/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/payment_methods/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/payment_methods/index.php" afterDir="false" />
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="Payment_methods">
+      <change afterPath="$PROJECT_DIR$/application/controllers/backend/Blog.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Blog_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/blog/create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/blog/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/blog/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Admins.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Brands.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Brands.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Pages.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/backend/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Settings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/migrations/001_add_admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/001_add_admins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/002_add_blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/002_add_blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/003_add_pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/003_add_pages.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/migrations/004_add_settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/004_add_settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/005_add_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/005_add_products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/006_add_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/006_add_users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/007_add_brands.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/007_add_brands.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/008_add_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/008_add_category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/009_add_images.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/009_add_images.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/012_add_payment_methods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/012_add_payment_methods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/013_add_delivery_methods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/013_add_delivery_methods.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/014_add_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/014_add_orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/015_add_order_status.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/015_add_order_status.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/016_add_order_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/016_add_order_products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/categories/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/categories/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Admins_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Admins_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/admins/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/admins/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/pages/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/pages/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/pages/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/pages/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/settings/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/settings/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/settings/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/settings/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/settings/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/settings/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/template/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/template/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/template/sidebar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +180,7 @@
       <workItem from="1671288959407" duration="8546000" />
       <workItem from="1671297676111" duration="407000" />
       <workItem from="1671298239878" duration="258000" />
-      <workItem from="1671302290638" duration="2609000" />
+      <workItem from="1671302290638" duration="15989000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671289527460</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Payment_methods">
+      <created>1671306259840</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671306259840</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +244,7 @@
     <MESSAGE value="admin delete" />
     <MESSAGE value="Brands, settings, categories, pages" />
     <MESSAGE value="users" />
-    <option name="LAST_COMMIT_MESSAGE" value="users" />
+    <MESSAGE value="Payment_methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Payment_methods" />
   </component>
 </project>

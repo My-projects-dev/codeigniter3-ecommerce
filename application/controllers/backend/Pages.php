@@ -39,7 +39,6 @@ class Pages extends CI_Controller
                     'title' => $this->security->xss_clean($this->input->post('title')),
                     'description' => $this->security->xss_clean($this->input->post('description')),
                     'content' => $this->security->xss_clean($this->input->post('content')),
-                    'is_menu' => ($this->input->post('is_menu') == 1) ? 1 : 0,
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 
@@ -79,7 +78,6 @@ class Pages extends CI_Controller
                     'title' => $this->security->xss_clean($this->input->post('title')),
                     'description' => $this->security->xss_clean($this->input->post('description')),
                     'content' => $this->security->xss_clean($this->input->post('content')),
-                    'is_menu' => ($this->input->post('is_menu') == 1) ? 1 : 0,
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 

@@ -107,4 +107,17 @@ class Admins extends CI_Controller {
 
     }
 
+    public function delete($id)
+    {
+        $id = $this->security->xss_clean($id);
+        $item = $this->admins_md->delete($id);
+
+        if ($item > 0) {
+            $this->session->set_flashdata('success_message', 'Uğurlu şəkildə silindi');
+        } else {
+            $this->session->set_flashdata('error_message', 'Silinmə zamanı xəta baş verdi');
+        }
+
+        redirect('backend/admins');
+    }
 }

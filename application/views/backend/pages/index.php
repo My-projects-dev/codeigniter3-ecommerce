@@ -30,9 +30,8 @@
                                     <th>Title</th>
                                     <th>Description</th>
                                     <th>Content</th>
-                                    <th>Created at</th>
-                                    <th>Update at</th>
-                                    <th>Is menu</th>
+                                    <th>Created date</th>
+                                    <th>Updated date</th>
                                     <th>Status</th>
                                 </tr>
                                 </thead>
@@ -42,9 +41,8 @@
                                         <td><?= $item->title; ?></td>
                                         <td><?= $item->description; ?></td>
                                         <td><?= $item->content; ?></td>
-                                        <td><?= $item->created_date; ?></td>
-                                        <td><?= $item->updated_date; ?></td>
-                                        <td><?= ($item->is_menu == 1) ? "Aktiv" : "Passiv"; ?></td>
+                                        <td><?= $item->created_at; ?></td>
+                                        <td><?= $item->updated_at; ?></td>
                                         <td><?= ($item->status == 1) ? "Aktiv" : "Passiv"; ?></td>
                                         <td style="display:flex;column-gap:5px;">
                                             <a href="<?= base_url('backend/pages/edit/' . $item->id); ?>" title="Edit"

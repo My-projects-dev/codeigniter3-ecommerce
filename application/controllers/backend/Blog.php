@@ -1,24 +1,24 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Brands extends CI_Controller
+class Blog extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->load->model('Brands_model', 'brands_md');
+        $this->load->model('Blog_model', 'blog_md');
 
     }
 
     public function index()
     {
-        $data['title'] = 'Brands List';
+        $data['title'] = 'Blog List';
 
-        $data['lists'] = $this->brands_md->select_all();
+        $data['lists'] = $this->blog_md->select_all();
 
-        $this->load->admin('brands/index', $data);
+        $this->load->admin('blog/index', $data);
     }
 
     public function create()
@@ -28,12 +28,13 @@ class Brands extends CI_Controller
             $this->load->library('form_validation');
 
             $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('description', 'Description', 'required');
 
             $this->form_validation->set_message('required', 'Boş keçilə bilməz');
 
             if ($this->form_validation->run()) {
 
-                $path = 'uploads/brand_icon/';
+                $path = 'uploads/blog_image/';
 
                 if (!file_exists("uploads")) {
                     mkdir("uploads");
@@ -48,7 +49,7 @@ class Brands extends CI_Controller
 
                 $this->load->library('upload', $config);
 
-                if (!$this->upload->do_upload('logo')) {
+                if (!$this->upload->do_upload('image')) {
 
                     $error = array('error' => $this->upload->display_errors());
                     $this->session->set_flashdata('error_message', $error);
@@ -58,17 +59,18 @@ class Brands extends CI_Controller
                     $file_data = $this->upload->data();
                     $request_data = [
                         'title' => $this->security->xss_clean($this->input->post('title')),
+                        'description' => $this->security->xss_clean($this->input->post('description')),
                         'status' => ($this->input->post('status') == 1) ? 1 : 0,
-                        'logo' => $path . $file_data['file_name']
+                        'image' => $path . $file_data['file_name']
                     ];
 
-                    $insert_id = $this->brands_md->insert($request_data);
+                    $insert_id = $this->blog_md->insert($request_data);
 
                     if ($insert_id > 0) {
                         $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
                     } else {
-                        if (file_exists($request_data['logo'])) {
-                            unlink($request_data['logo']);
+                        if (file_exists($request_data['image'])) {
+                            unlink($request_data['image']);
                         }
                         $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
                     }
@@ -76,9 +78,9 @@ class Brands extends CI_Controller
             }
         }
 
-        $data['title'] = 'Create Brand';
+        $data['title'] = 'Creat blog';
 
-        $this->load->admin('brands/create', $data);
+        $this->load->admin('blog/create', $data);
 
     }
 
@@ -93,6 +95,7 @@ class Brands extends CI_Controller
             $this->load->library('form_validation');
 
             $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('description', 'Description', 'required');
 
             $this->form_validation->set_message('required', 'Boş keçilə bilməz');
 
@@ -101,12 +104,13 @@ class Brands extends CI_Controller
 
                 $request_data = [
                     'title' => $this->security->xss_clean($this->input->post('title')),
+                    'description' => $this->security->xss_clean($this->input->post('description')),
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 
-                if ($_FILES["logo"]["tmp_name"]) {
+                if ($_FILES["image"]["tmp_name"]) {
 
-                    $path = 'uploads/brand_icon/';
+                    $path = 'uploads/blog_image/';
                     $config['upload_path'] = $path;
                     $config['allowed_types'] = 'gif|jpg|png';
                     $config['overwrite'] = 'false';
@@ -114,7 +118,7 @@ class Brands extends CI_Controller
 
                     $this->load->library('upload', $config);
 
-                    if (!$this->upload->do_upload('logo')) {
+                    if (!$this->upload->do_upload('image')) {
 
                         $error = array('error' => $this->upload->display_errors());
                         $this->session->set_flashdata('error_message', $error);
@@ -122,7 +126,7 @@ class Brands extends CI_Controller
                     } else {
 
                         $file_data = $this->upload->data();
-                        $request_data['logo'] = $path . $file_data['file_name'];
+                        $request_data['image'] = $path . $file_data['file_name'];
                         $unlink++;
                     }
                 }
@@ -130,7 +134,7 @@ class Brands extends CI_Controller
 
                 $img = $this->input->post('img');
 
-                $affected_rows = $this->brands_md->update($id, $request_data);
+                $affected_rows = $this->blog_md->update($id, $request_data);
 
                 if ($affected_rows > 0) {
                     $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
@@ -139,28 +143,28 @@ class Brands extends CI_Controller
                         unlink($img);
                     }
 
-                    redirect('backend/brands/edit/' . $id);
+                    redirect('backend/blog/edit/' . $id);
                 } else {
                     $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
-                    redirect('backend/brands/edit/' . $id);
+                    redirect('backend/blog/edit/' . $id);
                 }
             }
         }
 
 
-        $item = $this->brands_md->selectDataById($id);
+        $item = $this->blog_md->selectDataById($id);
 
         if (empty($item)) {
             $this->session->set_flashdata('error_message', 'Bu məlumat tapılmadı');
 
-            redirect('backend/brands');
+            redirect('backend/blog');
         }
 
         $data['item'] = $item;
 
-        $data['title'] = 'Edit Brand ';
+        $data['title'] = 'Edit Blog ';
 
-        $this->load->admin('brands/edit', $data);
+        $this->load->admin('blog/edit', $data);
 
     }
 
@@ -169,21 +173,21 @@ class Brands extends CI_Controller
     {
         $id = $this->security->xss_clean($id);
 
-        $select = $this->brands_md->selectDataById($id);
-        $logo = $select->logo;
+        $select = $this->blog_md->selectDataById($id);
+        $image = $select->image;
 
-        $item = $this->brands_md->delete($id);
+        $item = $this->blog_md->delete($id);
 
         if ($item > 0) {
-            if (file_exists($logo)) {
-                unlink($logo);
+            if (file_exists($image)) {
+                unlink($image);
             }
             $this->session->set_flashdata('success_message', 'Uğurlu şəkildə silindi');
         } else {
             $this->session->set_flashdata('error_message', 'Silinmə zamanı xəta baş verdi');
         }
 
-        redirect('backend/brands');
+        redirect('backend/blog');
     }
 
 }

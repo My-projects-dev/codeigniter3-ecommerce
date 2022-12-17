@@ -29,12 +29,12 @@ class Migration_Add_settings extends CI_Migration {
             'updated_at datetime default current_timestamp on update current_timestamp',
         ));
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('add_settings');
+        $this->dbforge->create_table('settings');
     }
 
     public function down()
     {
-        $this->dbforge->drop_table('add_settings');
+        $this->dbforge->drop_table('settings');
     }
 }
 

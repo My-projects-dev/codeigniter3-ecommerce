@@ -20,6 +20,7 @@ class Migration_Add_admins extends CI_Migration {
                         'email' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '55',
+                                'unique'     => TRUE,
                         ),
                         'password' => array(
                                 'type' => 'VARCHAR',
