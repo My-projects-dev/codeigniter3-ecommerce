@@ -2,13 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="Brands, settings, categories, pages">
+      <change afterPath="$PROJECT_DIR$/application/controllers/backend/Users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Users_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/users/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Admins_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Admins_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/Products_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Products_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/admins/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/admins/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/admins/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/admins/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/admins/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/admins/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/brands/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/brands/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/brands/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/brands/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/brands/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/brands/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/categories/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/categories/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/categories/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/categories/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/backend/categories/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/categories/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/products/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/products/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/pages/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/pages/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/pages/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/pages/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/pages/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/backend/products/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/products/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/settings/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/settings/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/settings/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/settings/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/settings/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/settings/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,22 +116,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/xampp/htdocs/codeigniter-ecommerce-lesson",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/codeigniter-ecommerce-lesson&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Products.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/application/controllers/backend/Products.php">
       <method v="2" />
@@ -146,7 +162,8 @@
       <workItem from="1671185607934" duration="4139000" />
       <workItem from="1671210201326" duration="156000" />
       <workItem from="1671274271136" duration="1623000" />
-      <workItem from="1671275925387" duration="1823000" />
+      <workItem from="1671275925387" duration="9295000" />
+      <workItem from="1671288959407" duration="509000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -155,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671023016859</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Brands, settings, categories, pages">
+      <created>1671278238243</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671278238243</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

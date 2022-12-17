@@ -1,6 +1,10 @@
 <div class="content-wrapper">
     <section class="content">
-        <div class="container-fluid">
+        <div class="container-fluid pt-3">
+            <?php
+            errorAlert();
+            successAlert();
+            ?>
             <div class="row">
                 <div class="col-12 mt-3">
                     <div class="card">

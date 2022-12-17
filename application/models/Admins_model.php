@@ -1,10 +1,6 @@
 <?php
 
 class Admins_model extends CI_Model {
-    public $fullname;
-    public $password;
-    public $email;
-    public $status;
 
     protected $table = 'admins';
 
@@ -16,7 +12,6 @@ class Admins_model extends CI_Model {
     }
 
     public function select_all(){
-        //$this->db->where('status',1);
         $query = $this->db->get($this->table);
 
         return $query->result();
@@ -32,6 +27,8 @@ class Admins_model extends CI_Model {
     public function update($id,$data){
         $this->db->where('id', $id);
         $this->db->update($this->table, $data);
+
+        return $this->db->affected_rows();
     }
 
 }

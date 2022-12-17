@@ -59,30 +59,37 @@ $route['backend'] = 'backend/Dashboard/index';
 
 $route['backend/admins'] = 'backend/Admins/index';
 $route['backend/admins/create'] = 'backend/Admins/create';
-$route['backend/admins/create/(:num)'] = 'backend/Admins/edit/$1';
+$route['backend/admins/edit/(:num)'] = 'backend/Admins/edit/$1';
 $route['backend/admins/delete/(:num)'] = 'backend/Admins/delete/$1';
 
 $route['backend/brands'] = 'backend/brands/index';
 $route['backend/brands/create'] = 'backend/brands/create';
-$route['backend/brands/create/(:num)'] = 'backend/brands/edit/$1';
+$route['backend/brands/edit/(:num)'] = 'backend/brands/edit/$1';
 $route['backend/brands/delete/(:num)'] = 'backend/brands/delete/$1';
 
 $route['backend/categories'] = 'backend/categories/index';
 $route['backend/categories/create'] = 'backend/categories/create';
-$route['backend/categories/create/(:num)'] = 'backend/categories/edit/$1';
+$route['backend/categories/edit/(:num)'] = 'backend/categories/edit/$1';
 $route['backend/categories/delete/(:num)'] = 'backend/categories/delete/$1';
 
 $route['backend/pages'] = 'backend/pages/index';
 $route['backend/pages/create'] = 'backend/pages/create';
-$route['backend/pages/create/(:num)'] = 'backend/pages/edit/$1';
+$route['backend/pages/edit/(:num)'] = 'backend/pages/edit/$1';
 $route['backend/pages/delete/(:num)'] = 'backend/pages/delete/$1';
 
 $route['backend/products'] = 'backend/Products/index';
 $route['backend/products/create'] = 'backend/Products/create';
-$route['backend/products/create/(:num)'] = 'backend/Products/edit/$1';
+$route['backend/products/edit/(:num)'] = 'backend/Products/edit/$1';
 $route['backend/products/delete/(:num)'] = 'backend/Products/delete/$1';
 
 $route['backend/settings'] = 'backend/settings/index';
 $route['backend/settings/create'] = 'backend/settings/create';
-$route['backend/settings/create/(:num)'] = 'backend/settings/edit/$1';
+$route['backend/settings/edit/(:num)'] = 'backend/settings/edit/$1';
 $route['backend/settings/delete/(:num)'] = 'backend/settings/delete/$1';
+
+$route['backend/users'] = 'backend/Users/index';
+$route['backend/users/create'] = 'backend/Users/create';
+$route['backend/users/edit/(:num)'] = 'backend/Users/edit/$1';
+$route['backend/users/delete/(:num)'] = 'backend/Users/delete/$1';
+$route['backend/users/active/(:num)'] = 'backend/Users/active/$1';
+$route['backend/users/passive/(:num)'] = 'backend/Users/passive/$1';
