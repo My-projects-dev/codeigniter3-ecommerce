@@ -11,22 +11,17 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="<?= base_url('backend/categories/create'); ?>" method="post">
+                <form action="<?= base_url('backend/payment/create'); ?>" method="post">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="title">Tittle</label>
                             <input type="text" name="title" class="form-control">
                             <?php echo form_error('title', '<span class =text-danger >','</span>'); ?>
                         </div>
-                         <div class="form-group">
-                            <label for="parentcategory">Parent category</label>
-                            <br>
-                            <select class="custom-select form-control" id="parentcategory" name="parentcategory">
-                                <option>Choose parent category</option>
-                                <?php foreach($lists as $item) : ?>
-                                <option value="<?= $item->id; ?>"><?= $item->title; ?></option>
-                                <?php endforeach;?>
-                            </select>
+                        <div class="form-group">
+                            <label for="title">Order</label>
+                            <input type="number" name="order" class="form-control" min="0">
+                            <?php echo form_error('order', '<span class =text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="Status">Status</label>

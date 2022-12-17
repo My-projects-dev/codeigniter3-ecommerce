@@ -50,7 +50,7 @@ class Settings extends CI_Controller
             }
         }
 
-        $data['title'] = 'Create Setting';
+        $data['title'] = 'Settings List';
 
         $this->load->admin('settings/create', $data);
 
@@ -100,7 +100,7 @@ class Settings extends CI_Controller
 
         $data['item'] = $item;
 
-        $data['title'] = 'Edit Settings';
+        $data['title'] = 'Settings Edit';
 
         $this->load->admin('settings/edit', $data);
 

@@ -93,3 +93,8 @@ $route['backend/users/edit/(:num)'] = 'backend/Users/edit/$1';
 $route['backend/users/delete/(:num)'] = 'backend/Users/delete/$1';
 $route['backend/users/active/(:num)'] = 'backend/Users/active/$1';
 $route['backend/users/passive/(:num)'] = 'backend/Users/passive/$1';
+
+$route['backend/payment'] = 'backend/Payment_methods/index';
+$route['backend/payment/create'] = 'backend/Payment_methods/create';
+$route['backend/payment/edit/(:num)'] = 'backend/Payment_methods/edit/$1';
+$route['backend/payment/delete/(:num)'] = 'backend/Payment_methods/delete/$1';

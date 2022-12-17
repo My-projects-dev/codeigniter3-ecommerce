@@ -11,29 +11,24 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="<?= base_url('backend/categories/create'); ?>" method="post">
+                <form action="<?= base_url('backend/payment/edit/'.$item->id); ?>" method="post">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="title">Tittle</label>
-                            <input type="text" name="title" class="form-control">
-                            <?php echo form_error('title', '<span class =text-danger >','</span>'); ?>
+                            <label for="title">FullName</label>
+                            <input type="text" name="title" class="form-control" value="<?= $item->title; ?>" placeholder="Enter title">
+                            <?php echo form_error('title','<span class =text-danger >','</span>'); ?>
                         </div>
-                         <div class="form-group">
-                            <label for="parentcategory">Parent category</label>
-                            <br>
-                            <select class="custom-select form-control" id="parentcategory" name="parentcategory">
-                                <option>Choose parent category</option>
-                                <?php foreach($lists as $item) : ?>
-                                <option value="<?= $item->id; ?>"><?= $item->title; ?></option>
-                                <?php endforeach;?>
-                            </select>
+                        <div class="form-group">
+                            <label for="order">Order</label>
+                            <input type="number" name="order" class="form-control" min="0" value="<?= $item->order; ?>" placeholder="Enter order">
+                            <?php echo form_error('order','<span class =text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="Status">Status</label>
                             <br>
                             <select class="custom-select form-control" id="Status" name="status">
-                                <option value="0">Non-Active</option>
-                                <option value="1">Active</option>
+                                <option value="0" <?php echo  ($item->status == 0) ? 'selected' : ''  ?>>Non-Active</option>
+                                <option value="1" <?php echo ($item->status == 1) ? 'selected' : ''  ?>>Active</option>
                             </select>
                         </div>
                     </div>

@@ -10,7 +10,7 @@ class Migration_Add_order_products extends CI_Migration {
             'id' => array(
                 'type' => 'INT',
                 'constraint' => 5,
-                'unsigned' => TRUE,
+                'unsigned' => FALSE,
                 'auto_increment' => TRUE
             ),
             'order_id' => array(

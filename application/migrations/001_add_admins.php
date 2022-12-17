@@ -10,7 +10,7 @@ class Migration_Add_admins extends CI_Migration {
                         'id' => array(
                                 'type' => 'INT',
                                 'constraint' => 5,
-                                'unsigned' => TRUE,
+                                'unsigned' => FALSE,
                                 'auto_increment' => TRUE
                         ),
                         'fullname' => array(

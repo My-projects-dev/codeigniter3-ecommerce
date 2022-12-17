@@ -10,7 +10,7 @@ class Migration_Add_payment_methods extends CI_Migration
             'id' => array(
                 'type' => 'INT',
                 'constraint' => 5,
-                'unsigned' => TRUE,
+                'unsigned' => FALSE,
                 'auto_increment' => TRUE
             ),
             'title' => array(
@@ -18,7 +18,7 @@ class Migration_Add_payment_methods extends CI_Migration
                 'constraint' => 250,
             ),
             'order' => array(
-                'type' => 'varchar',
+                'type' => 'INT',
                 'constraint' => 255,
             ),
             'status' => array(

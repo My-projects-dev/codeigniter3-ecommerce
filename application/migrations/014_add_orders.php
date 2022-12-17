@@ -11,14 +11,14 @@ class Migration_Add_orders extends CI_Migration
             'id' => array(
                 'type' => 'INT',
                 'constraint' => 5,
-                'unsigned' => TRUE,
+                'unsigned' => FALSE,
                 'auto_increment' => TRUE
             ),
             'user_id' => array(
                 'type' => 'INT',
                 'constraint' => '10',
             ),
-            'payment_method' => array(
+            'Payment_methods' => array(
                 'type' => 'INT',
                 'constraint' => '7',
             ),

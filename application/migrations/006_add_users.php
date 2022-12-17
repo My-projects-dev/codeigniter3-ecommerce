@@ -12,7 +12,7 @@ class Migration_Add_users extends CI_Migration
             'id' => array(
                 'type' => 'INT',
                 'constraint' => 5,
-                'unsigned' => TRUE,
+                'unsigned' => FALSE,
                 'auto_increment' => TRUE
             ),
             'name' => array(

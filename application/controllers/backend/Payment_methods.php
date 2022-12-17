@@ -1,24 +1,24 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Settings extends CI_Controller
+class Payment_methods extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->load->model('Settings_model', 'settings_md');
+        $this->load->model('Payment_methods_model', 'payment_md');
 
     }
 
     public function index()
     {
-        $data['title'] = 'Settings List';
+        $data['title'] = 'Payment methods list';
 
-        $data['lists'] = $this->settings_md->select_all();
+        $data['lists'] = $this->payment_md->select_all();
 
-        $this->load->admin('settings/index', $data);
+        $this->load->admin('payment_methods/index', $data);
     }
 
     public function create()
@@ -27,20 +27,21 @@ class Settings extends CI_Controller
         if ($this->input->post()) {
             $this->load->library('form_validation');
 
-            $this->form_validation->set_rules('kkey', 'Key', 'trim|required');
-            $this->form_validation->set_rules('value', 'Value', 'trim|required');
+            $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('order', 'Order', 'required|numeric');
 
             $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
+            $this->form_validation->set_message('numeric', 'Yalnızca rəqəm girilə bilər');
 
             if ($this->form_validation->run()) {
 
                 $request_data = [
-                    'kkey' => $this->security->xss_clean($this->input->post('kkey')),
-                    'value' => $this->security->xss_clean($this->input->post('value')),
+                    'title' => $this->security->xss_clean($this->input->post('title')),
+                    'order' => floor(abs($this->security->xss_clean($this->input->post('order')))),
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 
-                $insert_id = $this->settings_md->insert($request_data);
+                $insert_id = $this->payment_md->insert($request_data);
 
                 if ($insert_id > 0) {
                     $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
@@ -50,9 +51,9 @@ class Settings extends CI_Controller
             }
         }
 
-        $data['title'] = 'Create Setting';
+        $data['title'] = 'Create payment method';
 
-        $this->load->admin('settings/create', $data);
+        $this->load->admin('payment_methods/create', $data);
 
     }
 
@@ -64,45 +65,46 @@ class Settings extends CI_Controller
 
             $this->load->library('form_validation');
 
-            $this->form_validation->set_rules('kkey', 'Key', 'required');
-            $this->form_validation->set_rules('value', 'Value', 'required');
+            $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('order', 'Order', 'required|numeric');
 
             $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
+            $this->form_validation->set_message('numeric', 'Yalnızca rəqəm girilə bilər');
 
             if ($this->form_validation->run()) {
 
                 $request_data = [
-                    'kkey' => $this->security->xss_clean($this->input->post('kkey')),
-                    'value' => $this->security->xss_clean($this->input->post('value')),
+                    'title' => $this->security->xss_clean($this->input->post('title')),
+                    'order' => floor(abs($this->security->xss_clean($this->input->post('order')))),
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 
-                $affected_rows = $this->settings_md->update($id, $request_data);
+                $affected_rows = $this->payment_md->update($id, $request_data);
 
                 if ($affected_rows > 0) {
                     $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
 
-                    redirect('backend/settings/edit/' . $id);
+                    redirect('backend/payment/edit/' . $id);
                 } else {
                     $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
-                    redirect('backend/settings/edit/' . $id);
+                    redirect('backend/payment/edit/' . $id);
                 }
             }
         }
 
-        $item = $this->settings_md->selectDataById($id);
+        $item = $this->payment_md->selectDataById($id);
 
         if (empty($item)) {
             $this->session->set_flashdata('error_message', 'Bu məlumat tapılmadı');
 
-            redirect('backend/settings');
+            redirect('backend/payment');
         }
 
         $data['item'] = $item;
 
-        $data['title'] = 'Edit Settings';
+        $data['title'] = 'Edit Payment Method';
 
-        $this->load->admin('settings/edit', $data);
+        $this->load->admin('payment_methods/edit', $data);
 
     }
 
@@ -110,7 +112,7 @@ class Settings extends CI_Controller
     public function delete($id)
     {
         $id = $this->security->xss_clean($id);
-        $item = $this->settings_md->delete($id);
+        $item = $this->payment_md->delete($id);
 
         if ($item > 0) {
             $this->session->set_flashdata('success_message', 'Uğurlu şəkildə silindi');
@@ -118,7 +120,7 @@ class Settings extends CI_Controller
             $this->session->set_flashdata('error_message', 'Silinmə zamanı xəta baş verdi');
         }
 
-        redirect('backend/settings');
+        redirect('backend/payment');
     }
 
 }
