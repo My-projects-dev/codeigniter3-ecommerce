@@ -33,7 +33,7 @@
                                 <?php foreach($lists as $item) : ?>
                                         <tr>
                                             <td><?= $item->title; ?></td>
-                                            <td><?= $item->cattitle; ?></td>
+                                            <td><?= $item->cattitle ?? 'Main'; ?></td>
                                             <td><?= ($item->status == 1) ? "Aktiv" : "Passiv"; ?></td>
                                             <td style="display:flex;column-gap:5px;">
                                             <a href="<?= base_url('backend/categories/edit/'.$item->id); ?>" title="Edit"

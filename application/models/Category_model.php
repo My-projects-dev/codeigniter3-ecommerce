@@ -15,7 +15,12 @@ class Category_model extends CI_Model
 
     public function select_all()
     {
-        return $this->db->query("SELECT b.*, c.title as cattitle FROM `category` b LEFT JOIN category c ON c.id=b.parent_id;")->result();
+        $this->db->select('b.*, c.title as cattitle');
+        $this->db->from('category b');
+        $this->db->join('category c', 'c.id=b.parent_id', 'left');
+        $query = $this->db->get()->result();
+
+        return $query;
     }
 
     public function selectActive_isNotId($id)

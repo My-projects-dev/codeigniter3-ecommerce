@@ -12,7 +12,11 @@ class Products_model extends CI_Model {
     }
 
     public function select_all(){
-        $query = $this->db->get($this->table);
+
+        $this->db->select('p.*, b.title as brandtitle');
+        $this->db->from('products p');
+        $this->db->join('brands b', 'b.id=p.brand_id', 'left');
+        $query = $this->db->get();
 
         return $query->result();
     }

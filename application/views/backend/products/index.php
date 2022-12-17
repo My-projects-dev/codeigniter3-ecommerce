@@ -37,7 +37,7 @@
                                 <?php foreach($lists as $item) : ?>
                                         <tr>
                                             <td><?= $item->description; ?></td>
-                                            <td><?= $item->brand_id; ?></td>
+                                            <td><?= $item->brandtitle; ?></td>
                                             <td><?= $item->quantity; ?></td>
                                             <td><?= $item->sales_prices; ?></td>
                                             <td><?= $item->created_at; ?></td>

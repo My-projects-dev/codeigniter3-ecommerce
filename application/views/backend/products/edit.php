@@ -30,12 +30,12 @@
                         </div>
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="number" name="price" class="form-control" value="<?= $item->price; ?>">
+                            <input type="number" name="price" class="form-control"  step="0.01" min="0" value="<?= $item->price; ?>">
                             <?php echo form_error('price','<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="sales_prices">Sales prices</label>
-                            <input type="number" name="sales_prices" class="form-control" value="<?= $item->sales_prices; ?>">
+                            <input type="number" name="sales_prices" class="form-control" step="0.01" min="0" value="<?= $item->sales_prices; ?>">
                             <?php echo form_error('sales_prices','<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
