@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="blog">
-      <change afterPath="$PROJECT_DIR$/application/controllers/backend/Delivery_methods.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/controllers/backend/Order_status.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Delivery_methods_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Order_status_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Orders_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/delivery_methods/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/delivery_methods/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/order_status/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/order_status/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/order_status/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/backend/orders/index.php" afterDir="false" />
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="orders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Admins.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/backend/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/migrations/014_add_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/014_add_orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Products_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Products_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/order/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/delivery_methods/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/products/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/products/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/template/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/template/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Orders_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Orders_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Users_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Users_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/orders/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/orders/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +170,7 @@
       <workItem from="1671302290638" duration="16364000" />
       <workItem from="1671355927334" duration="4129000" />
       <workItem from="1671366516193" duration="4940000" />
-      <workItem from="1671384783270" duration="5822000" />
+      <workItem from="1671384783270" duration="7118000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -222,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671320866195</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="orders">
+      <created>1671396881753</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671396881753</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +250,7 @@
     <MESSAGE value="users" />
     <MESSAGE value="Payment_methods" />
     <MESSAGE value="blog" />
-    <option name="LAST_COMMIT_MESSAGE" value="blog" />
+    <MESSAGE value="orders" />
+    <option name="LAST_COMMIT_MESSAGE" value="orders" />
   </component>
 </project>

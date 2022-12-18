@@ -55,4 +55,11 @@ class Users_model extends CI_Model
 
         return $this->db->affected_rows();
     }
+
+    public function delete($id){
+        $this->db->where('id', $id);
+        $this->db->delete($this->table);
+
+        return $this->db->affected_rows();
+    }
 }

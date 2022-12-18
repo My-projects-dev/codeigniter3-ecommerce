@@ -27,7 +27,6 @@
                                     <th>Payment method</th>
                                     <th>Delivery method</th>
                                     <th>Total amount</th>
-                                    <!--<th>Payment Json</th> -->
                                     <th>Order status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -39,7 +38,6 @@
                                         <td><?= $item->payment; ?></td>
                                         <td><?= $item->delivery; ?></td>
                                         <td><?= $item->amount; ?></td>
-                                        <!--<td><?= $item->json ?? 'NaN'; ?></td>-->
                                         <td><?= $item->orderstatus; ?></td>
                                         <td style="display:flex;column-gap:5px;">
                                             <a href="<?= base_url('backend/orders/delete/' . $item->id); ?>"

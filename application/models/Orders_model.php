@@ -43,21 +43,9 @@ class Orders_model extends CI_Model
         return $this->db->affected_rows();
     }
 
-    public function active($id)
-    {
-        $this->db->set('status', '1');
+    public function delete($id){
         $this->db->where('id', $id);
-        $this->db->update($this->table);
-
-        return $this->db->affected_rows();
-    }
-
-    public function passive($id)
-    {
-        $this->db->set('status', '0
-        ');
-        $this->db->where('id', $id);
-        $this->db->update($this->table);
+        $this->db->delete($this->table);
 
         return $this->db->affected_rows();
     }
