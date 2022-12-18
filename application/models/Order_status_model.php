@@ -1,8 +1,8 @@
 <?php
 
-class Products_model extends CI_Model {
+class Order_status_model extends CI_Model {
 
-    protected $table = 'products';
+    protected $table = 'order_status';
 
     public function insert($data){
 
@@ -12,14 +12,7 @@ class Products_model extends CI_Model {
     }
 
     public function select_all(){
-
-        $this->db->select('p.*, b.title AS brandtitle, c.title AS cattitle');
-        $this->db->from('product_categories pc');
-        $this->db->join('category c', 'c.id=pc.categories_id', 'left');
-        $this->db->join('products p', 'p.id=pc.products_id', 'right');
-        $this->db->join('brands b', 'b.id=p.brand_id', 'left');
-        $this->db->order_by('id', 'DESC');
-        $query = $this->db->get();
+        $query = $this->db->get($this->table);
 
         return $query->result();
     }

@@ -1,116 +1,62 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Blog extends CI_Controller
+class Orders extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->load->model('Settings_model', 'settings_md');
+        $this->load->model('Orders_model', 'orders_md');
 
     }
 
     public function index()
     {
-        $data['title'] = 'Settings List';
+        $data['title'] = 'Orders List';
 
-        $data['lists'] = $this->settings_md->select_all();
+        $data['lists'] = $this->orders_md->select_all();
 
-        $this->load->admin('settings/index', $data);
+        $this->load->admin('orders/index', $data);
     }
 
-    public function create()
+
+    public function active($id)
     {
+        $id = $this->security->xss_clean($id);
 
-        if ($this->input->post()) {
-            $this->load->library('form_validation');
+        $affected_rows = $this->orders_md->active($id);
 
-            $this->form_validation->set_rules('kkey', 'Key', 'trim|required');
-            $this->form_validation->set_rules('value', 'Value', 'trim|required');
-
-            $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
-
-            if ($this->form_validation->run()) {
-
-                $request_data = [
-                    'kkey' => $this->security->xss_clean($this->input->post('kkey')),
-                    'value' => $this->security->xss_clean($this->input->post('value')),
-                    'status' => ($this->input->post('status') == 1) ? 1 : 0
-                ];
-
-                $insert_id = $this->settings_md->insert($request_data);
-
-                if ($insert_id > 0) {
-                    $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
-                } else {
-                    $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
-                }
-            }
+        if ($affected_rows > 0) {
+            $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
+        } else {
+            $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
         }
 
-        $data['title'] = 'Settings List';
-
-        $this->load->admin('settings/create', $data);
-
+        redirect('backend/orders');
     }
 
-    public function edit($id)
+    public function passive($id)
     {
+        $id = $this->security->xss_clean($id);
 
-        if ($this->input->post()) {
-            $id = $this->security->xss_clean($id);
+        $affected_rows = $this->orders_md->passive($id);
 
-            $this->load->library('form_validation');
-
-            $this->form_validation->set_rules('kkey', 'Key', 'required');
-            $this->form_validation->set_rules('value', 'Value', 'required');
-
-            $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
-
-            if ($this->form_validation->run()) {
-
-                $request_data = [
-                    'kkey' => $this->security->xss_clean($this->input->post('kkey')),
-                    'value' => $this->security->xss_clean($this->input->post('value')),
-                    'status' => ($this->input->post('status') == 1) ? 1 : 0
-                ];
-
-                $affected_rows = $this->settings_md->update($id, $request_data);
-
-                if ($affected_rows > 0) {
-                    $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
-
-                    redirect('backend/settings/edit/' . $id);
-                } else {
-                    $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
-                    redirect('backend/settings/edit/' . $id);
-                }
-            }
+        if ($affected_rows > 0) {
+            $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
+        } else {
+            $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
         }
 
-        $item = $this->settings_md->selectDataById($id);
-
-        if (empty($item)) {
-            $this->session->set_flashdata('error_message', 'Bu məlumat tapılmadı');
-
-            redirect('backend/settings');
-        }
-
-        $data['item'] = $item;
-
-        $data['title'] = 'Settings Edit';
-
-        $this->load->admin('settings/edit', $data);
-
+        redirect('backend/orders');
     }
 
 
     public function delete($id)
     {
         $id = $this->security->xss_clean($id);
-        $item = $this->settings_md->delete($id);
+        $item = $this->orders_md->delete($id);
 
         if ($item > 0) {
             $this->session->set_flashdata('success_message', 'Uğurlu şəkildə silindi');
@@ -118,7 +64,7 @@ class Blog extends CI_Controller
             $this->session->set_flashdata('error_message', 'Silinmə zamanı xəta baş verdi');
         }
 
-        redirect('backend/settings');
+        redirect('backend/orders');
     }
 
 }

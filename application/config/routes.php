@@ -88,18 +88,31 @@ $route['backend/settings/edit/(:num)'] = 'backend/Settings/edit/$1';
 $route['backend/settings/delete/(:num)'] = 'backend/Settings/delete/$1';
 
 $route['backend/users'] = 'backend/Users/index';
-$route['backend/users/create'] = 'backend/Users/create';
-$route['backend/users/edit/(:num)'] = 'backend/Users/edit/$1';
 $route['backend/users/delete/(:num)'] = 'backend/Users/delete/$1';
 $route['backend/users/active/(:num)'] = 'backend/Users/active/$1';
 $route['backend/users/passive/(:num)'] = 'backend/Users/passive/$1';
+
+$route['backend/orders'] = 'backend/Orders/index';
+$route['backend/orders/delete/(:num)'] = 'backend/Orders/delete/$1';
+$route['backend/orders/active/(:num)'] = 'backend/Orders/active/$1';
+$route['backend/orders/passive/(:num)'] = 'backend/Orders/passive/$1';
 
 $route['backend/payment'] = 'backend/Payment_methods/index';
 $route['backend/payment/create'] = 'backend/Payment_methods/create';
 $route['backend/payment/edit/(:num)'] = 'backend/Payment_methods/edit/$1';
 $route['backend/payment/delete/(:num)'] = 'backend/Payment_methods/delete/$1';
 
+$route['backend/delivery'] = 'backend/Delivery_methods/index';
+$route['backend/delivery/create'] = 'backend/Delivery_methods/create';
+$route['backend/delivery/edit/(:num)'] = 'backend/Delivery_methods/edit/$1';
+$route['backend/delivery/delete/(:num)'] = 'backend/Delivery_methods/delete/$1';
+
 $route['backend/blog'] = 'backend/Blog/index';
 $route['backend/blog/create'] = 'backend/Blog/create';
 $route['backend/blog/edit/(:num)'] = 'backend/Blog/edit/$1';
 $route['backend/blog/delete/(:num)'] = 'backend/Blog/delete/$1';
+
+$route['backend/order_status'] = 'backend/Order_status/index';
+$route['backend/order_status/create'] = 'backend/Order_status/create';
+$route['backend/order_status/edit/(:num)'] = 'backend/Order_status/edit/$1';
+$route['backend/order_status/delete/(:num)'] = 'backend/Order_status/delete/$1';
