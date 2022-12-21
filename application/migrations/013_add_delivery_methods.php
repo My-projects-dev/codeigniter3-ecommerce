@@ -25,7 +25,7 @@ class Migration_Add_delivery_methods extends CI_Migration
             ),
             'status' => array(
                 'type' => 'INT',
-                'constraint' => 5,
+                'constraint' => 3,
             ),
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',

@@ -18,7 +18,7 @@ class Migration_Add_orders extends CI_Migration
                 'type' => 'INT',
                 'constraint' => '10',
             ),
-            'Payment_methods' => array(
+            'payment_method' => array(
                 'type' => 'INT',
                 'constraint' => '7',
             ),
@@ -38,6 +38,10 @@ class Migration_Add_orders extends CI_Migration
             'status_id' => array(
                 'type' => 'INT',
                 'constraint' => 10,
+            ),
+            'status' => array(
+                'type' => 'INT',
+                'constraint' => 3,
             ),
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',

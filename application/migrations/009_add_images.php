@@ -19,8 +19,8 @@ class Migration_Add_images extends CI_Migration
                 'constraint' => 250,
             ),
             'main' => array(
-                'INT' => 1,
-                'constraint' => 250,
+                'type' => 'INT',
+                'constraint' => 3,
             ),
             'product_id' => array(
                 'type' => 'int',

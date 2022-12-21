@@ -43,37 +43,43 @@ class Blog extends CI_Controller
                     mkdir($path);
                 }
 
-                $config['upload_path'] = $path;
-                $config['allowed_types'] = 'gif|jpg|png';
-                $config['overwrite'] = 'false';
+                if ($_FILES["image"]["tmp_name"]) {
 
-                $this->load->library('upload', $config);
 
-                if (!$this->upload->do_upload('image')) {
+                    $config['upload_path'] = $path;
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['overwrite'] = 'false';
 
-                    $error = array('error' => $this->upload->display_errors());
-                    $this->session->set_flashdata('error_message', $error);
+                    $this->load->library('upload', $config);
 
-                } else {
+                    if (!$this->upload->do_upload('image')) {
 
-                    $file_data = $this->upload->data();
-                    $request_data = [
-                        'title' => $this->security->xss_clean($this->input->post('title')),
-                        'description' => $this->security->xss_clean($this->input->post('description')),
-                        'status' => ($this->input->post('status') == 1) ? 1 : 0,
-                        'image' => $path . $file_data['file_name']
-                    ];
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->session->set_flashdata('error_message', $error);
 
-                    $insert_id = $this->blog_md->insert($request_data);
-
-                    if ($insert_id > 0) {
-                        $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
                     } else {
-                        if (file_exists($request_data['image'])) {
-                            unlink($request_data['image']);
+
+                        $file_data = $this->upload->data();
+                        $request_data = [
+                            'title' => $this->security->xss_clean($this->input->post('title')),
+                            'description' => $this->security->xss_clean($this->input->post('description')),
+                            'status' => ($this->input->post('status') == 1) ? 1 : 0,
+                            'image' => $path . $file_data['file_name']
+                        ];
+
+                        $insert_id = $this->blog_md->insert($request_data);
+
+                        if ($insert_id > 0) {
+                            $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
+                        } else {
+                            if (file_exists($request_data['image'])) {
+                                unlink($request_data['image']);
+                            }
+                            $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
                         }
-                        $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
                     }
+                } else {
+                    $this->session->set_flashdata('error_message', 'Şəkil seçilmədi');
                 }
             }
         }

@@ -81,6 +81,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?= base_url('backend/order_products'); ?>" class="nav-link">
+                        <i class="nav-icon fas fa-folder-open"></i>
+                        <p>
+                            Order Products
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?= base_url('backend/pages'); ?>" class="nav-link">
                         <i class="nav-icon fas fa-folder-open"></i>
                         <p>

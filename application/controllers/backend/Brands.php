@@ -42,36 +42,42 @@ class Brands extends CI_Controller
                     mkdir($path);
                 }
 
-                $config['upload_path'] = $path;
-                $config['allowed_types'] = 'gif|jpg|png';
-                $config['overwrite'] = 'false';
+                if ($_FILES["logo"]["tmp_name"]) {
 
-                $this->load->library('upload', $config);
 
-                if (!$this->upload->do_upload('logo')) {
+                    $config['upload_path'] = $path;
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['overwrite'] = 'false';
 
-                    $error = array('error' => $this->upload->display_errors());
-                    $this->session->set_flashdata('error_message', $error);
+                    $this->load->library('upload', $config);
 
-                } else {
+                    if (!$this->upload->do_upload('logo')) {
 
-                    $file_data = $this->upload->data();
-                    $request_data = [
-                        'title' => $this->security->xss_clean($this->input->post('title')),
-                        'status' => ($this->input->post('status') == 1) ? 1 : 0,
-                        'logo' => $path . $file_data['file_name']
-                    ];
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->session->set_flashdata('error_message', $error);
 
-                    $insert_id = $this->brands_md->insert($request_data);
-
-                    if ($insert_id > 0) {
-                        $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
                     } else {
-                        if (file_exists($request_data['logo'])) {
-                            unlink($request_data['logo']);
+
+                        $file_data = $this->upload->data();
+                        $request_data = [
+                            'title' => $this->security->xss_clean($this->input->post('title')),
+                            'status' => ($this->input->post('status') == 1) ? 1 : 0,
+                            'logo' => $path . $file_data['file_name']
+                        ];
+
+                        $insert_id = $this->brands_md->insert($request_data);
+
+                        if ($insert_id > 0) {
+                            $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
+                        } else {
+                            if (file_exists($request_data['logo'])) {
+                                unlink($request_data['logo']);
+                            }
+                            $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
                         }
-                        $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
                     }
+                } else {
+                    $this->session->set_flashdata('error_message', 'Şəkil seçilmədi');
                 }
             }
         }

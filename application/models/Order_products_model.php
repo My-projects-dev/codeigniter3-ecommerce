@@ -1,9 +1,9 @@
 <?php
 
-class Orders_model extends CI_Model
+class Order_products_model extends CI_Model
 {
 
-    protected $table = 'orders';
+    protected $table = 'order_products';
 
     public function insert($data)
     {
@@ -15,13 +15,11 @@ class Orders_model extends CI_Model
 
     public function select_all()
     {
-        $this->db->select('o.id, o.total_amount AS amount, o.created_at, O.updated_at, u.name, p.title AS payment, d.title AS delivery, os.title orderstatus, o.status');
-        $this->db->from('orders o');
-        $this->db->join('users u', 'o.user_id=u.id', 'left');
-        $this->db->join('payment_methods p', 'o.payment_method=p.id', 'left');
-        $this->db->join('delivery_methods d', 'o.delivery_method=d.id', 'left');
-        $this->db->join('order_status os', 'o.delivery_method=os.id', 'left');
-        $this->db->order_by('o.id', 'DESC');
+        $this->db->select('o.*,  p.title AS title, op.*');
+        $this->db->from('order_products op');
+        $this->db->join('orders o', 'op.order_id=o.id', 'left');;
+        $this->db->join('products p', 'op.product_id=p.id', 'left');
+        $this->db->order_by('op.id', 'DESC');
         $query = $this->db->get();
 
         return $query->result();

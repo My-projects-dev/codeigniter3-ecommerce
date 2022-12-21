@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="orders">
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="product image">
+      <change afterPath="$PROJECT_DIR$/application/helpers/uploadFile_helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Images_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Order_products_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Product_categories_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Product_images_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Brands.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Brands.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Categories.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/backend/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/009_add_images.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/009_add_images.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/013_add_delivery_methods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/013_add_delivery_methods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/014_add_orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/014_add_orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/015_add_order_status.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/015_add_order_status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/016_add_order_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/016_add_order_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/Orders_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Orders_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Users_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Users_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/blog/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/blog/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/categories/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/categories/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/backend/orders/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/orders/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/products/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/products/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/products/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/products/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/template/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/template/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/brand_icon/10650895351858.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/brand_icon/1_1598452306_resim.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/brand_icon/images.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +139,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/ecommerce/application/views/backend/order_status&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/ecommerce/application/views/backend/order_products&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -129,6 +152,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\order_products" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\order_status" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\delivery_methods" />
     </key>
@@ -170,7 +194,16 @@
       <workItem from="1671302290638" duration="16364000" />
       <workItem from="1671355927334" duration="4129000" />
       <workItem from="1671366516193" duration="4940000" />
-      <workItem from="1671384783270" duration="7118000" />
+      <workItem from="1671384783270" duration="7183000" />
+      <workItem from="1671442991545" duration="11094000" />
+      <workItem from="1671461904781" duration="10850000" />
+      <workItem from="1671532043142" duration="22820000" />
+      <workItem from="1671567607535" duration="6689000" />
+      <workItem from="1671581265740" duration="8606000" />
+      <workItem from="1671591539423" duration="7897000" />
+      <workItem from="1671613084526" duration="5258000" />
+      <workItem from="1671626659389" duration="3582000" />
+      <workItem from="1671634826640" duration="8845000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -214,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671396881753</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="orders">
+      <created>1671401424081</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671401424081</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +291,7 @@
     <MESSAGE value="Payment_methods" />
     <MESSAGE value="blog" />
     <MESSAGE value="orders" />
-    <option name="LAST_COMMIT_MESSAGE" value="orders" />
+    <MESSAGE value="product image" />
+    <option name="LAST_COMMIT_MESSAGE" value="product image" />
   </component>
 </project>

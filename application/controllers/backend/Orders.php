@@ -21,6 +21,35 @@ class Orders extends CI_Controller
         $this->load->admin('orders/index', $data);
     }
 
+    public function active($id)
+    {
+        $id = $this->security->xss_clean($id);
+
+        $affected_rows = $this->user_md->active($id);
+
+        if ($affected_rows > 0) {
+            $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
+        } else {
+            $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
+        }
+
+        redirect('backend/users');
+    }
+
+    public function passive($id)
+    {
+        $id = $this->security->xss_clean($id);
+
+        $affected_rows = $this->user_md->passive($id);
+
+        if ($affected_rows > 0) {
+            $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
+        } else {
+            $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
+        }
+
+        redirect('backend/users');
+    }
 
     public function delete($id)
     {

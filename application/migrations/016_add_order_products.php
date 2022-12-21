@@ -37,6 +37,10 @@ class Migration_Add_order_products extends CI_Migration {
                 'constraint' => '10,2',
                 'default' => 0.00,
             ),
+            'status' => array(
+                'type' => 'INT',
+                'constraint' => 3,
+            ),
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',
 

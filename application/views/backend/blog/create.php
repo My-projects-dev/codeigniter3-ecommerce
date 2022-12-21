@@ -24,7 +24,7 @@
                             <?php echo form_error('description', '<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="logo">Image</label>
+                            <label for="image">Image</label>
                             <input type="file" name="image" class="form-control">
                             <?php echo form_error('image','<span class = text-danger >','</span>'); ?>
                         </div>

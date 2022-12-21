@@ -23,6 +23,24 @@ class Category_model extends CI_Model
         return $query;
     }
 
+    public function parentId($id)
+    {
+        $this->db->select('parent_id');
+        $this->db->where('id', $id);
+        $query = $this->db->get($this->table);
+
+        return $query->row();
+    }
+
+    public function selectActiveDataById($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->where('status', 1);
+        $query = $this->db->get($this->table);
+
+        return $query->row();
+    }
+
     public function selectActive_isNotId($id)
     {
         $this->db->where('id!=', $id);
@@ -43,15 +61,6 @@ class Category_model extends CI_Model
     public function selectDataById($id)
     {
         $this->db->where('id', $id);
-        $query = $this->db->get($this->table);
-
-        return $query->row();
-    }
-
-    public function selectActiveDataById($id)
-    {
-        $this->db->where('id', $id);
-        $this->db->where('status', 1);
         $query = $this->db->get($this->table);
 
         return $query->row();

@@ -37,7 +37,7 @@ class Categories extends CI_Controller
 
                 $item = $this->categories_md->selectActiveDataById($parentcategory);
 
-                if (empty($item)){
+                if (empty($item)) {
                     $parentcategory = null;
                 }
 
@@ -47,7 +47,7 @@ class Categories extends CI_Controller
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 
-                $insert_id  = $this->categories_md->insert($request_data);
+                $insert_id = $this->categories_md->insert($request_data);
 
                 if ($insert_id > 0) {
                     $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
@@ -80,28 +80,47 @@ class Categories extends CI_Controller
 
                 $parentcategory = $this->security->xss_clean($this->input->post('parentcategory'));
 
-                $item = $this->categories_md->selectActiveDataById($parentcategory);
+                $ids = $parentcategory;
+                $a = true;
 
-                if (empty($item)){
-                    $parentcategory = null;
+                while ($ids != null) {
+
+                    $parentId = $this->categories_md->parentId($ids);
+
+                    if ($parentId->parent_id == $id) {
+                        $a = false;
+                        break;
+                    }
+                    $ids = $parentId->parent_id;
                 }
 
-                $request_data = [
-                    'title' => $this->security->xss_clean($this->input->post('title')),
-                    'parent_id' => $parentcategory,
-                    'status' => ($this->input->post('status') == 1) ? 1 : 0
-                ];
+                if ($a) {
+
+                    $item = $this->categories_md->selectActiveDataById($parentcategory);
+
+                    if (empty($item)) {
+                        $parentcategory = null;
+                    }
+
+                    $request_data = [
+                        'title' => $this->security->xss_clean($this->input->post('title')),
+                        'parent_id' => $parentcategory,
+                        'status' => ($this->input->post('status') == 1) ? 1 : 0
+                    ];
 
 
-                $affected_rows = $this->categories_md->update($id, $request_data);
+                    $affected_rows = $this->categories_md->update($id, $request_data);
 
-                if ($affected_rows > 0) {
-                    $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
+                    if ($affected_rows > 0) {
+                        $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
 
-                    redirect('backend/categories/edit/' . $id);
+                        redirect('backend/categories/edit/' . $id);
+                    } else {
+                        $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
+                        redirect('backend/categories/edit/' . $id);
+                    }
                 } else {
-                    $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
-                    redirect('backend/categories/edit/' . $id);
+                    $this->session->set_flashdata('error_message', 'Əlavə etmək istədiyiniz kateqoriya bu kateqoriyanın ana kateqoriyasıdır');
                 }
             }
         }
@@ -117,7 +136,28 @@ class Categories extends CI_Controller
         $data['item'] = $item;
 
         $data['title'] = 'Categories Edit';
-        $data['lists'] = $this->categories_md->selectActive_isNotId($id);
+        $lists = $this->categories_md->selectActive_isNotId($id);
+        $listler = [];
+
+        foreach ($lists as $list){
+            $ids = $list->id;
+            $b = true;
+            while ($ids != null) {
+                $parentId = $this->categories_md->parentId($ids);
+
+                if ($parentId->parent_id == $id) {
+                    $b = false;
+                    break;
+                }
+                $ids = $parentId->parent_id;
+            }
+
+            if ($b){
+                array_push($listler, $list);
+            }
+        }
+
+        $data['lists'] = $listler;
 
         $this->load->admin('categories/edit', $data);
     }

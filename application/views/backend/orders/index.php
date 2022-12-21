@@ -28,6 +28,7 @@
                                     <th>Delivery method</th>
                                     <th>Total amount</th>
                                     <th>Order status</th>
+                                    <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -38,7 +39,19 @@
                                         <td><?= $item->payment; ?></td>
                                         <td><?= $item->delivery; ?></td>
                                         <td><?= $item->amount; ?></td>
-                                        <td><?= $item->orderstatus; ?></td>
+                                        <td><?= $item->orderstatus; ?></td><td>
+                                            <?php if ($item->status == 1) { ?>
+                                                <a href="<?= base_url('backend/orders/passive/'.$item->id); ?>" title="Active"
+                                                   class="btn btn-sm btn-success">
+                                                    <i class="voyager-paper-plane">Active</i>
+                                                </a>
+                                            <?php } else { ?>
+                                                <a href="<?= base_url('backend/orders/active/'.$item->id); ?>" title="Passive"
+                                                   class="btn btn-sm btn-warning">
+                                                    <i class="voyager-paper-plane">Passive</i>
+                                                </a>
+                                            <?php } ?>
+                                        </td>
                                         <td style="display:flex;column-gap:5px;">
                                             <a href="<?= base_url('backend/orders/delete/' . $item->id); ?>"
                                                title="Delete"
