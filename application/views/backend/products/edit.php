@@ -66,6 +66,7 @@
                                 <div class="">
                                     <img src="<?= base_url($img->path); ?>" alt="" width="100" height="100">
                                     <input type="hidden" name="<?= 'img' . $key; ?>" value="<?= $img->path; ?>">
+                                    <input type="radio" name="main" value="<?= $key; ?>" <?= ($img->main==1) ? 'checked' : ''; ?>>
                                     <input type="hidden" name="<?= 'id' . $key; ?>" value="<?= $img->id; ?>">
                                 </div>
                                 <input type="file" name="<?= 'image' . $key; ?>" class="form-control">

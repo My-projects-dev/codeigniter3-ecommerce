@@ -235,6 +235,22 @@ class Products extends CI_Controller
 
                     $img = $this->input->post('img' . $i);
                     $imgId = $this->security->xss_clean($this->input->post('id' . $i));
+                    $main = $this->input->post('main');
+
+
+                    if ($main == $i) {
+                        $main = 1;
+
+                        $radio['main'] = $main;
+
+                        $rows = $this->images_md->update2($imgId, $radio, $id);
+
+                        if ($rows > 0) {
+                            $this->session->set_flashdata('success_message', 'Məlumat uğurlu şəkildə dəyişdirildi.');
+                        } else {
+                            $this->session->set_flashdata('error_message', 'Uğursuz işləm');
+                        }
+                    }
 
                     if ($_FILES['image' . $i]["tmp_name"]) {
 
@@ -244,9 +260,12 @@ class Products extends CI_Controller
                             $countErrorUploadFiles++;
                         } else {
 
-                            $data = ['path' => $uploadStatus];
+                            $datas = [
+                                'path' => $uploadStatus,
+                                'main' => $main,
+                            ];
 
-                            $rows = $this->images_md->update2($imgId, $data, $id);
+                            $rows = $this->images_md->update2($imgId, $datas, $id);
 
                             if ($rows > 0) {
                                 $countUploadFiles++;
@@ -304,7 +323,7 @@ class Products extends CI_Controller
                                 }
                             }
                         }
-                         $this->session->set_flashdata('success_message', $countUploadFiles . ' şəkil yükləndi. Yüklənməyən şəkil ' . $countErrorUploadFiles);
+                        $this->session->set_flashdata('success_message', $countUploadFiles . ' şəkil yükləndi. Yüklənməyən şəkil ' . $countErrorUploadFiles);
                     }
                 }
 
