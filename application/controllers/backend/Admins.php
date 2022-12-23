@@ -8,6 +8,8 @@ class Admins extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Admins_model', 'admins_md');
 
     }
@@ -16,9 +18,7 @@ class Admins extends CI_Controller
     {
         $data['title'] = 'Admins List';
 
-        $admins = new Admins_model();
-
-        $data['lists'] = $admins->select_all();
+        $data['lists'] = $this->admins_md->select_all();
 
         $this->load->admin('admins/index', $data);
     }
@@ -30,7 +30,7 @@ class Admins extends CI_Controller
             $this->load->library('form_validation');
 
             $this->form_validation->set_rules('fullname', 'Ad ve soyad', 'required');
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[admins.email]');
             $this->form_validation->set_rules('password', 'Şifrə', 'required');
 
             if ($this->form_validation->run()) {
@@ -82,12 +82,21 @@ class Admins extends CI_Controller
                     $request_data['password'] = md5($this->input->post('password'));
                 }
 
-                $affected_rows = $this->admins_md->update($id, $request_data);
+                $another_id_has_mail = $this->admins_md->another_id_has_mail($id, $request_data['email']);
 
-                if ($affected_rows > 0) {
-                    $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
+                if ($another_id_has_mail > 0) {
 
-                    redirect('backend/admins/edit/' . $id);
+                    $this->session->set_flashdata('error_message', $request_data['email'].' mövcuddur');
+
+                } else {
+
+                    $affected_rows = $this->admins_md->update($id, $request_data);
+
+                    if ($affected_rows > 0) {
+                        $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
+
+                        redirect('backend/admins/edit/' . $id);
+                    }
                 }
             }
         }

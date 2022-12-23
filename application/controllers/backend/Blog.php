@@ -8,6 +8,8 @@ class Blog extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Blog_model', 'blog_md');
 
     }
@@ -44,7 +46,6 @@ class Blog extends CI_Controller
                 }
 
                 if ($_FILES["image"]["tmp_name"]) {
-
 
                     $config['upload_path'] = $path;
                     $config['allowed_types'] = 'gif|jpg|png';

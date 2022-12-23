@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ecommerce</title>
+    <title>DivBlog</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/backend/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/backend/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/backend/plugins/summernote/summernote-bs4.min.css">
+    <script src="https://kit.fontawesome.com/cabd738477.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -46,7 +47,7 @@
                 <li class="nav-item dropdown">
 
                     <!--                //logout-->
-                    <a class="nav-link" href="logout.php">
+                    <a class="nav-link" href="<?= base_url('backend/logout'); ?>">
                         <i class="fas fa-sign-out-alt"></i>
                     </a>
                     <!--                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">-->

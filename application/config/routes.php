@@ -56,6 +56,9 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['backend'] = 'backend/Dashboard/index';
 
+$route['backend/login'] = 'backend/Login';
+$route['backend/logout'] = 'backend/Login/logout';
+
 
 $route['backend/admins'] = 'backend/Admins/index';
 $route['backend/admins/create'] = 'backend/Admins/create';

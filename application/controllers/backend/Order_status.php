@@ -8,6 +8,8 @@ class Order_status extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Order_status_model', 'order_status_md');
 
     }

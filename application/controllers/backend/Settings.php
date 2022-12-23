@@ -8,6 +8,8 @@ class Settings extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Settings_model', 'settings_md');
 
     }
@@ -40,12 +42,20 @@ class Settings extends CI_Controller
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 
-                $insert_id = $this->settings_md->insert($request_data);
 
-                if ($insert_id > 0) {
-                    $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
+                $has_key = $this->settings_md->has_key($request_data['key']);
+
+                if ($has_key > 0) {
+                    $this->session->set_flashdata('error_message', $request_data['key'].' adlı açar mövcuddur');
+
                 } else {
-                    $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
+                    $insert_id = $this->settings_md->insert($request_data);
+
+                    if ($insert_id > 0) {
+                        $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
+                    } else {
+                        $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
+                    }
                 }
             }
         }
@@ -77,16 +87,27 @@ class Settings extends CI_Controller
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 
-                $affected_rows = $this->settings_md->update($id, $request_data);
+                $another_id_has_key = $this->settings_md->another_id_has_key($id, $request_data['key']);
 
-                if ($affected_rows > 0) {
-                    $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
+                if ($another_id_has_key > 0) {
 
-                    redirect('backend/settings/edit/' . $id);
+                    $this->session->set_flashdata('error_message', $request_data['key'].' adlı açar mövcuddur');
+
                 } else {
-                    $this->session->set_flashdata('error_message', 'Dəyişdirmə uğursuz oldu');
-                    redirect('backend/settings/edit/' . $id);
+
+                    $affected_rows = $this->settings_md->update($id, $request_data);
+
+                    if ($affected_rows > 0) {
+                        $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
+
+                        redirect('backend/settings/edit/' . $id);
+                    } else {
+                        $this->session->set_flashdata('error_message', 'Dəyişmə uğursuz oldu');
+                        redirect('backend/settings/edit/' . $id);
+                    }
                 }
+
+
             }
         }
 

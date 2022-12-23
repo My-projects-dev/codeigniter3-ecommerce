@@ -8,6 +8,8 @@ class Users extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Users_model', 'user_md');
 
     }

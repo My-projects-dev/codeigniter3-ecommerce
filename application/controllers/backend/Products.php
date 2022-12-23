@@ -8,6 +8,8 @@ class Products extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Products_model', 'products_md');
         $this->load->model('Brands_model', 'brands_md');
         $this->load->model('Images_model', 'images_md');
@@ -244,7 +246,7 @@ class Products extends CI_Controller
 
                             $data = ['path' => $uploadStatus];
 
-                            $rows = $this->images_md->update($imgId, $data);
+                            $rows = $this->images_md->update2($imgId, $data, $id);
 
                             if ($rows > 0) {
                                 $countUploadFiles++;

@@ -9,7 +9,6 @@ function uploadFile($filePath, $allowedTypes, $name)
     $config['allowed_types'] = $allowedTypes;         //'gif|jpg|png';
     $config['overwrite'] = 'false';
 
-
     $ci->load->library('upload', $config);
 
     if (!$ci->upload->do_upload($name)) {

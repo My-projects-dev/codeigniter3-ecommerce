@@ -8,6 +8,8 @@ class Delivery_methods extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Delivery_methods_model', 'delivery_md');
 
     }

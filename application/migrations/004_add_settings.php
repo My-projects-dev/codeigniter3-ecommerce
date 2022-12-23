@@ -16,6 +16,7 @@ class Migration_Add_settings extends CI_Migration {
             'key' => array(
                 'type' => 'VARCHAR',
                 'constraint' => 250,
+                'unique'     => TRUE,
             ),
             'value' => array(
                 'type' => 'VARCHAR',

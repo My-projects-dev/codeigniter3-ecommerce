@@ -8,6 +8,8 @@ class Brands extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Brands_model', 'brands_md');
 
     }
@@ -116,7 +118,6 @@ class Brands extends CI_Controller
                     $config['upload_path'] = $path;
                     $config['allowed_types'] = 'gif|jpg|png';
                     $config['overwrite'] = 'false';
-
 
                     $this->load->library('upload', $config);
 

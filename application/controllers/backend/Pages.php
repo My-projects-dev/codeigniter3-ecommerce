@@ -8,6 +8,8 @@ class Pages extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Pages_model', 'pages_md');
 
     }

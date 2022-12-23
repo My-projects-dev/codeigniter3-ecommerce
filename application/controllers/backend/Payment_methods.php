@@ -8,6 +8,8 @@ class Payment_methods extends CI_Controller
     {
         parent::__construct();
 
+        is_logged();
+
         $this->load->model('Payment_methods_model', 'payment_md');
 
     }
