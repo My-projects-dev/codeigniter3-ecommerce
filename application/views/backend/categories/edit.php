@@ -23,9 +23,7 @@
                             <br>
                             <select class="custom-select form-control" id="parentcategory" name="parentcategory">
                                 <option>Choose parent category</option>
-                                <?php foreach($lists as $list) : ?>
-                                <option value="<?= $list->id; ?>" <?php echo ($item->parent_id == $list->id) ? 'selected' : '' ?> ><?= $list->title; ?></option>
-                                <?php endforeach;?>
+                                <?php categoryTree($item->parent_id); ?>
                             </select>
                         </div>
                         <div class="form-group">

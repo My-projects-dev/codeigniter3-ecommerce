@@ -55,9 +55,7 @@
                             <label for="category">Category</label>
                             <br>
                             <select class="custom-select form-control" id="category" name="category">
-                                <?php foreach ($category as $cat): ?>
-                                    <option value="<?= $cat->id; ?>" <?php echo ($cat->id == $selected_category->categories_id) ? 'selected' : '' ?>><?= $cat->title; ?></option>
-                                <?php endforeach; ?>
+                                <?php categoryTree($selected_category->categories_id); ?>
                             </select>
                         </div>
 

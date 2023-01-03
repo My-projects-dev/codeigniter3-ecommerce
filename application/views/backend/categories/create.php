@@ -22,10 +22,8 @@
                             <label for="parentcategory">Parent category</label>
                             <br>
                             <select class="custom-select form-control" id="parentcategory" name="parentcategory">
-                                <option>Choose parent category</option>
-                                <?php foreach($lists as $item) : ?>
-                                <option value="<?= $item->id; ?>"><?= $item->title; ?></option>
-                                <?php endforeach;?>
+                                <option>Choose parent category</option>;
+                                <?php categoryTree(); ?>
                             </select>
                         </div>
                         <div class="form-group">

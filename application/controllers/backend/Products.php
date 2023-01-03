@@ -98,6 +98,38 @@ class Products extends CI_Controller
                         mkdir($path);
                     }
 
+                    if ($_FILES["main"]["tmp_name"]) {
+
+                        $uploadStatus = uploadFile($path, $allowedTypes, 'main');
+
+                        if ($uploadStatus == false) {
+                            $countErrorUploadFiles++;
+                        } else {
+                            $mainImageData = [
+                                'path' => $uploadStatus,
+                                'product_id' => $insert_id,
+                                'main' => 1
+                            ];
+
+                            $last_id = $this->images_md->insert($mainImageData);
+
+                            if ($last_id > 0) {
+                                $data = [
+                                    'products_id' => $insert_id,
+                                    'images_id' => $last_id
+                                ];
+                                $this->pr_img_md->insert($data);
+                                $countUploadFiles++;
+                            } else {
+                                $countErrorUploadFiles++;
+                                if (file_exists($uploadStatus)) {
+                                    unlink($uploadStatus);
+                                }
+
+                            }
+                        }
+                    }
+
                     if ($_FILES['images']['name'][0]) {
 
                         for ($i = 0; $i < $countFiles; $i++) {

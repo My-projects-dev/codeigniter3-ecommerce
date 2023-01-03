@@ -4,13 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="product">
-      <change afterPath="$PROJECT_DIR$/application/views/front/template/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/front/template/header.php" afterDir="false" />
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="product edit main image">
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/About.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/Blog_detail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/Blogs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/Category_product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/Home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/Login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/Register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/Front/Wishlist.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/helpers/category_helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/migrations/017_add_cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/migrations/018_add_wishlist.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/aboutus/about.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/blog/blog_category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/blog/blog_detail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/blog/blogs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/blog/latest_product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/category_product/category_product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/category_product/latest_product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/category_product/shop_by.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/home/banner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/home/best_sellers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/home/brands.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/home/first_three_category_products.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/home/hot_deals.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/home/media.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/home/slider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/order/order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/product/description.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/product/product_detail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/product/related_products.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/product/upsell_products.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/wishlist/wishlist.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/migration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/backend/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/helpers/alert_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/alert_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/categories/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/categories/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/categories/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/categories/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/products/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/products/create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/backend/products/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/products/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Product_images/download5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +183,10 @@
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\order_status" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\delivery_methods" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\application\views\front\include\aboutus" />
+      <recent name="C:\xampp\htdocs\ecommerce\application\views\front\include\main" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Products.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/application/controllers/backend/Products.php">
@@ -199,7 +245,29 @@
       <workItem from="1671801738460" duration="1717000" />
       <workItem from="1671807672211" duration="456000" />
       <workItem from="1671808201788" duration="202000" />
-      <workItem from="1671808460315" duration="10198000" />
+      <workItem from="1671808460315" duration="10294000" />
+      <workItem from="1671875979461" duration="19082000" />
+      <workItem from="1671909412592" duration="1440000" />
+      <workItem from="1671910928056" duration="4137000" />
+      <workItem from="1671915826481" duration="6943000" />
+      <workItem from="1671963569902" duration="3883000" />
+      <workItem from="1671988962889" duration="6918000" />
+      <workItem from="1671996835393" duration="3097000" />
+      <workItem from="1672000837741" duration="527000" />
+      <workItem from="1672045040334" duration="218000" />
+      <workItem from="1672058963553" duration="1157000" />
+      <workItem from="1672062905337" duration="565000" />
+      <workItem from="1672145559708" duration="1194000" />
+      <workItem from="1672214325200" duration="7618000" />
+      <workItem from="1672239017330" duration="5758000" />
+      <workItem from="1672413258098" duration="11491000" />
+      <workItem from="1672479451109" duration="8495000" />
+      <workItem from="1672677916501" duration="6845000" />
+      <workItem from="1672701453919" duration="1209000" />
+      <workItem from="1672702736475" duration="400000" />
+      <workItem from="1672732361885" duration="4368000" />
+      <workItem from="1672755830317" duration="11589000" />
+      <workItem from="1672773816303" duration="11338000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -257,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671644150215</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="product edit main image">
+      <created>1671818832971</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671818832971</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +371,7 @@
     <MESSAGE value="orders" />
     <MESSAGE value="product image" />
     <MESSAGE value="product" />
-    <option name="LAST_COMMIT_MESSAGE" value="product" />
+    <MESSAGE value="product edit main image" />
+    <option name="LAST_COMMIT_MESSAGE" value="product edit main image" />
   </component>
 </project>

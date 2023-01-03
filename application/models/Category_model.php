@@ -32,6 +32,14 @@ class Category_model extends CI_Model
         return $query->row();
     }
 
+    public function getParentId($parent_id)
+    {
+        $this->db->where('parent_id', $parent_id);
+        $query = $this->db->get($this->table);
+
+        return $query;
+    }
+
     public function selectActiveDataById($id)
     {
         $this->db->where('id', $id);

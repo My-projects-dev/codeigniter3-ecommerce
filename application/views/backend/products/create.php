@@ -51,13 +51,16 @@
                             <label for="category">Category</label>
                             <br>
                             <select class="custom-select form-control" id="category" name="category">
-                                <?php foreach($category as $cat): ?>
-                                <option value="<?= $cat->id; ?>"><?= $cat->title; ?></option>
-                                <?php endforeach;?>
+                                <?php categoryTree(); ?>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="images">Image</label>
+                            <label for="images">Main image</label>
+                            <input type="file" name="main" class="form-control">
+                            <?php echo form_error('main','<span class = text-danger >','</span>'); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="images">Images</label>
                             <input type="file" multiple name="images[]" class="form-control">
                             <?php echo form_error('images','<span class = text-danger >','</span>'); ?>
                         </div>
