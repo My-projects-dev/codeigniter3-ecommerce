@@ -18,17 +18,15 @@ class Category_product extends CI_Controller
         $id = $this->security->xss_clean($id);
 
         // child category
-//        $childId = [];
-//        $child = $this->categories_md->getChildId($id);
-//        print_r($child);
-//        foreach($child as $key=>$value){
-//            array_push($childId, $value->id);
-//        }
-//
-//        print_r($child);
-//        $product = $this->product_cat_md->selectProduct($childId);
-//        $data['childCategoryProduct'] = $product;
-//        print_r($product);
+        $data['childCategoryProduct'] = [];
+        $child = $this->categories_md->getChildId($id);
+        print_r($child);
+        foreach($child as $key=>$value){
+            $product = $this->product_cat_md->selectProduct($value->id);
+            if ($product){
+                array_push($data['childCategoryProduct'], $product);
+            }
+        }
         // end child category
 
 

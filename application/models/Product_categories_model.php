@@ -52,7 +52,7 @@ class Product_categories_model extends CI_Model
         $this->db->join('products p', 'p.id=pc.products_id', 'right');
         $this->db->join('brands b', 'b.id=p.brand_id', 'left');
         $this->db->join('images i', 'p.id=i.product_id', 'left');
-        $this->db->where(['pc.categories_id', $category_id]);
+        $this->db->where('pc.categories_id', $category_id);
         $this->db->where('p.status', 1);
         $this->db->where('i.main', 1);
         $this->db->order_by('p.id', 'DESC');
