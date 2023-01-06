@@ -178,7 +178,7 @@
                 <div class="row">
                     <!-- LOGO -->
                     <div class="navbar-logo col-md-3 col-sm-4 col-xs-10">
-                        <a href="index.html"><img class="lazyload" data-sizes="auto"
+                        <a href="<?= base_url('home/'); ?>"><img class="lazyload" data-sizes="auto"
                                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                                   data-src="<?= base_url(); ?>assets/frontend/image/demo/logos/theme_logo.png"
                                                   title="Your Store" alt="Your Store"/></a>

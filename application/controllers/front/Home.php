@@ -16,7 +16,7 @@ class Home extends CI_Controller
     {
         $data['title'] = 'Admins List';
 
-        $data['lists'] = $this->admins_md->select_all();
+        //$data['lists'] = $this->admins_md->select_all();
 
         $this->load->main([
             'include/home/slider',

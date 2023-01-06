@@ -32,9 +32,10 @@ class Category_model extends CI_Model
         return $query->row();
     }
 
-    public function getParentId($parent_id)
+    public function getChildId($parent_id)
     {
         $this->db->where('parent_id', $parent_id);
+        $this->db->where('status', 1);
         $query = $this->db->get($this->table);
 
         return $query;

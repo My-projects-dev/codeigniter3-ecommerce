@@ -29,6 +29,38 @@ class Product_categories_model extends CI_Model
         return $query->row();
     }
 
+    public function selectDataByCategorysId($category_id)
+    {
+        $this->db->select('p.*, c.title AS cattitle');
+        $this->db->from('product_categories pc');
+        $this->db->join('category c', 'c.id=pc.categories_id', 'left');
+        $this->db->join('products p', 'p.id=pc.products_id', 'right');
+        $this->db->join('brands b', 'b.id=p.brand_id', 'left');
+        $this->db->where('pc.categories_id', $category_id);
+        $this->db->where('p.status', 1);
+        $this->db->order_by('p.id', 'DESC');
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function selectProduct($category_id)
+    {
+        $this->db->select('p.*, c.title AS cattitle');
+        $this->db->from('product_categories pc');
+        $this->db->join('category c', 'c.id=pc.categories_id', 'left');
+        $this->db->join('products p', 'p.id=pc.products_id', 'right');
+        $this->db->join('brands b', 'b.id=p.brand_id', 'left');
+        $this->db->join('images i', 'p.id=i.product_id', 'left');
+        $this->db->where(['pc.categories_id', $category_id]);
+        $this->db->where('p.status', 1);
+        $this->db->where('i.main', 1);
+        $this->db->order_by('p.id', 'DESC');
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
     public function update($id,$data){
         $this->db->where('products_id', $id);
         $this->db->update($this->table, $data);

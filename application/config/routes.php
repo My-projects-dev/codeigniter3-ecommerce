@@ -119,3 +119,11 @@ $route['backend/order_status'] = 'backend/Order_status/index';
 $route['backend/order_status/create'] = 'backend/Order_status/create';
 $route['backend/order_status/edit/(:num)'] = 'backend/Order_status/edit/$1';
 $route['backend/order_status/delete/(:num)'] = 'backend/Order_status/delete/$1';
+
+//--------------------------------------------------------------------------------------------------
+//      FRONT
+//--------------------------------------------------------------------------------------------------
+
+$route['home'] = 'front/Home/index';
+
+$route['category/(:num)'] = 'front/Category_product/index/$1';
