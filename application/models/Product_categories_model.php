@@ -29,7 +29,7 @@ class Product_categories_model extends CI_Model
         return $query->row();
     }
 
-    public function selectDataByCategorysId($category_id)
+    public function selectDataByCategoryId($category_id)
     {
         $this->db->select('p.*, c.title AS cattitle');
         $this->db->from('product_categories pc');
