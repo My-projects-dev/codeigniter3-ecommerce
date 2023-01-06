@@ -4,7 +4,7 @@ function categoryTree($parent=0, $parent_id = null, $sub_mark = '')
 {
     $ci = &get_instance();
     $ci->load->model('Category_model', 'category_md');
-    $query = $ci->category_md->getChildId($parent_id);
+    $query = $ci->category_md->getChild($parent_id);
     if ($query->num_rows() > 0) {
         while ($row = $query->unbuffered_row()) { ?>
             <option value="<?=$row->id ?>"<?php echo ($parent == $row->id) ? 'selected' : '' ?>><?=$sub_mark . $row->title ?></option>;
@@ -18,7 +18,7 @@ function homeCategoryTree($parent_id = null)
 {
     $ci = &get_instance();
     $ci->load->model('Category_model', 'category_md');
-    $query = $ci->category_md->getChildId($parent_id);
+    $query = $ci->category_md->getChild($parent_id);
     if ($query->num_rows() > 0):?>
         <ul class="megamenu">
             <?php while ($row = $query->unbuffered_row()): ?>
@@ -28,7 +28,7 @@ function homeCategoryTree($parent_id = null)
                     <a href="<?= base_url('category/'.$row->id); ?>" class="clearfix">
                         <strong>
                             <span><?= $row->title ?></span>
-                            <?php if ($ci->category_md->getChildId($row->id)->num_rows() > 0): ?>
+                            <?php if ($ci->category_md->getChild($row->id)->num_rows() > 0): ?>
                                 <b class="fa fa-angle-right"></b>
                             <?php endif; ?>
                         </strong>
@@ -47,7 +47,7 @@ function homeCategory($parent_id)
 {
     $ci = &get_instance();
     $ci->load->model('Category_model', 'category_md');
-    $query = $ci->category_md->getChildId($parent_id);
+    $query = $ci->category_md->getChild($parent_id);
     if ($query->num_rows() > 0):
         if ($parent_id != null) { ?>
             <div class="sub-menu" data-subwidth="30"
@@ -63,7 +63,7 @@ function homeCategory($parent_id)
                                                 <?php while ($row = $query->unbuffered_row()): ?>
                                                     <li>
                                                         <a href="<?= base_url('category/'.$row->id); ?>" class="main-menu"><?= $row->title ?>
-                                                            <?php if ($ci->category_md->getChildId($row->id)->num_rows() > 0): ?>
+                                                            <?php if ($ci->category_md->getChild($row->id)->num_rows() > 0): ?>
                                                                 <b class="fa fa-angle-right"></b>
                                                             <?php endif; ?>
                                                         </a>
@@ -88,14 +88,14 @@ function homeCategory2($parent_id)
 {
     $ci = &get_instance();
     $ci->load->model('Category_model', 'category_md');
-    $query = $ci->category_md->getChildId($parent_id);
+    $query = $ci->category_md->getChild($parent_id);
     if ($query->num_rows() > 0):
         if ($parent_id != null): ?>
             <ul>
                 <?php while ($row = $query->unbuffered_row()): ?>
                     <li>
                         <a href="<?= base_url('category/'.$row->id); ?>" class="main-menu"><?= $row->title ?>
-                            <?php if ($ci->category_md->getChildId($row->id)->num_rows() > 0): ?>
+                            <?php if ($ci->category_md->getChild($row->id)->num_rows() > 0): ?>
                                 <b class="fa fa-angle-right"></b>
                             <?php endif; ?>
                         </a>
