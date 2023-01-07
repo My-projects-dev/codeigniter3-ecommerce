@@ -4,11 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="front/categoryproduct">
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="asse">
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/106508953518585.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/106508953518586.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/106508953518587.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1_1598452306_resim7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1_1598452306_resim8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1_1598452306_resim9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/download6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/download7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/download8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/download9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/images4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/images5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/images6.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/front/Category_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Category_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/helpers/category_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/category_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/category_product/category_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/category_product/category_product.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +263,9 @@
       <workItem from="1672954850215" duration="3987000" />
       <workItem from="1672959416337" duration="175000" />
       <workItem from="1672991414075" duration="13902000" />
-      <workItem from="1673018051993" duration="3398000" />
+      <workItem from="1673018051993" duration="5885000" />
+      <workItem from="1673024431234" duration="1139000" />
+      <workItem from="1673084113675" duration="17843000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -321,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673018887675</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="asse">
+      <created>1673023939006</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1673023939006</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,6 +400,7 @@
     <MESSAGE value="product edit main image" />
     <MESSAGE value="front/categoryTree" />
     <MESSAGE value="front/categoryproduct" />
-    <option name="LAST_COMMIT_MESSAGE" value="front/categoryproduct" />
+    <MESSAGE value="asse" />
+    <option name="LAST_COMMIT_MESSAGE" value="asse" />
   </component>
 </project>

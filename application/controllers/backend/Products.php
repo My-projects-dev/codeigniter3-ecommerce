@@ -39,6 +39,9 @@ class Products extends CI_Controller
             $this->form_validation->set_rules('price', 'Price', 'required|numeric');
             $this->form_validation->set_rules('sales_prices', 'Sales prices', 'required|numeric');
 
+            if (empty($_FILES["main"]["tmp_name"])) {
+                $this->form_validation->set_rules('main', 'Main image', 'required');
+            }
 
             $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
             $this->form_validation->set_message('numeric', 'Yalnızca rəqəm girilə bilər');
@@ -318,6 +321,8 @@ class Products extends CI_Controller
                     }
                 }
 
+                $countFiles = count($_FILES['images']['name']);
+
                 if ($_FILES['images']['name'][0]) {
 
                     for ($i = 0; $i < $countFiles; $i++) {
@@ -355,11 +360,12 @@ class Products extends CI_Controller
                                 }
                             }
                         }
-                        $this->session->set_flashdata('success_message', $countUploadFiles . ' şəkil yükləndi. Yüklənməyən şəkil ' . $countErrorUploadFiles);
+                        //$this->session->set_flashdata('success_message', $countUploadFiles . ' şəkil yükləndi. Yüklənməyən şəkil ' . $countErrorUploadFiles);
                     }
                 }
 
             }
+
         }
 
         $item = $this->products_md->selectDataById($id);
@@ -383,8 +389,7 @@ class Products extends CI_Controller
     }
 
 
-    public
-    function delete($id)
+    public function delete($id)
     {
         $id = $this->security->xss_clean($id);
         $item = $this->products_md->delete($id);

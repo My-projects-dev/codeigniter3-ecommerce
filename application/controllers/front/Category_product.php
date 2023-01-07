@@ -20,7 +20,6 @@ class Category_product extends CI_Controller
         // child category
         $data['childCategoryProduct'] = [];
         $child = $this->categories_md->getChildId($id);
-        print_r($child);
         foreach($child as $key=>$value){
             $product = $this->product_cat_md->selectProduct($value->id);
             if ($product){
