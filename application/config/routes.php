@@ -142,3 +142,8 @@ $route['category/(:num)'] = 'front/Category_product/index/$1';
 $route['category/(:num)/(:num)'] = 'front/Category_product/index/$1/$2';
 
 $route['product/(:num)'] = 'front/Product/index/$1';
+
+$route['blog'] = 'front/Blogs/index';
+
+$route['about'] = 'front/About/index';
+

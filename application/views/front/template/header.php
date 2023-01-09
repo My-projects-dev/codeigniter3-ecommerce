@@ -530,16 +530,7 @@
                                                                     <div class="col-md-6">
                                                                         <ul class="row-list">
                                                                             <li><a class="subcategory_item"
-                                                                                   href="about-us.html">About Us 1</a>
-                                                                            </li>
-                                                                            <li><a class="subcategory_item"
-                                                                                   href="about-us-2.html">About Us 2</a>
-                                                                            </li>
-                                                                            <li><a class="subcategory_item"
-                                                                                   href="about-us-3.html">About Us 3</a>
-                                                                            </li>
-                                                                            <li><a class="subcategory_item"
-                                                                                   href="about-us-4.html">About Us 4</a>
+                                                                                   href="<?=base_url('about/')?>">About Us</a>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
@@ -908,7 +899,7 @@
                                                     </li>
                                                     <li class="">
                                                         <p class="close-menu"></p>
-                                                        <a href="blog-page.html" class="clearfix">
+                                                        <a href="<?=base_url('blog/')?>" class="clearfix">
                                                             <strong>Blog</strong>
                                                             <span class="label"></span>
                                                         </a>
