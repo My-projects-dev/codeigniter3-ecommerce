@@ -18,6 +18,6 @@ class About extends CI_Controller
 
         $data['lists'] = $this->admins_md->select_all();
 
-        $this->load->front('include/aboutus/about', $data);
+        $this->load->front('include/information/about', $data);
     }
 }

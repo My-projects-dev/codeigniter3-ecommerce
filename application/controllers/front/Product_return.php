@@ -14,7 +14,7 @@ class Product_return extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Login';
+        $data['title'] = 'Product return';
 
         $data['lists'] = $this->admins_md->select_all();
 

@@ -14,7 +14,7 @@ class My_account extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'About';
+        $data['title'] = 'My Account';
 
         $data['lists'] = $this->admins_md->select_all();
 

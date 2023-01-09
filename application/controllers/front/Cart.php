@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Wishlist extends CI_Controller
+class Cart extends CI_Controller
 {
 
     public function __construct()
@@ -14,10 +14,10 @@ class Wishlist extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Wishlist';
+        $data['title'] = 'Cart';
 
         $data['lists'] = $this->admins_md->select_all();
 
-        $this->load->front('include/shopping/wishlist', $data);
+        $this->load->front('include/shopping/cart', $data);
     }
 }

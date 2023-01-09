@@ -50,7 +50,7 @@
 							<div class="module ">
 								<div class="content-block-footer">
 									<div class="footer-logo">
-										<a href="index.html"><img  class="lazyload img-responsive" data-sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?= base_url(); ?>assets/frontend/image/demo/logos/theme_logo.png" title="Your Store" alt="Your Store" /></a>
+										<a href="<?=base_url('home/')?>"><img  class="lazyload img-responsive" data-sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?= base_url(); ?>assets/frontend/image/demo/logos/theme_logo.png" title="Your Store" alt="Your Store" /></a>
 									</div>
 									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 								</div>
@@ -76,8 +76,8 @@
 								<h3 class="modtitle">Information</h3>
 								<div class="modcontent">
 									<ul class="menu">
-										<li><a href="#">About Us</a></li>
-										<li><a href="#">FAQ</a></li>
+										<li><a href="<?=base_url('about/')?>">About Us</a></li>
+										<li><a href="<?=base_url('faq/')?>">FAQ</a></li>
 										<li><a href="#">Pricing Tables</a></li>
 										<li><a href="#">Terms And Conditions</a></li>
 									</ul>

@@ -146,4 +146,10 @@ $route['product/(:num)'] = 'front/Product/index/$1';
 $route['blog'] = 'front/Blogs/index';
 
 $route['about'] = 'front/About/index';
+$route['faq'] = 'front/Faq/index';
 
+$route['cart'] = 'front/Cart/index';
+$route['checkout'] = 'front/Checkout/index';
+$route['compare'] = 'front/Compare/index';
+
+$route['gift_voucher'] = 'front/GiftVoucher/index';

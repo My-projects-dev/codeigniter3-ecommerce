@@ -14,7 +14,7 @@ class Order_information extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'About';
+        $data['title'] = 'Order information';
 
         $data['lists'] = $this->admins_md->select_all();
 

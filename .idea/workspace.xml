@@ -4,9 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="rotate">
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="rotate2">
+      <change afterPath="$PROJECT_DIR$/application/controllers/front/Cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/front/Checkout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/front/Compare.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/front/Contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/front/Faq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/front/GiftVoucher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/contact/contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/information/faq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/myaccount/gift_voucher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/shopping/cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/shopping/checkout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/shopping/compare.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/About.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/About.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/My_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/My_account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Order_history.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Order_history.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Order_information.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Order_information.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Product_return.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Product_return.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Wishlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Wishlist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/aboutus/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/information/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/product/product_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/product/product_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/wishlist/wishlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/shopping/wishlist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/front/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,6 +161,7 @@
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\delivery_methods" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\application\views\front\include\shopping" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\front\include\aboutus" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\front\include\main" />
     </key>
@@ -238,7 +261,7 @@
       <workItem from="1673024431234" duration="1139000" />
       <workItem from="1673084113675" duration="42114000" />
       <workItem from="1673182507661" duration="34654000" />
-      <workItem from="1673254618904" duration="7673000" />
+      <workItem from="1673254618904" duration="12749000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -345,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673262027349</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="rotate2">
+      <created>1673263313671</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673263313671</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,6 +420,7 @@
     <MESSAGE value="asse" />
     <MESSAGE value="backend product edit duzelis" />
     <MESSAGE value="rotate" />
-    <option name="LAST_COMMIT_MESSAGE" value="rotate" />
+    <MESSAGE value="rotate2" />
+    <option name="LAST_COMMIT_MESSAGE" value="rotate2" />
   </component>
 </project>

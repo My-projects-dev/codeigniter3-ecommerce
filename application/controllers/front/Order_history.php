@@ -14,7 +14,7 @@ class Order_history extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'About';
+        $data['title'] = 'Order history';
 
         $data['lists'] = $this->admins_md->select_all();
 

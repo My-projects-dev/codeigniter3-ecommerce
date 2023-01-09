@@ -43,8 +43,8 @@
     <link href="<?= base_url(); ?>assets/frontend/css/themecss/so-super-category.css" rel="stylesheet">
     <link id="color_scheme" href="<?= base_url(); ?>assets/frontend/css/theme.css" rel="stylesheet">
 
-<!--        <link href="--><?php //= base_url(); ?><!--assets/frontend/css/responsive.css" rel="stylesheet">-->
-<!--    -->
+    <link href="<?= base_url(); ?>assets/frontend/css/responsive.css" rel="stylesheet">
+
 
     <!-- Include Libs & Plugins
 	============================================ -->
@@ -450,11 +450,11 @@
                                                                                 pages</a>
                                                                             <div>
                                                                                 <ul class="row-list">
-                                                                                    <li><a href="cart.html">Shopping
+                                                                                    <li><a href="<?=base_url('cart/')?>">Shopping
                                                                                             Cart Page</a></li>
-                                                                                    <li><a href="checkout.html">Checkout
+                                                                                    <li><a href="<?=base_url('checkout/')?>">Checkout
                                                                                             Page</a></li>
-                                                                                    <li><a href="compare.html">Compare
+                                                                                    <li><a href="<?=base_url('compare/')?>">Compare
                                                                                             Page</a></li>
                                                                                     <li>
                                                                                         <a href="<?= base_url('wishlist/') ?>">Wishlist
@@ -488,7 +488,7 @@
                                                                                     <li>
                                                                                         <a href="<?= base_url('return/') ?>">Product
                                                                                             Returns</a></li>
-                                                                                    <li><a href="gift-voucher.html">Gift
+                                                                                    <li><a href="<?= base_url('gift_voucher/') ?>">Gift
                                                                                             Voucher</a></li>
                                                                                 </ul>
                                                                             </div>
@@ -513,14 +513,14 @@
                                                                     <div class="col-md-6">
                                                                         <ul class="row-list">
                                                                             <li><a class="subcategory_item"
-                                                                                   href="faq.html">FAQ</a></li>
+                                                                                   href="<?=base_url('faq/')?>">FAQ</a></li>
                                                                             <li><a class="subcategory_item"
                                                                                    href="typography.html">Typography</a>
                                                                             </li>
                                                                             <li><a class="subcategory_item"
                                                                                    href="sitemap.html">Site Map</a></li>
                                                                             <li><a class="subcategory_item"
-                                                                                   href="contact.html">Contact us</a>
+                                                                                   href="<?=base_url('contact/')?>">Contact us</a>
                                                                             </li>
                                                                             <li><a class="subcategory_item"
                                                                                    href="banner-effect.html">Banner
@@ -1227,9 +1227,9 @@
                                                         </tr>
                                                         </tbody>
                                                     </table>
-                                                    <p class="text-center"><a class="btn view-cart" href="cart.html"><i
+                                                    <p class="text-center"><a class="btn view-cart" href="<?=base_url('cart/')?>"><i
                                                                     class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp;
-                                                        <a class="btn btn-mega checkout-cart" href="checkout.html"><i
+                                                        <a class="btn btn-mega checkout-cart" href="<?=base_url('checkout/')?>"><i
                                                                     class="fa fa-share"></i>Checkout</a></p>
                                                 </div>
                                             </li>

@@ -33,7 +33,7 @@
 										</ul>
 									</div>
 									<div class="large-image  vertical">
-										<img itemprop="image" class="product-image-zoom" src="<?=$first?>" data-zoom-image="" title="<?=$product->title?>" alt="<?=$product->title?>">
+										<img itemprop="image" class="product-image-zoom" src="<?=$first?>" data-zoom-image="" title="<?=$product->title?>" alt="<?=$product->title?>" style=" width: 100%;">
 
                                     </div>
 <!--									<a class="thumb-video pull-left" href="https://www.youtube.com/watch?v=HhabgvIIXik"><i class="fa fa-youtube-play"></i></a>-->
