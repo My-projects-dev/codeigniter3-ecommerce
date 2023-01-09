@@ -18,7 +18,20 @@ class Products_model extends CI_Model {
         $this->db->join('category c', 'c.id=pc.categories_id', 'left');
         $this->db->join('products p', 'p.id=pc.products_id', 'right');
         $this->db->join('brands b', 'b.id=p.brand_id', 'left');
-        $this->db->order_by('id', 'DESC');
+        $this->db->order_by('p.id', 'DESC');
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function product_mainImage($limit){
+
+        $this->db->select('p.*, i.path');
+        $this->db->from('products p');
+        $this->db->join('images i', 'i.product_id=p.id', 'left');
+        $this->db->where('i.main', 1);
+        $this->db->limit($limit);
+        $this->db->order_by('p.id', 'DESC');
         $query = $this->db->get();
 
         return $query->result();

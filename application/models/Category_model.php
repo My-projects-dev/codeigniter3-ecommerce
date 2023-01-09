@@ -85,6 +85,14 @@ class Category_model extends CI_Model
         return $query->row();
     }
 
+    public function selectDataByIds($id)
+    {
+        $this->db->or_where_in('id', $id);
+        $query = $this->db->get($this->table);
+
+        return $query->result();
+    }
+
     public function update($id, $data)
     {
         $this->db->where('id', $id);

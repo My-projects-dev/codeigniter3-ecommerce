@@ -1,9 +1,10 @@
 <!-- Main Container  -->
 		<div class="main-container container">
 			<ul class="breadcrumb">
-				<li><a href="#"><i class="fa fa-home"></i></a></li>
-				<li><a href="#">Smartphone & Tablets</a></li>
-				<li><a href="#">Comas samer rumas</a></li>
+				<li><a href="<?= base_url('home/'); ?>"><i class="fa fa-home"></i></a></li>
+                <?php foreach ($categories as $key=>$value):?>
+				<li><a href="<?= base_url('category/'.$value->id); ?>"><?=$value->title?></a></li>
+                <?php endforeach; ?>
 			</ul>
 
 			<div class="row">
@@ -18,45 +19,30 @@
 										<span class="btn-more prev-thumb nt"><i class="fa fa-chevron-up"></i></span>
 										<span class="btn-more next-thumb nt"><i class="fa fa-chevron-down"></i></span>
 										<ul class="thumb-vertical">
+                                            <?php $first = '';
+                                            foreach ($images as $key=>$value):
+                                                if($key==0) {
+                                                    $first = base_url($value->path);
+                                                }?>
 											<li class="owl2-item">
-												<a data-index="0" class="img thumbnail" data-image="image/demo/shop/product/1.png" title="Canon EOS 5D">
-													<img src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/1.png" title="Canon EOS 5D" alt="Canon EOS 5D">
+												<a data-index="0" class="img thumbnail" data-image="<?=base_url($value->path)?>" title="<?=$product->title?>">
+													<img src="<?=base_url($value->path)?>" title="<?=$product->title?>" alt="<?=$product->title?>" style=" height: 90px;">
 												</a>
 											</li>
-											<li class="owl2-item">
-												<a data-index="1" class="img thumbnail " data-image="image/demo/shop/product/f9.jpg" title="Bint Beef">
-													<img src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/f9.jpg" title="Bint Beef" alt="Bint Beef">
-												</a>
-											</li>
-											<li class="owl2-item">
-												<a data-index="2" class="img thumbnail" data-image="image/demo/shop/product/2.png" title="Bint Beef">
-													<img src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/2.png" title="Bint Beef" alt="Bint Beef">
-												</a>
-											</li>
-											<li class="owl2-item">
-												<a data-index="3" class="img thumbnail" data-image="image/demo/shop/product/3.png" title="Bint Beef">
-													<img src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/3.png" title="Bint Beef" alt="Bint Beef">
-												</a>
-											</li>
-											<li class="owl2-item">
-												<a data-index="4" class="img thumbnail" data-image="image/demo/shop/product/j9.jpg" title="Bint Beef">
-													<img src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/j9.jpg" title="Bint Beef" alt="Bint Beef">
-												</a>
-											</li>
+                                            <?php endforeach;?>
 										</ul>
-
-
 									</div>
 									<div class="large-image  vertical">
-										<img itemprop="image" class="product-image-zoom" src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/1.png" data-zoom-image="image/demo/shop/product/1.png" title="Bint Beef" alt="Bint Beef">
-									</div>
-									<a class="thumb-video pull-left" href="https://www.youtube.com/watch?v=HhabgvIIXik"><i class="fa fa-youtube-play"></i></a>
+										<img itemprop="image" class="product-image-zoom" src="<?=$first?>" data-zoom-image="" title="<?=$product->title?>" alt="<?=$product->title?>">
+
+                                    </div>
+<!--									<a class="thumb-video pull-left" href="https://www.youtube.com/watch?v=HhabgvIIXik"><i class="fa fa-youtube-play"></i></a>-->
 
 								</div>
 
 								<div class="content-product-right col-sm-6 col-xs-12">
 									<div class="title-product">
-										<h1>Comas samer rumas</h1>
+										<h1><?=$product->title?></h1>
 									</div>
 									<!-- Review ---->
 									<div class="box-review form-group">
@@ -77,8 +63,8 @@
 									<div class="product-label form-group">
 										<div class="stock"><span>Availability:</span> <span class="status-stock">In Stock</span></div>
 										<div class="product_page_price price" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer">
-											<span class="price-new" itemprop="price">$114.00</span>
-											<span class="price-old">$122.00</span>
+											<span class="price-new" itemprop="price"><?=$product->sales_prices?></span>
+											<span class="price-old"><?=$product->price?></span>
 										</div>
 
 									</div>
@@ -86,7 +72,7 @@
 									<div class="product-box-desc">
 										<div class="inner-box-desc">
 											<div class="price-tax"><span>Ex Tax:</span> $60.00</div>
-											<div class="brand"><span>Brand:</span><a href="#">Apple</a>		</div>
+											<div class="brand"><span>Brand:</span><a href="#"> <?=$product->brandtitle?></a>		</div>
 											<div class="model"><span>Product Code:</span> Product 15</div>
 											<div class="reward"><span>Reward Points:</span> 100</div>
 										</div>
@@ -100,21 +86,21 @@
 											<ul class="product-options clearfix"id="input-option231">
 												<li class="radio active">
 													<label>
-														<input class="image_radio" type="radio" name="option[231]" value="33"> <img src="<?= base_url(); ?>assets/frontend/image/demo/colors/blue.jpg"
+														<input class="image_radio" type="radio" name="option[231]" value="33"> <img src="<?=base_url()?>assets/frontend/image/demo/colors/blue.jpg"
 														data-original-title="blue +$12.00" class="img-thumbnail icon icon-color">				<i class="fa fa-check"></i>
 														<label> </label>
 													</label>
 												</li>
 												<li class="radio">
 													<label>
-														<input class="image_radio" type="radio" name="option[231]" value="34"> <img src="<?= base_url(); ?>assets/frontend/image/demo/colors/brown.jpg"
+														<input class="image_radio" type="radio" name="option[231]" value="34"> <img src="<?=base_url()?>assets/frontend/image/demo/colors/brown.jpg"
 														data-original-title="brown -$12.00" class="img-thumbnail icon icon-color">				<i class="fa fa-check"></i>
 														<label> </label>
 													</label>
 												</li>
 												<li class="radio">
 													<label>
-														<input class="image_radio" type="radio" name="option[231]" value="35"> <img src="<?= base_url(); ?>assets/frontend/image/demo/colors/green.jpg"
+														<input class="image_radio" type="radio" name="option[231]" value="35"> <img src="<?=base_url()?>assets/frontend/image/demo/colors/green.jpg"
 														data-original-title="green +$12.00" class="img-thumbnail icon icon-color">				<i class="fa fa-check"></i>
 														<label> </label>
 													</label>

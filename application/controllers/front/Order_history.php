@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Wishlist extends CI_Controller
+class Order_history extends CI_Controller
 {
 
     public function __construct()
@@ -14,10 +14,10 @@ class Wishlist extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Wishlist';
+        $data['title'] = 'About';
 
         $data['lists'] = $this->admins_md->select_all();
 
-        $this->load->front('include/wishlist/wishlist', $data);
+        $this->load->front('include/order/order_history', $data);
     }
 }

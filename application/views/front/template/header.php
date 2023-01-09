@@ -32,8 +32,7 @@
     <link href="<?= base_url(); ?>assets/frontend/js/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/frontend/css/themecss/lib.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/frontend/js/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-    <!--    <link href="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/lightslider/lightslider.css" rel="stylesheet">-->
+    <link href="<?= base_url(); ?>assets/frontend/js/lightslider/lightslider.css" rel="stylesheet">
 
     <!-- Theme CSS
     ============================================ -->
@@ -43,42 +42,46 @@
     <link href="<?= base_url(); ?>assets/frontend/css/themecss/animate.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/frontend/css/themecss/so-super-category.css" rel="stylesheet">
     <link id="color_scheme" href="<?= base_url(); ?>assets/frontend/css/theme.css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets/frontend/css/responsive.css" rel="stylesheet">
+
+<!--        <link href="--><?php //= base_url(); ?><!--assets/frontend/css/responsive.css" rel="stylesheet">-->
+<!--    -->
 
     <!-- Include Libs & Plugins
 	============================================ -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!--    <script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/jquery-2.2.4.min.js"></script>-->
-    <!--    <script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/bootstrap.min.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/owl-carousel/owl.carousel.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/themejs/libs.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/unveil/jquery.unveil.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/countdown/jquery.countdown.min.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/dcjqaccordion/jquery.dcjqaccordion.2.8.min.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/datetimepicker/moment.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/jquery-ui/jquery-ui.min.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/lightslider/lightslider.js"></script>-->
+    <?php if ($title != 'Home'): ?>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/owl-carousel/owl.carousel.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/themejs/libs.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/unveil/jquery.unveil.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/countdown/jquery.countdown.min.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/dcjqaccordion/jquery.dcjqaccordion.2.8.min.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/datetimepicker/moment.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="
+    <?= base_url(); ?>assets/frontend/js/lightslider/lightslider.js"></script>
+    <?php endif; ?>
 
     <!-- Theme files
     ============================================ -->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/themejs/so_megamenu.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/themejs/addtocart.js"></script>-->
-    <!--	<script type="text/javascript" src="-->
-    <?php //= base_url(); ?><!--assets/frontend/js/themejs/application.js"></script>-->
+    <!--    	<script type="text/javascript" src="-->
+<!--        --><?php //= base_url(); ?><!--assets/frontend/js/themejs/so_megamenu.js"></script>-->
+<!--        	<script type="text/javascript" src="-->
+<!--        --><?php //= base_url(); ?><!--assets/frontend/js/themejs/addtocart.js"></script>-->
+<!--        	<script type="text/javascript" src="-->
+<!--        --><?php //= base_url(); ?><!--assets/frontend/js/themejs/application.js"></script>-->
 
 
 </head>
@@ -116,11 +119,13 @@
                                        data-toggle="dropdown"> <span>My Account</span> <span
                                                 class="fa fa-angle-down"></span></a>
                                     <ul class="dropdown-menu ">
-                                        <li><a href="register.html"><i class="fa fa-user"></i> Register</a></li>
-                                        <li><a href="login.html"><i class="fa fa-pencil-square-o"></i> Login</a></li>
+                                        <li><a href="<?= base_url('register/') ?>"><i class="fa fa-user"></i>
+                                                Register</a></li>
+                                        <li><a href="<?= base_url('login/') ?>"><i class="fa fa-pencil-square-o"></i>
+                                                Login</a></li>
                                     </ul>
                                 </li>
-                                <li class="wishlist "><a href="wishlist.html" id="wishlist-total"
+                                <li class="wishlist "><a href="<?= base_url('wishlist/') ?>" id="wishlist-total"
                                                          class="top-link-wishlist" title="Wish List (2)"><span>Wish List (2)</span></a>
                                 </li>
                                 <li class="checkout hidden"><a href="checkout.html" class="top-link-checkout"
@@ -179,9 +184,9 @@
                     <!-- LOGO -->
                     <div class="navbar-logo col-md-3 col-sm-4 col-xs-10">
                         <a href="<?= base_url('home/'); ?>"><img class="lazyload" data-sizes="auto"
-                                                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                  data-src="<?= base_url(); ?>assets/frontend/image/demo/logos/theme_logo.png"
-                                                  title="Your Store" alt="Your Store"/></a>
+                                                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                                 data-src="<?= base_url(); ?>assets/frontend/image/demo/logos/theme_logo.png"
+                                                                 title="Your Store" alt="Your Store"/></a>
                     </div>
                     <div class="header-center-right col-md-9 col-sm-8 col-xs-2">
                         <div class="responsive so-megamenu  megamenu-style-dev">
@@ -451,7 +456,8 @@
                                                                                             Page</a></li>
                                                                                     <li><a href="compare.html">Compare
                                                                                             Page</a></li>
-                                                                                    <li><a href="wishlist.html">Wishlist
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('wishlist/') ?>">Wishlist
                                                                                             Page</a></li>
 
                                                                                 </ul>
@@ -464,18 +470,23 @@
                                                                                 pages</a>
                                                                             <div>
                                                                                 <ul class="row-list">
-                                                                                    <li><a href="login.html">Login
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('login/') ?>">Login
                                                                                             Page</a></li>
-                                                                                    <li><a href="register.html">Register
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('register/') ?>">Register
                                                                                             Page</a></li>
-                                                                                    <li><a href="my-account.html">My
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('my_account/') ?>">My
                                                                                             Account</a></li>
-                                                                                    <li><a href="order-history.html">Order
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('order_history/') ?>">Order
                                                                                             History</a></li>
                                                                                     <li>
-                                                                                        <a href="order-information.html">Order
+                                                                                        <a href="<?= base_url('order_information/') ?>">Order
                                                                                             Information</a></li>
-                                                                                    <li><a href="return.html">Product
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('return/') ?>">Product
                                                                                             Returns</a></li>
                                                                                     <li><a href="gift-voucher.html">Gift
                                                                                             Voucher</a></li>

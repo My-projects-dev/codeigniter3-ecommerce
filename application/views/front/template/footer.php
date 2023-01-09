@@ -241,7 +241,8 @@
 	</div>
 
 	<link rel='stylesheet' property='stylesheet'  href='<?= base_url(); ?>assets/frontend/css/themecss/cpanel.css' type='text/css' media='all' />
-	
+    <script type="text/javascript" src="<?= base_url(); ?>assets/frontend/js/themejs/cpanel.js"></script>	<!-- //Cpanel Block -->
+
 	<!-- Preloading Screen -->
 <!--	<div id="loader-wrapper">-->
 <!--		<div id="loader"></div>-->
@@ -249,8 +250,9 @@
 <!--		<div class="loader-section section-right"></div>-->
 <!--	 </div>-->
 	<!-- End Preloading Screen -->
-	
-	<!-- Include Libs & Plugins
+
+
+    <!-- Include Libs & Plugins
 	============================================ -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script type="text/javascript" src="<?= base_url(); ?>assets/frontend/js/jquery-2.2.4.min.js"></script>

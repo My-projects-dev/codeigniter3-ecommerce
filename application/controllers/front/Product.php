@@ -8,15 +8,40 @@ class Product extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('Admins_model', 'admins_md');
-
+        $this->load->model('Product_categories_model', 'product_category_md');
+        $this->load->model('Category_model', 'category_md');
+        $this->load->model('Images_model', 'images_md');
     }
 
-    public function index()
+    public function index($id)
     {
-        $data['title'] = 'Admins List';
+        $id = $this->security->xss_clean($id);
 
-        $data['lists'] = $this->admins_md->select_all();
+        $catId = $this->product_category_md->getCategoryId($id)->categories_id;
+        $ids = (int)$catId;
+        $subCat = array();
+
+        while ($ids != null) {
+            $parent = $this->category_md->parentId($ids);
+            if (!$parent->parent_id) {
+                break;
+            }
+
+            $subCat = array_merge($subCat, array_values((array)$parent));
+            $ids = $parent->parent_id;
+        }
+
+        array_push($subCat, $catId);
+
+        // Related Product
+        $data['related'] = $this->product_category_md->selectLastProduct($catId,4);
+        // Related Product
+
+        $data['categories'] = $this->category_md->selectDataByIds($subCat);
+        $data['product'] = $this->product_category_md->selectById($id);
+        $data['images'] = $this->images_md->selectDataByProductId($id);
+
+        $data['title'] = 'Product';
 
         $this->load->main([
             'include/product/product_detail',

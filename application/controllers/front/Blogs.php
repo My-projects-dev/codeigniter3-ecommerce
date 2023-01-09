@@ -14,7 +14,7 @@ class Blogs extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Admins List';
+        $data['title'] = 'Blogs';
 
         $data['lists'] = $this->admins_md->select_all();
 

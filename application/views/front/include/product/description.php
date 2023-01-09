@@ -1,4 +1,5 @@
-	<!-- Product Tabs -->
+<div class="col-lg-9 col-md-8  col-xs-12">
+								<!-- Product Tabs -->
 								<div class="producttab ">
 									<div class="tabsslider  col-xs-12">
 										<ul class="nav nav-tabs">
@@ -9,17 +10,7 @@
 										</ul>
 										<div class="tab-content col-xs-12">
 											<div id="tab-1" class="tab-pane fade active in">
-												<p>Lorem ipsum dolor sit amet, consetetursadipscing elitr, sed diam nonumy eirmodtempor invidunt ut labore et doloremagna aliquyam erat, sed diam voluptua.</p>
-												<p>At vero eos et accusam et justo duo dolores	et ea rebum. Stet clita kasd gubergren,no sea takimata sanctus est Lorem ipsumdolor sit amet. Lorem ipsum dolor sitamet, consetetur sadipscing elitr, seddiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,sed diam voluptua. </p>
-												<p><strong>Nemo enim ipsam voluptatem</strong></p>
-												<ul class="des-custom">
-													<li>100% Brand New.</li>
-													<li>Fashion Cute Mini Finger Ring</li>
-													<li>Contains 1 PCS</li>
-													<li>Simple and easy</li>
-												</ul>
-												<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum uptatem accusantium doloremque laudantium, totam rem aperiam, eaque.</p>
-
+												<?=$product->description?>
 											</div>
 											<div id="tab-review" class="tab-pane fade">
 												<form>
@@ -83,8 +74,8 @@
 												<table class="data-table" style="width: 100%;" border="1">
 													<tbody>
 													<tr>
-													<td>Brand</td>
-													<td><img  src="<?= base_url(); ?>assets/frontend/image/demo/shop/category/logo-client.png"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" /></td>
+													<td><?=$product->brandtitle?></td>
+													<td><img  src="<?=base_url($product->logo)?>"  title="<?=$product->brandtitle?>" class="img-1 img-responsive" style="width: 70px; height: 70px;"/></td>
 													</tr>
 													<tr>
 													<td>History</td>

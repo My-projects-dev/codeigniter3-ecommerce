@@ -392,15 +392,39 @@ class Products extends CI_Controller
     public function delete($id)
     {
         $id = $this->security->xss_clean($id);
+        $images = $this->images_md->selectDataByProductId($id);
         $item = $this->products_md->delete($id);
 
         if ($item > 0) {
+            foreach ($images as $key => $value) {
+                if (file_exists($value->path)) {
+                    unlink($value->path);
+                }
+            }
             $this->session->set_flashdata('success_message', 'Uğurlu şəkildə silindi');
         } else {
-            $this->session->set_flashdata('error_message', 'Silinmə zamanı xəta baş verdi');
+            $this->session->set_flashdata('error_message', 'Silinmək mümkün olmadı');
         }
 
         redirect('backend/products');
+    }
+
+    public function deleteImage($product_id, $file, $subfile, $imgpath)
+    {
+        $path = $file . '/' . $subfile . '/' . $imgpath;
+        $product_id = $this->security->xss_clean($product_id);
+        $item = $this->images_md->deleteImage($product_id, $path);
+
+        if ($item > 0) {
+            $this->session->set_flashdata('success_message', 'Şəkil silindi');
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        } else {
+            $this->session->set_flashdata('error_message', 'Silinmək mümkün olmadı, Əsas şəkil silinə bilməz. Başqa bir şəkli əsas şəkil edərək silə bilərsiniz ');
+        }
+
+        redirect('backend/products/edit/' . $product_id);
     }
 
 

@@ -1,4 +1,4 @@
-							<!-- Upsell Products -->
+<!-- Upsell Products -->
 								<div class="related upsell titleLine products-list grid module ">
 									<h3 class="modtitle"><span>Upsell Products</span></h3>
 									<div class="upsell-products ">
@@ -6,8 +6,8 @@
 											<div class="product-item-container">
 												<div class="left-block">
 													<div class="product-image-container second_img ">
-														<img  src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/e11.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
-														<img  src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/e12.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
+														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/e11.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
+														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/e12.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
 													</div>
 													<!--Sale Label-->
 													<span class="label label-sale">Sale</span>
@@ -50,8 +50,8 @@
 											<div class="product-item-container">
 												<div class="left-block">
 													<div class="product-image-container second_img ">
-														<img  src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/11.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
-														<img  src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/10.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
+														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/11.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
+														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/10.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
 
 													</div>
 													<!--Sale Label-->
@@ -95,8 +95,8 @@
 											<div class="product-item-container">
 												<div class="left-block">
 													<div class="product-image-container second_img ">
-														<img  src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/35.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
-														<img  src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/34.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
+														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/35.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
+														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/34.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
 													</div>
 													<!--Sale Label-->
 													<span class="label label-sale">Sale</span>
@@ -138,8 +138,8 @@
 											<div class="product-item-container">
 												<div class="left-block">
 													<div class="product-image-container second_img ">
-														<img  src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/14.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
-														<img  src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/15.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
+														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/14.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
+														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/15.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
 													</div>
 													<!--Sale Label-->
 													<span class="label label-sale">Sale</span>
@@ -199,11 +199,11 @@
 							});
 							$('.large-image').magnificPopup({
 								items: [
-									{src: '<?= base_url(); ?>assets/frontend/image/demo/shop/product/1.png' },
-									{src: '<?= base_url(); ?>assets/frontend/image/demo/shop/product/f9.jpg' },
-									{src: '<?= base_url(); ?>assets/frontend/image/demo/shop/product/2.png' },
-									{src: '<?= base_url(); ?>assets/frontend/image/demo/shop/product/3.png' },
-									{src: '<?= base_url(); ?>assets/frontend/image/demo/shop/product/j9.jpg' },
+									{src: '<?=base_url()?>assets/frontend/image/demo/shop/product/1.png' },
+									{src: '<?=base_url()?>assets/frontend/image/demo/shop/product/f9.jpg' },
+									{src: '<?=base_url()?>assets/frontend/image/demo/shop/product/2.png' },
+									{src: '<?=base_url()?>assets/frontend/image/demo/shop/product/3.png' },
+									{src: '<?=base_url()?>assets/frontend/image/demo/shop/product/j9.jpg' },
 								],
 								gallery: { enabled: true, preload: [0,2] },
 								type: 'image',

@@ -62,10 +62,16 @@
                         <?php foreach ($images as $key => $img): ?>
                             <div class="form-group">
                                 <div class="">
-                                    <img src="<?= base_url($img->path); ?>" alt="" width="100" height="100">
                                     <input type="hidden" name="<?= 'img' . $key; ?>" value="<?= $img->path; ?>">
-                                    <input type="radio" name="main" value="<?= $key; ?>" <?= ($img->main==1) ? 'checked' : ''; ?>>
+                                    <lebel>Main image</lebel>
+                                    <input type="radio" name="main" value="<?= $key; ?>" <?= ($img->main == 1) ? 'checked' : ''; ?> class="mr-3">
+                                    <img src="<?= base_url($img->path); ?>" alt="" width="100" height="100">
                                     <input type="hidden" name="<?= 'id' . $key; ?>" value="<?= $img->id; ?>">
+                                    <a href="<?= base_url('backend/products/deleteImage/' . $item->id . '/' . $img->path); ?>"
+                                           title="Delete"
+                                           class="btn btn-sm btn-danger text-right">
+                                            <i class="voyager-paper-plane">Delete image</i>
+                                        </a>
                                 </div>
                                 <input type="file" name="<?= 'image' . $key; ?>" class="form-control">
                             </div>
@@ -73,7 +79,7 @@
                         <div class="form-group">
                             <label for="images">Yeni şəkil əlavə et</label>
                             <input type="file" multiple name="images[]" class="form-control">
-                            <?php echo form_error('images','<span class = text-danger >','</span>'); ?>
+                            <?php echo form_error('images', '<span class = text-danger >', '</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="Status">Status</label>

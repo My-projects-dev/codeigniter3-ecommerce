@@ -14,7 +14,7 @@ class Order extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Admins List';
+        $data['title'] = 'Order';
 
         $data['lists'] = $this->admins_md->select_all();
 

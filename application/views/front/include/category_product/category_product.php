@@ -1,50 +1,4 @@
-<!--Middle Part Start-->
-<div id="content" class="col-md-9 col-sm-8">
-    <div class="products-category">
-        <div class="category-derc form-group">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p><img src="<?= base_url(); ?>assets/frontend/image/demo/shop/category/electronic-cat.png"
-                            alt="Apple Cinema 30&quot;"><br></p>
-                    <p>Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis. In pede
-                        mi, aliquet sit amet, euismod in, auctor ut, ligula. Aliquam dapibus tincidunt metus. Praesent
-                        justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec
-                        sagittis euismod purus. Sed ut perspiciatis sit voluptatem accusantim doloremque laudantim.</p>
-                </div>
-            </div>
-        </div>
-        <!--- Subcategories - -->
-        <div class="refine-search form-group">
-            <div class="row">
-                <div class="form-group col-md-15 col-sm-4 col-xs-12 ">
-                    <a href="#" class="thumbnail"><img
-                                src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/m2.jpg"
-                                alt="Car Alarms and Security"></a> <a href="#">Car Alarms and Security</a>
-                </div>
-                <div class="form-group col-md-15 col-sm-4 col-xs-12 ">
-                    <a href="#" class="thumbnail"><img
-                                src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/e2.jpg"
-                                alt="Car Audio &amp; Speakers"></a> <a href="#">Car Audio &amp; Speakers</a>
-                </div>
-                <div class="form-group col-md-15 col-sm-4 col-xs-12 ">
-                    <a href="#" class="thumbnail"><img
-                                src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/10.jpg"
-                                alt="Gadgets &amp; Auto Parts"> </a> <a href="#">Gadgets &amp; Auto Parts</a>
-                </div>
-                <div class="form-group col-md-15 col-sm-4 col-xs-12 ">
-                    <a href="#" class="thumbnail"><img
-                                src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/18.jpg"
-                                alt="More Car Accessories"> </a> <a href="#">More Car Accessories</a>
-                </div>
-                <div class="form-group col-md-15 col-sm-4 col-xs-12 ">
-                    <a href="#" class="thumbnail"><img
-                                src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/19.jpg"
-                                alt="More Car Accessories"> </a> <a href="#">More Car Accessories</a>
-                </div>
-            </div>
-        </div>
-        <!---//Subcategories - -->
-        <!-- Filters -->
+ <!-- Filters -->
         <div class="product-filter filters-panel">
             <div class="row">
                 <div class="col-md-2 visible-lg">
@@ -130,7 +84,7 @@
 
                         <div class="right-block">
                             <div class="caption">
-                                <h4><a href="product.html"><?= $value->title; ?></a></h4>
+                                <h4><a href="<?= base_url('product/'.$value->id); ?>""><?= $value->title; ?></a></h4>
                                 <div class="ratings">
                                     <div class="rating-box">
                                         <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
@@ -186,12 +140,14 @@
                     <div class="form-group" style="margin: 3px 10px">Showing 1 to 9 of 10 (2 Pages)</div>
                 </div>
                 <div class="box-pagination col-md-3 col-sm-4 text-right">
-                    <ul class="pagination">
-                        <li class="active"><span>1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">&gt;</a></li>
-                        <li><a href="#">&gt;|</a></li>
-                    </ul>
+<!--                    <ul class="pagination">-->
+<!--                        <li class="active"><span>1</span></li>-->
+<!--                        <li><a href="#">2</a></li>-->
+<!--                        <li><a href="#">&gt;</a></li>-->
+<!--                        <li><a href="#">&gt;|</a></li>-->
+<!---->
+<!--                    </ul>-->
+                    <?=$links?>
                 </div>
 
             </div>

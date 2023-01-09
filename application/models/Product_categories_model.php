@@ -29,32 +29,78 @@ class Product_categories_model extends CI_Model
         return $query->row();
     }
 
-    public function selectDataByCategoryId($category_id)
+    public function selectById($id){
+
+        $this->db->select('p.*, b.title AS brandtitle, b.logo, c.title AS cattitle');
+        $this->db->from('product_categories pc');
+        $this->db->join('category c', 'c.id=pc.categories_id', 'left');
+        $this->db->join('products p', 'p.id=pc.products_id', 'right');
+        $this->db->join('brands b', 'b.id=p.brand_id', 'left');
+        $this->db->where('p.id', $id);
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+
+    public function selectDataByCategoryId($category_id,$per, $segment)
     {
         $this->db->select('p.*, c.title AS cattitle');
         $this->db->from('product_categories pc');
         $this->db->join('category c', 'c.id=pc.categories_id', 'left');
         $this->db->join('products p', 'p.id=pc.products_id', 'right');
         $this->db->join('brands b', 'b.id=p.brand_id', 'left');
-        $this->db->where('pc.categories_id', $category_id);
+        $this->db->or_where_in('pc.categories_id', $category_id);
         $this->db->where('p.status', 1);
+        $this->db->limit($per, $segment);
         $this->db->order_by('p.id', 'DESC');
         $query = $this->db->get();
 
         return $query->result();
     }
 
-    public function selectProduct($category_id)
+    public function selectLastProduct($category_id,$limit)
     {
-        $this->db->select('p.*, c.title AS cattitle');
+        $this->db->select('p.*, c.title AS cattitle, i.path');
         $this->db->from('product_categories pc');
         $this->db->join('category c', 'c.id=pc.categories_id', 'left');
-        $this->db->join('products p', 'p.id=pc.products_id', 'right');
-        $this->db->join('brands b', 'b.id=p.brand_id', 'left');
+        $this->db->join('products p', 'p.id=pc.products_id', 'left');
         $this->db->join('images i', 'p.id=i.product_id', 'left');
         $this->db->where('pc.categories_id', $category_id);
         $this->db->where('p.status', 1);
         $this->db->where('i.main', 1);
+        $this->db->order_by('p.id', 'DESC');
+        $this->db->limit($limit);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function countProduct($category_id)
+    {
+        $this->db->select('p.*, c.title AS cattitle');
+        $this->db->from('product_categories pc');
+        $this->db->join('category c', 'c.id=pc.categories_id', 'left');
+        $this->db->join('products p', 'p.id=pc.products_id', 'left');
+        $this->db->join('brands b', 'b.id=p.brand_id', 'left');
+        $this->db->or_where_in('pc.categories_id', $category_id);
+        $this->db->where('p.status', 1);
+        $this->db->order_by('p.id', 'DESC');
+        $query = $this->db->count_all_results();
+
+        return $query;
+    }
+
+    public function selectProduct($category_id, $limit)
+    {
+        $this->db->select('p.*, i.path as image');
+        $this->db->from('product_categories pc');
+        $this->db->join('category c', 'c.id=pc.categories_id', 'left');
+        $this->db->join('products p', 'p.id=pc.products_id', 'right');
+        $this->db->join('images i', 'p.id=i.product_id', 'left');
+        $this->db->where('pc.categories_id', $category_id);
+        $this->db->where('p.status', 1);
+        $this->db->where('i.main', 1);
+        $this->db->limit($limit);
         $this->db->order_by('p.id', 'DESC');
         $query = $this->db->get();
 

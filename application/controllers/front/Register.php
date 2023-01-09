@@ -14,7 +14,7 @@ class Register extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Admins List';
+        $data['title'] = 'Register';
 
         $data['lists'] = $this->admins_md->select_all();
 

@@ -1,8 +1,10 @@
 <!-- Main Container  -->
 		<div class="main-container container">
 			<ul class="breadcrumb">
-				<li><a href="#"><i class="fa fa-home"></i></a></li>
-				<li><a href="#">Smartphone & Tablets</a></li>
+				<li><a href="<?= base_url('home/'); ?>"><i class="fa fa-home"></i></a></li>
+                <?php foreach ($categories as $key=>$value):?>
+				<li><a href="<?= base_url('category/'.$value->id); ?>"><?=$value->title?></a></li>
+                <?php endforeach; ?>
 			</ul>
 			<div class="row">
 				<!--Left Part Start -->

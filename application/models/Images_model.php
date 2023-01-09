@@ -27,6 +27,24 @@ class Images_model extends CI_Model
         return $query->result();
     }
 
+    public function getImagePath($product_id)
+    {
+        $this->db->select('path');
+        $this->db->where('product_id', $product_id);
+        $query = $this->db->get($this->table);
+
+        return $query->result();
+    }
+
+    public function getMainImage($product_id)
+    {
+        $this->db->where('product_id', $product_id);
+        $this->db->where('main', 1);
+        $query = $this->db->get($this->table);
+
+        return $query->result();
+    }
+
     public function update($id, $data)
     {
         $this->db->where('id', $id);
@@ -46,6 +64,22 @@ class Images_model extends CI_Model
 
     public function delete($id){
         $this->db->where('id', $id);
+        $this->db->delete($this->table);
+
+        return $this->db->affected_rows();
+    }
+
+    public function deleteImage($id, $path){
+        $this->db->where('product_id', $id);
+        $this->db->where('path', $path);
+        $this->db->where('main', 0);
+        $this->db->delete($this->table);
+
+        return $this->db->affected_rows();
+    }
+
+    public function deleteProductImage($id){
+        $this->db->where('product_id', $id);
         $this->db->delete($this->table);
 
         return $this->db->affected_rows();

@@ -126,4 +126,19 @@ $route['backend/order_status/delete/(:num)'] = 'backend/Order_status/delete/$1';
 
 $route['home'] = 'Home/index';
 
+$route['login'] = 'front/Login/index';
+$route['register'] = 'front/Register/index';
+
+$route['wishlist'] = 'front/Wishlist/index';
+
+$route['return'] = 'front/Product_return/index';
+
+$route['my_account'] = 'front/My_account/index';
+
+$route['order_history'] = 'front/Order_history/index';
+$route['order_information'] = 'front/Order_information/index';
+
 $route['category/(:num)'] = 'front/Category_product/index/$1';
+$route['category/(:num)/(:num)'] = 'front/Category_product/index/$1/$2';
+
+$route['product/(:num)'] = 'front/Product/index/$1';
