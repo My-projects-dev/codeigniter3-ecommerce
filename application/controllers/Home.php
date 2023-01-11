@@ -8,7 +8,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('Admins_model', 'admins_md');
+        $this->load->model('Category_model', 'category_md');
 
     }
 
@@ -16,7 +16,8 @@ class Home extends CI_Controller
     {
         $data['title'] = 'Home';
 
-        //$data['lists'] = $this->admins_md->select_all();
+
+        $data['categories'] = category_tree($this->category_md->select_all());
 
         $this->load->main([
             'include/home/slider',

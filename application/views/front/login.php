@@ -12,6 +12,7 @@
 
 						<div class="account-border">
 							<div class="row">
+
 								<div class="col-sm-6 new-customer">
 									<div class="well">
 										<h2><i class="fa fa-file-o" aria-hidden="true"></i> New Customer</h2>
@@ -22,19 +23,21 @@
 									</div>
 								</div>
 
-								<form action="#" method="post" enctype="multipart/form-data">
+								<form action="<?= base_url('front/login'); ?>" method="post" enctype="multipart/form-data">
 									<div class="col-sm-6 customer-login">
-										<div class="well">
-											<h2><i class="fa fa-file-text-o" aria-hidden="true"></i> Returning Customer</h2>
-											<p><strong>I am a returning customer</strong></p>
+										<div class="well"><?php errorAlert();?>
+<!--											<h2><i class="fa fa-file-text-o" aria-hidden="true"></i> Returning Customer</h2>-->
+<!--											<p><strong>I am a returning customer</strong></p>-->
 											<div class="form-group">
 												<label class="control-label " for="input-email">E-Mail Address</label>
-												<input type="text" name="email" value="" id="input-email" class="form-control" />
+												<input type="email" name="email" value="" id="input-email" class="form-control" />
 											</div>
+                                            <?php echo form_error('email', '<span class = text-danger >', '</span>'); ?>
 											<div class="form-group">
 												<label class="control-label " for="input-password">Password</label>
 												<input type="password" name="password" value="" id="input-password" class="form-control" />
 											</div>
+                                            <?php echo form_error('password', '<span class = text-danger >', '</span>'); ?>
 										</div>
 										<div class="bottom-form">
 											<a href="#" class="forgot">Forgotten Password</a>

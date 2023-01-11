@@ -24,6 +24,11 @@
                             <?php echo form_error('logo','<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
+                            <label for="">History</label>
+                            <textarea name="history" id="" cols="30" rows="3" class="form-control"></textarea>
+                            <?php echo form_error('history', '<span class = text-danger >','</span>'); ?>
+                        </div>
+                        <div class="form-group">
                             <label for="Status">Status</label>
                             <br>
                             <select class="custom-select form-control" id="Status" name="status">

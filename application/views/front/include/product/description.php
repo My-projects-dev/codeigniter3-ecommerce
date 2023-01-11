@@ -79,7 +79,7 @@
 													</tr>
 													<tr>
 													<td>History</td>
-													<td>Color sit amet, consectetur adipiscing elit. In gravida pellentesque ligula, vel eleifend turpis blandit vel. Nam quis lorem ut mi mattis ullamcorper ac quis dui. Vestibulum et scelerisque ante, eu sodales mi. Nunc tincidunt tempus varius. Integer ante dolor, suscipit non faucibus a, scelerisque vitae sapien.</td>
+													<td><?=$product->history; ?></td>
 													</tr>
 													</tbody>
 												</table>

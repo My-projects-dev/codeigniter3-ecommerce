@@ -37,11 +37,12 @@ class Product extends CI_Controller
         $data['related'] = $this->product_category_md->selectLastProduct($catId,4);
         // Related Product
 
-        $data['categories'] = $this->category_md->selectDataByIds($subCat);
+        $data['category'] = $this->category_md->selectDataByIds($subCat);
         $data['product'] = $this->product_category_md->selectById($id);
         $data['images'] = $this->images_md->selectDataByProductId($id);
 
         $data['title'] = 'Product';
+        $data['categories'] = category_tree($this->category_md->select_all());
 
         $this->load->main([
             'include/product/product_detail',

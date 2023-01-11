@@ -30,6 +30,7 @@ class Brands extends CI_Controller
             $this->load->library('form_validation');
 
             $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('history', 'History', 'required');
 
             $this->form_validation->set_message('required', 'Boş keçilə bilməz');
 
@@ -63,6 +64,7 @@ class Brands extends CI_Controller
                         $file_data = $this->upload->data();
                         $request_data = [
                             'title' => $this->security->xss_clean($this->input->post('title')),
+                            'history' => $this->security->xss_clean($this->input->post('history')),
                             'status' => ($this->input->post('status') == 1) ? 1 : 0,
                             'logo' => $path . $file_data['file_name']
                         ];
@@ -101,6 +103,7 @@ class Brands extends CI_Controller
             $this->load->library('form_validation');
 
             $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('history', 'History', 'required');
 
             $this->form_validation->set_message('required', 'Boş keçilə bilməz');
 
@@ -109,6 +112,7 @@ class Brands extends CI_Controller
 
                 $request_data = [
                     'title' => $this->security->xss_clean($this->input->post('title')),
+                    'history' => $this->security->xss_clean($this->input->post('history')),
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 

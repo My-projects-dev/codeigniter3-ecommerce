@@ -35,7 +35,7 @@ class Category_product extends CI_Controller
 
         array_push($parentCat, $catId);
 
-        $data['categories'] = $this->categories_md->selectDataByIds($parentCat);
+        $data['category'] = $this->categories_md->selectDataByIds($parentCat);
         // end category way
 
         // Latest Product
@@ -110,6 +110,7 @@ class Category_product extends CI_Controller
         // End-Products
 
         $data['title'] = 'Category product';
+        $data['categories'] = category_tree($this->categories_md->select_all());
 
         $this->load->main([
             'include/category_product/shop_by',

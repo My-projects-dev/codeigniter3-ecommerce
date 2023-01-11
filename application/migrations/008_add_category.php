@@ -22,6 +22,10 @@ class Migration_Add_category extends CI_Migration
                 'constraint' => 5,
                 'null' => TRUE,
             ),
+            'slug' => array(
+                'type' => 'VARCHAR',
+                'constraint' => 250,
+            ),
             'status' => array(
                 'type' => 'INT',
                 'constraint' => '3',

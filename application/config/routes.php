@@ -110,15 +110,25 @@ $route['backend/delivery/create'] = 'backend/Delivery_methods/create';
 $route['backend/delivery/edit/(:num)'] = 'backend/Delivery_methods/edit/$1';
 $route['backend/delivery/delete/(:num)'] = 'backend/Delivery_methods/delete/$1';
 
+$route['backend/order_status'] = 'backend/Order_status/index';
+$route['backend/order_status/create'] = 'backend/Order_status/create';
+$route['backend/order_status/edit/(:num)'] = 'backend/Order_status/edit/$1';
+$route['backend/order_status/delete/(:num)'] = 'backend/Order_status/delete/$1';
+
 $route['backend/blog'] = 'backend/Blog/index';
 $route['backend/blog/create'] = 'backend/Blog/create';
 $route['backend/blog/edit/(:num)'] = 'backend/Blog/edit/$1';
 $route['backend/blog/delete/(:num)'] = 'backend/Blog/delete/$1';
 
-$route['backend/order_status'] = 'backend/Order_status/index';
-$route['backend/order_status/create'] = 'backend/Order_status/create';
-$route['backend/order_status/edit/(:num)'] = 'backend/Order_status/edit/$1';
-$route['backend/order_status/delete/(:num)'] = 'backend/Order_status/delete/$1';
+$route['backend/country'] = 'backend/Country/index';
+$route['backend/country/create'] = 'backend/Country/create';
+$route['backend/country/edit/(:num)'] = 'backend/Country/edit/$1';
+$route['backend/country/delete/(:num)'] = 'backend/Country/delete/$1';
+
+$route['backend/region'] = 'backend/Region/index';
+$route['backend/region/create'] = 'backend/Region/create';
+$route['backend/region/edit/(:num)'] = 'backend/Region/edit/$1';
+$route['backend/region/delete/(:num)'] = 'backend/Region/delete/$1';
 
 //--------------------------------------------------------------------------------------------------
 //      FRONT
@@ -127,6 +137,7 @@ $route['backend/order_status/delete/(:num)'] = 'backend/Order_status/delete/$1';
 $route['home'] = 'Home/index';
 
 $route['login'] = 'front/Login/index';
+$route['logout'] = 'front/Login/logout';
 $route['register'] = 'front/Register/index';
 
 $route['wishlist'] = 'front/Wishlist/index';
@@ -153,3 +164,4 @@ $route['checkout'] = 'front/Checkout/index';
 $route['compare'] = 'front/Compare/index';
 
 $route['gift_voucher'] = 'front/GiftVoucher/index';
+

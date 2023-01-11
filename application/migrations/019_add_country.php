@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Migration_Add_cart extends CI_Migration
+class Migration_Add_country extends CI_Migration
 {
 
     public function up()
@@ -14,27 +14,23 @@ class Migration_Add_cart extends CI_Migration
                 'unsigned' => FALSE,
                 'auto_increment' => TRUE
             ),
-            'user' => array(
-                'type' => 'INT',
-                'constraint' => 7,
+            'country_name' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
             ),
-            'product_id' => array(
+            'status' => array(
                 'type' => 'INT',
-                'constraint' => '7',
-            ),
-            'quantity' => array(
-                'type' => 'INT',
-                'constraint' => 7,
+                'constraint' => '3',
             ),
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',
         ));
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('cart');
+        $this->dbforge->create_table('country');
     }
 
     public function down()
     {
-        $this->dbforge->drop_table('cart');
+        $this->dbforge->drop_table('country');
     }
 }

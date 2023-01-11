@@ -77,11 +77,11 @@
     <!-- Theme files
     ============================================ -->
     <!--    	<script type="text/javascript" src="-->
-<!--        --><?php //= base_url(); ?><!--assets/frontend/js/themejs/so_megamenu.js"></script>-->
-<!--        	<script type="text/javascript" src="-->
-<!--        --><?php //= base_url(); ?><!--assets/frontend/js/themejs/addtocart.js"></script>-->
-<!--        	<script type="text/javascript" src="-->
-<!--        --><?php //= base_url(); ?><!--assets/frontend/js/themejs/application.js"></script>-->
+    <!--        --><?php //= base_url(); ?><!--assets/frontend/js/themejs/so_megamenu.js"></script>-->
+    <!--        	<script type="text/javascript" src="-->
+    <!--        --><?php //= base_url(); ?><!--assets/frontend/js/themejs/addtocart.js"></script>-->
+    <!--        	<script type="text/javascript" src="-->
+    <!--        --><?php //= base_url(); ?><!--assets/frontend/js/themejs/application.js"></script>-->
 
 
 </head>
@@ -119,10 +119,20 @@
                                        data-toggle="dropdown"> <span>My Account</span> <span
                                                 class="fa fa-angle-down"></span></a>
                                     <ul class="dropdown-menu ">
-                                        <li><a href="<?= base_url('register/') ?>"><i class="fa fa-user"></i>
-                                                Register</a></li>
-                                        <li><a href="<?= base_url('login/') ?>"><i class="fa fa-pencil-square-o"></i>
-                                                Login</a></li>
+                                        <?php if ($this->session->has_userdata('userloggedin')) { ?>
+                                            <li><a href="<?= base_url('logout/'); ?>">
+                                                    <i class="fas fa-sign-out-alt"></i>
+                                                    Logout</a>
+                                            </li>
+                                        <?php } else { ?>
+                                            <li><a href="<?= base_url('register/') ?>"><i class="fa fa-user"></i>
+                                                    Register</a>
+                                            </li>
+                                            <li><a href="<?= base_url('login/') ?>">
+                                                    <i class="fa fa-pencil-square-o"></i>
+                                                    Login</a>
+                                            </li>
+                                        <?php } ?>
                                     </ul>
                                 </li>
                                 <li class="wishlist "><a href="<?= base_url('wishlist/') ?>" id="wishlist-total"
@@ -450,11 +460,14 @@
                                                                                 pages</a>
                                                                             <div>
                                                                                 <ul class="row-list">
-                                                                                    <li><a href="<?=base_url('cart/')?>">Shopping
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('cart/') ?>">Shopping
                                                                                             Cart Page</a></li>
-                                                                                    <li><a href="<?=base_url('checkout/')?>">Checkout
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('checkout/') ?>">Checkout
                                                                                             Page</a></li>
-                                                                                    <li><a href="<?=base_url('compare/')?>">Compare
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('compare/') ?>">Compare
                                                                                             Page</a></li>
                                                                                     <li>
                                                                                         <a href="<?= base_url('wishlist/') ?>">Wishlist
@@ -488,7 +501,8 @@
                                                                                     <li>
                                                                                         <a href="<?= base_url('return/') ?>">Product
                                                                                             Returns</a></li>
-                                                                                    <li><a href="<?= base_url('gift_voucher/') ?>">Gift
+                                                                                    <li>
+                                                                                        <a href="<?= base_url('gift_voucher/') ?>">Gift
                                                                                             Voucher</a></li>
                                                                                 </ul>
                                                                             </div>
@@ -513,14 +527,16 @@
                                                                     <div class="col-md-6">
                                                                         <ul class="row-list">
                                                                             <li><a class="subcategory_item"
-                                                                                   href="<?=base_url('faq/')?>">FAQ</a></li>
+                                                                                   href="<?= base_url('faq/') ?>">FAQ</a>
+                                                                            </li>
                                                                             <li><a class="subcategory_item"
                                                                                    href="typography.html">Typography</a>
                                                                             </li>
                                                                             <li><a class="subcategory_item"
                                                                                    href="sitemap.html">Site Map</a></li>
                                                                             <li><a class="subcategory_item"
-                                                                                   href="<?=base_url('contact/')?>">Contact us</a>
+                                                                                   href="<?= base_url('contact/') ?>">Contact
+                                                                                    us</a>
                                                                             </li>
                                                                             <li><a class="subcategory_item"
                                                                                    href="banner-effect.html">Banner
@@ -530,7 +546,8 @@
                                                                     <div class="col-md-6">
                                                                         <ul class="row-list">
                                                                             <li><a class="subcategory_item"
-                                                                                   href="<?=base_url('about/')?>">About Us</a>
+                                                                                   href="<?= base_url('about/') ?>">About
+                                                                                    Us</a>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
@@ -899,7 +916,7 @@
                                                     </li>
                                                     <li class="">
                                                         <p class="close-menu"></p>
-                                                        <a href="<?=base_url('blog/')?>" class="clearfix">
+                                                        <a href="<?= base_url('blog/') ?>" class="clearfix">
                                                             <strong>Blog</strong>
                                                             <span class="label"></span>
                                                         </a>
@@ -962,7 +979,77 @@
                                                 <span id="remove-verticalmenu" class="fa fa-times"></span>
                                                 <div class="megamenu-pattern">
                                                     <div class="container">
-                                                        <?php homeCategoryTree(); ?>
+                                                        <ul class="megamenu">
+
+                                                            <?php foreach ($categories as $key => $value): ?>
+
+                                                            <li class="item-vertical css-menu with-sub-menu hover">
+                                                                <p class="close-menu"></p>
+                                                                <a href="<?= base_url('category/' . $value['id']); ?>"
+                                                                   class="clearfix">
+                                                                    <strong>
+                                                                        <span><?= $value['title'] ?></span>
+                                                                        <?php if (!empty($value['childs'])): ?>
+                                                                            <b class="fa fa-angle-right"></b>
+                                                                        <?php endif; ?>
+                                                                    </strong>
+                                                                </a>
+                                                                <div class="sub-menu" data-subwidth="30"
+                                                                     style="width: 270px; display: none; right: 0px;">
+                                                                    <div class="content" style="display: none;">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-12">
+                                                                                <div class="categories ">
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-12 hover-menu">
+                                                                                            <div class="menu">
+                                                                                                <ul>
+
+                                                                                                    <?php
+                                                                                                    if (!empty($value['childs'])):
+                                                                                                    foreach ($value['childs'] as $key => $value): ?>
+                                                                                                        <li>
+                                                                                                        <a href="<?= base_url('category/' . $value['id']); ?>"
+                                                                                                           class="main-menu"><?= $value['title'] ?>
+                                                                                                            <?php if (!empty($value['childs'])): ?>
+                                                                                                                <b class="fa fa-angle-right"></b>
+                                                                                                            <?php endif; ?>
+                                                                                                        </a>
+
+                                                                                                        <ul>
+                                                                                                        <?php
+                                                                                                        if (!empty($value['childs'])):
+                                                                                                            foreach ($value['childs'] as $key => $value): ?>
+                                                                                                                <li>
+                                                                                                                    <a href="<?= base_url('category/' . $value['id']); ?>"
+                                                                                                                       class="main-menu"><?= $value['title'] ?>
+                                                                                                                        <?php if (!empty($value['childs'])): ?>
+                                                                                                                            <b class="fa fa-angle-right"></b>
+                                                                                                                        <?php endif; ?>
+                                                                                                                    </a>
+                                                                                                                </li>
+                                                                                                                <?php
+                                                                                                                endforeach;
+                                                                                                                endif; ?>
+                                                                                                            </ul>
+                                                                                                            </li>
+                                                                                                        <?php
+                                                                                                    endforeach;
+                                                                                                    endif;
+                                                                                                    ?>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -1227,9 +1314,11 @@
                                                         </tr>
                                                         </tbody>
                                                     </table>
-                                                    <p class="text-center"><a class="btn view-cart" href="<?=base_url('cart/')?>"><i
+                                                    <p class="text-center"><a class="btn view-cart"
+                                                                              href="<?= base_url('cart/') ?>"><i
                                                                     class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp;
-                                                        <a class="btn btn-mega checkout-cart" href="<?=base_url('checkout/')?>"><i
+                                                        <a class="btn btn-mega checkout-cart"
+                                                           href="<?= base_url('checkout/') ?>"><i
                                                                     class="fa fa-share"></i>Checkout</a></p>
                                                 </div>
                                             </li>
@@ -1240,7 +1329,7 @@
                             </div>
                             <div class="header_custom_link hidden-xs">
                                 <ul>
-                                    <li><a href="login.html"><i class="fa fa-user"></i> Login</a></li>
+                                    <li><a href="<?= base_url('login/') ?>""><i class="fa fa-user"></i> Login</a></li>
                                 </ul>
                             </div>
                         </div>

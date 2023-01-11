@@ -21,7 +21,9 @@ class Migration_Add_wishlist extends CI_Migration
             'product_id' => array(
                 'type' => 'INT',
                 'constraint' => '7',
-            )
+            ),
+            'created_at datetime default current_timestamp',
+            'updated_at datetime default current_timestamp on update current_timestamp',
         ));
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('wishlist');

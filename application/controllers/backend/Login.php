@@ -7,8 +7,6 @@ class Login extends CI_Controller
     {
         parent::__construct();
 
-
-
         $this->load->model('Admins_model', 'admins_md');
     }
 
@@ -40,7 +38,7 @@ class Login extends CI_Controller
                     $this->session->set_userdata('loggedin', 1);
                     redirect('backend/dashboard');
                 } else {
-                    $this->session->set_flashdata('error_message', 'Error');
+                    $this->session->set_flashdata('error_message', 'Şifrə və ya meil yanlışdır');
                     redirect('backend/login');
                 }
             }

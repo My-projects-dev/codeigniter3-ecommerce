@@ -60,7 +60,7 @@ class Categories extends CI_Controller
             }
         }
 
-        $data['title'] = 'Categories List';
+        $data['title'] = 'Create Category';
         $data['lists'] = $this->categories_md->select_all_active();
 
         $this->load->admin('categories/create', $data);

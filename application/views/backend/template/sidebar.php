@@ -134,6 +134,23 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('backend/settings'); ?>" class="nav-link">
+<!--                        <i class="nav-icon fas fa-cog"></i>-->
+                        <i class="nav-icon fas fa-earth-europe"></i>
+                        <p>
+                            Country
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('backend/products'); ?>" class="nav-link">
+                        <i class="nav-icon fas fa-registered"></i>
+                        <p>
+                            Region
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

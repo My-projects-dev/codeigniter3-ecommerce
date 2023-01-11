@@ -21,6 +21,9 @@ class Migration_Add_brands extends CI_Migration
                 'type' => 'varchar',
                 'constraint' => 255,
             ),
+            'history' => array(
+                'type' => 'TEXT',
+            ),
             'status' => array(
                 'type' => 'INT',
                 'constraint' => 5,
