@@ -19,8 +19,7 @@ class Category_product extends CI_Controller
         $id = $this->security->xss_clean($id);
 
         // Category way
-        $catId = $this->product_cat_md->getCategoryId($id)->categories_id;
-        $ids = (int)$catId;
+        $ids = $id;
         $parentCat = array();
 
         while ($ids != null) {
@@ -33,7 +32,7 @@ class Category_product extends CI_Controller
             $ids = $parent->parent_id;
         }
 
-        array_push($parentCat, $catId);
+        array_push($parentCat, $id);
 
         $data['category'] = $this->categories_md->selectDataByIds($parentCat);
         // end category way

@@ -18,7 +18,7 @@ class Product extends CI_Controller
         $id = $this->security->xss_clean($id);
 
         $catId = $this->product_category_md->getCategoryId($id)->categories_id;
-        $ids = (int)$catId;
+        $ids = $catId;
         $subCat = array();
 
         while ($ids != null) {
