@@ -9,7 +9,9 @@ class Home extends CI_Controller
         parent::__construct();
 
         $this->load->model('Category_model', 'category_md');
-
+        $this->load->model('Slider_model', 'slider_md');
+        $this->load->model('Banner_model', 'banner_md');
+        $this->load->model('Brands_model', 'brand_md');
     }
 
     public function index()
@@ -18,6 +20,9 @@ class Home extends CI_Controller
 
 
         $data['categories'] = category_tree($this->category_md->select_all());
+        $data['sliders'] = $this->slider_md->selectActive();
+        $data['banners'] = $this->banner_md->selectActiveLimit(4);
+        $data['brands'] = $this->brand_md->select_all_active();
 
         $this->load->main([
             'include/home/slider',

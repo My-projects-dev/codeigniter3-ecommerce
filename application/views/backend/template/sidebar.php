@@ -135,8 +135,23 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?= base_url('backend/slider'); ?>" class="nav-link">
+                        <i class="nav-icon fa-sharp fa-solid fa-sliders"></i>
+                        <p>
+                            Slider
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('backend/banner'); ?>" class="nav-link">
+                        <i class="nav-icon fas fa-ad"></i>
+                        <p>
+                            Banner
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?= base_url('backend/settings'); ?>" class="nav-link">
-<!--                        <i class="nav-icon fas fa-cog"></i>-->
                         <i class="nav-icon fas fa-earth-europe"></i>
                         <p>
                             Country

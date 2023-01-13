@@ -1,7 +1,8 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Migration_Add_category extends CI_Migration
+class Migration_Add_slider extends CI_Migration
 {
 
     public function up()
@@ -13,19 +14,29 @@ class Migration_Add_category extends CI_Migration
                 'unsigned' => FALSE,
                 'auto_increment' => TRUE
             ),
-            'slug' => array(
+            'link' => array(
                 'type' => 'VARCHAR',
-                'constraint' => 250,
-                'unique' => TRUE,
+                'constraint' => '255',
             ),
             'title' => array(
                 'type' => 'VARCHAR',
-                'constraint' => 250,
+                'constraint' => '255',
             ),
-            'parent_id' => array(
-                'type' => 'INT',
-                'constraint' => 5,
-                'null' => TRUE,
+            'message' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'unique' => TRUE,
+            ),
+            'description' => array(
+                'type' => 'TEXT',
+            ),
+            'image' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ),
+            'background' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
             ),
             'status' => array(
                 'type' => 'INT',
@@ -35,13 +46,11 @@ class Migration_Add_category extends CI_Migration
             'updated_at datetime default current_timestamp on update current_timestamp',
         ));
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('category');
+        $this->dbforge->create_table('slider');
     }
 
     public function down()
     {
-        $this->dbforge->drop_table('category');
+        $this->dbforge->drop_table('slider');
     }
 }
-
-

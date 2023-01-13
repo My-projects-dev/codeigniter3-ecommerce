@@ -130,6 +130,16 @@ $route['backend/region/create'] = 'backend/Region/create';
 $route['backend/region/edit/(:num)'] = 'backend/Region/edit/$1';
 $route['backend/region/delete/(:num)'] = 'backend/Region/delete/$1';
 
+$route['backend/slider'] = 'backend/Slider/index';
+$route['backend/slider/create'] = 'backend/Slider/create';
+$route['backend/slider/edit/(:num)'] = 'backend/Slider/edit/$1';
+$route['backend/slider/delete/(:num)'] = 'backend/Slider/delete/$1';
+
+$route['backend/banner'] = 'backend/Banner/index';
+$route['backend/banner/create'] = 'backend/Banner/create';
+$route['backend/banner/edit/(:num)'] = 'backend/Banner/edit/$1';
+$route['backend/banner/delete/(:num)'] = 'backend/Banner/delete/$1';
+
 //--------------------------------------------------------------------------------------------------
 //      FRONT
 //--------------------------------------------------------------------------------------------------

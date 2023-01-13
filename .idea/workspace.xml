@@ -4,12 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="controller">
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="slider, banner, brand">
+      <change afterPath="$PROJECT_DIR$/application/controllers/backend/Banner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/backend/Slider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/migrations/021_add_slider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/migrations/022_add_banner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Banner_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Slider_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/banner/create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/banner/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/banner/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/slider/create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/slider/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/slider/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/banner/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/banner/1_1598452306_resim.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/banner/download.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/banner/images.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/banner/images1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/10650895351858.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/1_1598452306_resim.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/1_1598452306_resim1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/1_1598452306_resim2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/download.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/download1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/download2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/download3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/download4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/images.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/slider/images1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Category_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Category_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/helpers/category_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/category_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/include/category_product/shop_by.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/category_product/shop_by.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/migration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/001_add_admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/001_add_admins.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/008_add_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/008_add_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/template/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/template/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/banner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/brands.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/brands.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/slider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +157,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/ecommerce/application/views/backend/region&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/ecommerce/application/views/backend/banner&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -136,11 +174,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\banner" />
+      <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\slider" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\region" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\Country" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\order_products" />
-      <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\order_status" />
-      <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\delivery_methods" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ecommerce\application\views\front\include\shopping" />
@@ -248,7 +286,10 @@
       <workItem from="1673358297592" duration="33493000" />
       <workItem from="1673432069083" duration="9432000" />
       <workItem from="1673449604057" duration="5839000" />
-      <workItem from="1673520454311" duration="3615000" />
+      <workItem from="1673520454311" duration="13675000" />
+      <workItem from="1673549525362" duration="13025000" />
+      <workItem from="1673592417034" duration="5564000" />
+      <workItem from="1673601325306" duration="6733000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -376,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673455477011</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="way">
+      <created>1673524522828</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673524522828</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,6 +472,8 @@
     <MESSAGE value="rotate2" />
     <MESSAGE value="rotate3" />
     <MESSAGE value="controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="controller" />
+    <MESSAGE value="way" />
+    <MESSAGE value="slider, banner, brand" />
+    <option name="LAST_COMMIT_MESSAGE" value="slider, banner, brand" />
   </component>
 </project>
