@@ -12,13 +12,19 @@ class Home extends CI_Controller
         $this->load->model('Slider_model', 'slider_md');
         $this->load->model('Banner_model', 'banner_md');
         $this->load->model('Brands_model', 'brand_md');
+        $this->load->model('Product_categories_model', 'product_category_md');
     }
 
     public function index()
     {
+
+        $cat = $this->category_md->selectLimit(3);
+
+        print_r($cat);
+        //$data['products'] = $this->product_category_md->selectLastProduct($cat,3);
+        //print_r($data['products']);
+
         $data['title'] = 'Home';
-
-
         $data['categories'] = category_tree($this->category_md->select_all());
         $data['sliders'] = $this->slider_md->selectActive();
         $data['banners'] = $this->banner_md->selectActiveLimit(4);

@@ -994,6 +994,7 @@
                                                                         <?php endif; ?>
                                                                     </strong>
                                                                 </a>
+                                                                <?php if (!empty($value['childs'])):?>
                                                                 <div class="sub-menu" data-subwidth="30"
                                                                      style="width: 270px; display: none; right: 0px;">
                                                                     <div class="content" style="display: none;">
@@ -1005,9 +1006,7 @@
                                                                                             <div class="menu">
                                                                                                 <ul>
 
-                                                                                                    <?php
-                                                                                                    if (!empty($value['childs'])):
-                                                                                                    foreach ($value['childs'] as $key => $value): ?>
+                                                                                                    <?php foreach ($value['childs'] as $key => $value): ?>
                                                                                                         <li>
                                                                                                         <a href="<?= base_url('category/' . $value['id']); ?>"
                                                                                                            class="main-menu"><?= $value['title'] ?>
@@ -1035,7 +1034,6 @@
                                                                                                             </li>
                                                                                                         <?php
                                                                                                     endforeach;
-                                                                                                    endif;
                                                                                                     ?>
                                                                                                 </ul>
                                                                                             </div>
@@ -1046,6 +1044,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <?php endif;?>
                                                             </li>
                                                             <?php endforeach; ?>
                                                         </ul>

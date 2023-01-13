@@ -23,6 +23,16 @@ class Category_model extends CI_Model
         return $query;
     }
 
+    public function selectLimit($limit)
+    {
+        $this->db->select('id');
+        $this->db->where('status', 1);
+        $this->db->limit($limit);
+        $query = $this->db->get($this->table)->result();
+
+        return $query;
+    }
+
     public function parentId($id)
     {
         $this->db->select('parent_id');
