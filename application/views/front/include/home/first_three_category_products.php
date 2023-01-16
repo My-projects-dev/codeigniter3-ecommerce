@@ -550,13 +550,13 @@
 
             <!-- End Mod -->
             <!-- Banner Content2 -->
-            <?php if ($value['bannerCenter']): ?>
+            <?php if ($value['underProductBanner']): ?>
             <div class="module banner">
                 <div class="banners">
-                    <div><a title="<?=$value['bannerLeft']->image?>" href="<?=$value['bannerLeft']->link?>"><img class="lazyload img-responsive" data-sizes="auto"
+                    <div><a title="<?=$value['bannerLeft']->image?>" href="<?=$value['underProductBanner']->link?>"><img class="lazyload img-responsive" data-sizes="auto"
                                                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                               data-src="<?= base_url($value['bannerLeft']->image); ?>"
-                                                               alt="<?=$value['bannerLeft']->image?>"></a></div>
+                                                               data-src="<?= base_url($value['underProductBanner']->image); ?>"
+                                                               alt="<?=$value['underProductBanner']->image?>"></a></div>
                 </div>
             </div>
         <?php endif;?>

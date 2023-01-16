@@ -36,19 +36,22 @@ class Banner_model extends CI_Model
         return $query->row();
     }
 
-    public function selectActive()
+    public function selectBanners($limit, $location)
     {
-        $this->db->where('status', 1);
-        $this->db->order_by('id', 'DESC');
-        $query = $this->db->get($this->table);
+        $this->db->select('b.*, bl.title AS location');
+        $this->db->from($this->table.' b');
+        $this->db->join('banner_location bl', 'bl.id=b.location_id', 'left');
+        $this->db->where('bl.title', $location);
+        $this->db->order_by('b.id', 'DESC');
+        $this->db->limit($limit);
+        $query = $this->db->get();
 
         return $query->result();
     }
 
-    public function selectActiveLimit($limit)
+    public function selectActive()
     {
         $this->db->where('status', 1);
-        $this->db->limit($limit);
         $this->db->order_by('id', 'DESC');
         $query = $this->db->get($this->table);
 

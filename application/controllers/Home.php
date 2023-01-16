@@ -8,6 +8,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
 
+        $this->load->model('Settings_model', 'setting_md');
         $this->load->model('Brands_model', 'brand_md');
         $this->load->model('Slider_model', 'slider_md');
         $this->load->model('Banner_model', 'banner_md');
@@ -44,7 +45,7 @@ class Home extends CI_Controller
 
             $product['bannerLeft'] = $this->banner_md->selectBanner('Home > Category products > left side ' . $key);
             $product['bannerCenter'] = $this->banner_md->selectBanner('Home > Category products > center side ' . $key);
-            $product['underProduct'] = $this->banner_md->selectBanner('Home > Under Category products ' . $key);
+            $product['underProductBanner'] = $this->banner_md->selectBanner('Home > Under Category products ' . $key);
 
             foreach ($value as $keyy => $valuee) {
 
@@ -78,9 +79,9 @@ class Home extends CI_Controller
         // end firs 3 product
 
 
+        $data['underSliderBanner'] = $this->banner_md->selectBanners(4, 'Under slider');
         $data['categories'] = category_tree($this->category_md->select_all());
         $data['sliders'] = $this->slider_md->selectActive();
-        $data['banners'] = $this->banner_md->selectActiveLimit(4);
         $data['brands'] = $this->brand_md->select_all_active();
         $data['bestSeller'] = $bestSeller;
         $data['bestSeller2'] = $bestSeller;

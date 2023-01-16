@@ -1,6 +1,7 @@
-
 <div class="block-banner banners banner-sn-1 wow fadeInUp">
-    <?php foreach ($banners as $key => $value): ?>
+    <?php
+    if ($underSliderBanner):
+    foreach ($underSliderBanner as $key => $value): ?>
         <div class="img-1 banner1-1 col-md-3">
             <a title="<?= $value->title ?>" href="<?= $value->link ?>"><img class="lazyload img-responsive"
                                                                             data-sizes="auto"
@@ -10,7 +11,7 @@
                                                                             style="height: 180px; width: 100%"></a>
 
         </div>
-    <?php endforeach; ?>
+        <?php  endforeach; endif;?>
 </div>
 </div>
 </div>

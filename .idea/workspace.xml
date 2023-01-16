@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="home">
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="header menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/About.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/About.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Banner_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Banner_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/banner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/first_three_category_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/first_three_category_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/frontend/image/demo/banner/t21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/frontend/image/demo/banner/t22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/frontend/image/demo/banner/t23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/106508953518581.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/106508953518582.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/1_1598452306_resim2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/download2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/download5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/images2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/banner/images3.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +267,8 @@
       <workItem from="1673601325306" duration="8860000" />
       <workItem from="1673622516155" duration="6757000" />
       <workItem from="1673690188384" duration="27783000" />
-      <workItem from="1673773338198" duration="54618000" />
+      <workItem from="1673773338198" duration="54689000" />
+      <workItem from="1673866171492" duration="3784000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -409,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673837134666</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="header menu">
+      <created>1673840086410</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1673840086410</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,6 +483,7 @@
     <MESSAGE value="slider, banner, brand" />
     <MESSAGE value="slider, banner, brands" />
     <MESSAGE value="home" />
-    <option name="LAST_COMMIT_MESSAGE" value="home" />
+    <MESSAGE value="header menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="header menu" />
   </component>
 </project>
