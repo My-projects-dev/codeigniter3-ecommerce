@@ -8,27 +8,88 @@ class Home extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('Category_model', 'category_md');
+        $this->load->model('Brands_model', 'brand_md');
         $this->load->model('Slider_model', 'slider_md');
         $this->load->model('Banner_model', 'banner_md');
-        $this->load->model('Brands_model', 'brand_md');
+        $this->load->model('Images_model', 'images_md');
+        $this->load->model('Category_model', 'category_md');
         $this->load->model('Product_categories_model', 'product_category_md');
+
     }
 
     public function index()
     {
+        //Best sellers
+        $bestSeller = $this->product_category_md->randomProduct(8);
+        foreach ($bestSeller as $key => $value) {
+            $value->image = $this->images_md->selectOnePassive($value->id)->path;
+        }
+        // end best sellers
 
-        $cat = $this->category_md->selectLimit(3);
 
-        print_r($cat);
-        //$data['products'] = $this->product_category_md->selectLastProduct($cat,3);
-        //print_r($data['products']);
+        // last category product
+        $lastId = $this->category_md->lastCategory(3);
+        $prod = $this->product_category_md->selectLastProduct($lastId->id, 7);
+        foreach ($prod as $key => $value) {
+            $value->image = $this->images_md->selectOnePassive($value->id)->path;
+        }
+        // end last category product
 
-        $data['title'] = 'Home';
+        // first 3 category
+        $catId = $this->category_md->selectLimit(3);
+
+        $limit = 6;
+        $products = [];
+        foreach ($catId as $key => $value) {
+
+            $product['bannerLeft'] = $this->banner_md->selectBanner('Home > Category products > left side ' . $key);
+            $product['bannerCenter'] = $this->banner_md->selectBanner('Home > Category products > center side ' . $key);
+            $product['underProduct'] = $this->banner_md->selectBanner('Home > Under Category products ' . $key);
+
+            foreach ($value as $keyy => $valuee) {
+
+                $pr = $this->product_category_md->selectOrderBy($valuee, $limit, 'price');
+                $qu = $this->product_category_md->selectOrderBy($valuee, $limit, 'quantity');
+                $dt = $this->product_category_md->selectOrderBy($valuee, $limit, 'updated_at');
+                $sl = $this->product_category_md->selectOrderBy($valuee, $limit, 'sales_prices');
+
+                foreach ($pr as $key => $value) {
+                    $value->image = $this->images_md->selectOnePassive($value->id)->path;
+                }
+                foreach ($qu as $key => $value) {
+                    $value->image = $this->images_md->selectOnePassive($value->id)->path;
+                }
+                foreach ($dt as $key => $value) {
+                    $value->image = $this->images_md->selectOnePassive($value->id)->path;
+                }
+                foreach ($sl as $key => $value) {
+                    $value->image = $this->images_md->selectOnePassive($value->id)->path;
+                }
+
+                $product['sale'] = $sl;
+                $product['date'] = $dt;
+                $product['price'] = $pr;
+                $product['quantity'] = $qu;
+                $product['hotCategory'] = $this->category_md->orderBYRandom(6);
+
+            }
+            array_push($products, $product);
+        }
+        // end firs 3 product
+
+
         $data['categories'] = category_tree($this->category_md->select_all());
         $data['sliders'] = $this->slider_md->selectActive();
         $data['banners'] = $this->banner_md->selectActiveLimit(4);
         $data['brands'] = $this->brand_md->select_all_active();
+        $data['bestSeller'] = $bestSeller;
+        $data['bestSeller2'] = $bestSeller;
+        $data['hotDeals'] = $prod;
+        $data['products'] = $products;
+        $data['title'] = 'Home';
+
+        //echo '<pre>';
+        //print_r($data['products']);
 
         $this->load->main([
             'include/home/slider',

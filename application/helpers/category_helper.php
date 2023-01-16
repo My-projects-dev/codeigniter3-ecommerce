@@ -1,6 +1,6 @@
 <?php
 
-function categoryTree($parent=0, $parent_id = null, $sub_mark = '')
+function categoryTree($parent=0, $parent_id = 0, $sub_mark = '')
 {
     $ci = &get_instance();
     $ci->load->model('Category_model', 'category_md');
@@ -15,7 +15,7 @@ function categoryTree($parent=0, $parent_id = null, $sub_mark = '')
 }
 
 
-function category_tree($items = array(),$parent_id = null){
+function category_tree($items = array(),$parent_id = 0){
     $tree = array();
     for($i=0, $ni=count($items); $i < $ni; $i++){
         if($items[$i]->parent_id == $parent_id){

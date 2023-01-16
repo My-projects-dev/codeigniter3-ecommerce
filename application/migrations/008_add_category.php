@@ -25,7 +25,7 @@ class Migration_Add_category extends CI_Migration
             'parent_id' => array(
                 'type' => 'INT',
                 'constraint' => 5,
-                'null' => TRUE,
+                'default' => 0,
             ),
             'status' => array(
                 'type' => 'INT',

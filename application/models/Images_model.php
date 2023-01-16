@@ -27,6 +27,17 @@ class Images_model extends CI_Model
         return $query->result();
     }
 
+    public function selectOnePassive($product_id)
+    {
+        $this->db->select('path');
+        $this->db->where('product_id', $product_id);
+        $this->db->where('main', 0);
+        $this->db->limit(1);
+        $query = $this->db->get($this->table);
+
+        return $query->row();
+    }
+
     public function getImagePath($product_id)
     {
         $this->db->select('path');

@@ -5,10 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="slider, banner, brands">
+      <change afterPath="$PROJECT_DIR$/application/migrations/023_add_banner_location.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Banner_location_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/migration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Banner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Slider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Category_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Category_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/helpers/category_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/category_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/helpers/login_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/login_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/005_add_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/005_add_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/008_add_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/008_add_category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/022_add_banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/022_add_banner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Banner_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Banner_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Images_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Images_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Product_categories_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Product_categories_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/banner/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/banner/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/banner/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/banner/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/banner/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/banner/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/banner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/best_sellers.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/best_sellers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/front/include/home/first_three_category_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/first_three_category_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/hot_deals.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/hot_deals.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/media.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/media.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/front/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -252,7 +277,9 @@
       <workItem from="1673549525362" duration="13025000" />
       <workItem from="1673592417034" duration="5564000" />
       <workItem from="1673601325306" duration="8860000" />
-      <workItem from="1673622516155" duration="643000" />
+      <workItem from="1673622516155" duration="6757000" />
+      <workItem from="1673690188384" duration="27783000" />
+      <workItem from="1673773338198" duration="53121000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -394,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673613076787</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="slider, banner, brands">
+      <created>1673623297456</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673623297456</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

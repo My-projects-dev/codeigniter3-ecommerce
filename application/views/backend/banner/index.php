@@ -27,17 +27,17 @@
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                 <tr>
-                                    <th>Title</th>
                                     <th>Image</th>
-                                    <th>Description</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php foreach($lists as $item) : ?>
                                         <tr>
-                                            <td><?= $item->title; ?></td>
-                                            <td><?= $item->description; ?></td>
                                             <td><img src="<?= base_url($item->image); ?>" alt="" height="100" width="100"></td>
+                                            <td><?= $item->location; ?></td>
                                             <td><?= ($item->status == 1) ? "Aktiv" : "Passiv"; ?></td>
                                             <td style="display:flex;column-gap:5px;">
                                             <a href="<?= base_url('backend/banner/edit/'.$item->id); ?>" title="Edit"

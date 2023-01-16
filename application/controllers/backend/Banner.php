@@ -9,7 +9,7 @@ class Banner extends CI_Controller
         parent::__construct();
 
         $this->load->model('Banner_model', 'banner_md');
-
+        $this->load->model('Banner_location_model', 'location_md');
     }
 
     public function index()
@@ -26,57 +26,61 @@ class Banner extends CI_Controller
         if ($this->input->post()) {
             $this->load->library('form_validation');
 
-            $this->form_validation->set_rules('title', 'Title', 'required');
-            $this->form_validation->set_rules('description', 'Description', 'required');
+            $location_id = $this->security->xss_clean($this->input->post('location'));
 
-            $this->form_validation->set_message('required', 'Boş keçilə bilməz');
+            $location = $this->location_md->selectDataById($location_id);
 
-            if ($this->form_validation->run()) {
+            if (empty($location)) {
+                $this->session->set_flashdata('error_message', 'Lokasiya tapılmadı');
+                redirect('backend/banner/edit');
+            }
 
-                if ($_FILES["image"]["tmp_name"]) {
+            if ($_FILES["image"]["tmp_name"]) {
 
-                    $path = 'uploads/banner/';
-                    $allowedTypes = 'gif|jpg|png';
+                $path = 'uploads/banner/';
+                $allowedTypes = 'gif|jpg|png';
 
-                    if (!file_exists("uploads")) {
-                        mkdir("uploads");
-                    }
-                    if (!file_exists($path)) {
-                        mkdir($path);
-                    }
-
-                    $uploadImage = uploadFile($path, $allowedTypes, 'image');
-
-                    if ($uploadImage == false) {
-                        redirect('backend/banner/create');
-                    } else {
-                        $request_data = [
-                            'link' => $this->security->xss_clean($this->input->post('link')),
-                            'title' => $this->security->xss_clean($this->input->post('title')),
-                            'description' => $this->security->xss_clean($this->input->post('description')),
-                            'status' => ($this->input->post('status') == 1) ? 1 : 0,
-                            'image' => $uploadImage,
-                        ];
-
-                        $insert_id = $this->banner_md->insert($request_data);
-
-                        if ($insert_id > 0) {
-                            $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
-                        } else {
-                            if (file_exists($request_data['image'])) {
-                                unlink($request_data['image']);
-                            }
-                            $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
-                        }
-                    }
-                } else {
-                    $this->session->set_flashdata('error_message', 'Şəkil seçilmədi');
-                    redirect('backend/banner/create');
+                if (!file_exists("uploads")) {
+                    mkdir("uploads");
                 }
+                if (!file_exists($path)) {
+                    mkdir($path);
+                }
+
+                $uploadImage = uploadFile($path, $allowedTypes, 'image');
+
+                if ($uploadImage == false) {
+                    redirect('backend/banner/create');
+                } else {
+                    $request_data = [
+                        'location_id' => $location_id,
+                        'link' => $this->security->xss_clean($this->input->post('link')),
+                        'title' => $this->security->xss_clean($this->input->post('title')),
+                        'description' => $this->security->xss_clean($this->input->post('description')),
+                        'status' => ($this->input->post('status') == 1) ? 1 : 0,
+                        'image' => $uploadImage,
+                    ];
+
+                    $insert_id = $this->banner_md->insert($request_data);
+
+                    if ($insert_id > 0) {
+                        $this->session->set_flashdata('success_message', 'Məlumat uğurla əlavə edildi');
+                    } else {
+                        if (file_exists($request_data['image'])) {
+                            unlink($request_data['image']);
+                        }
+                        $this->session->set_flashdata('error_message', 'Yükləmə işləmi baş tutmadı');
+                    }
+                }
+            } else {
+                $this->session->set_flashdata('error_message', 'Şəkil seçilmədi');
+                redirect('backend/banner/create');
             }
         }
 
         $data['title'] = 'Create Banner';
+        $data['locations'] = $this->location_md->selectActive();
+
 
         $this->load->admin('banner/create', $data);
 
@@ -89,51 +93,52 @@ class Banner extends CI_Controller
 
             $this->load->library('form_validation');
 
-            $this->form_validation->set_rules('title', 'Title', 'required');
-            $this->form_validation->set_rules('description', 'Description', 'required');
 
-            $this->form_validation->set_message('required', 'Boş keçilə bilməz');
+            $location_id = $this->security->xss_clean($this->input->post('location'));
 
-            if ($this->form_validation->run()) {
+            $location = $this->location_md->selectDataById($location_id);
+
+            if (empty($location)) {
+                $this->session->set_flashdata('error_message', 'Lokasiya tapılmadı');
+                redirect('backend/banner/edit');
+            }
+
+            $request_data = [
+                'location_id' => $location_id,
+                'link' => $this->security->xss_clean($this->input->post('link')),
+                'title' => $this->security->xss_clean($this->input->post('title')),
+                'description' => $this->security->xss_clean($this->input->post('description')),
+                'status' => ($this->input->post('status') == 1) ? 1 : 0
+            ];
+
+            $path = 'uploads/banner/';
+            $allowedTypes = 'gif|jpg|png';
+
+            if ($_FILES["image"]["tmp_name"]) {
+
+                $uploadImage = uploadFile($path, $allowedTypes, 'image');
+
+                if ($uploadImage != false) {
+                    $request_data = ['image' => $uploadImage];
+                }
+            }
 
 
-                $request_data = [
-                    'link' => $this->security->xss_clean($this->input->post('link')),
-                    'title' => $this->security->xss_clean($this->input->post('title')),
-                    'description' => $this->security->xss_clean($this->input->post('description')),
-                    'status' => ($this->input->post('status') == 1) ? 1 : 0
-                ];
+            $old_img = $this->input->post('old_image');
 
-                $path = 'uploads/banner/';
-                $allowedTypes = 'gif|jpg|png';
+            $affected_rows = $this->banner_md->update($id, $request_data);
 
-                if ($_FILES["image"]["tmp_name"]) {
+            if ($affected_rows > 0) {
+                $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdi');
 
-                    $uploadImage = uploadFile($path, $allowedTypes, 'image');
-
-                    if ($uploadImage!=false){
-                        $request_data = ['image'=>$uploadImage];
-                        //$unlink_image++;
-                    }
+                if ($request_data['image'] and file_exists($old_img)) {
+                    unlink($old_img);
                 }
 
-
-                $old_img = $this->input->post('old_image');
-
-                $affected_rows = $this->banner_md->update($id, $request_data);
-
-                if ($affected_rows > 0) {
-                    $this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdirildi');
-
-                    if ($request_data['image'] and file_exists($old_img)) {
-                        unlink($old_img);
-                    }
-
-                    redirect('backend/banner/edit/' . $id);
-                } else {
-                    $this->session->set_flashdata('error_message', 'Yeniləmə uğursuz oldu');
-                    redirect('backend/banner/edit/' . $id);
-                }
+                redirect('backend/banner/edit/' . $id);
+            } else {
+                $this->session->set_flashdata('error_message', 'Yeniləmə uğursuz oldu');
+                redirect('backend/banner/edit/' . $id);
             }
         }
 
@@ -147,8 +152,9 @@ class Banner extends CI_Controller
         }
 
         $data['item'] = $item;
-
         $data['title'] = 'Edit Banner ';
+        $data['locations'] = $this->location_md->selectActive();
+
 
         $this->load->admin('banner/edit', $data);
 

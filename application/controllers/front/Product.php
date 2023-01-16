@@ -21,7 +21,7 @@ class Product extends CI_Controller
         $ids = $catId;
         $subCat = array();
 
-        while ($ids != null) {
+        while ($ids != 0) {
             $parent = $this->category_md->parentId($ids);
             if (!$parent->parent_id) {
                 break;

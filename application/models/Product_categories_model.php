@@ -58,6 +58,22 @@ class Product_categories_model extends CI_Model
         return $query->result();
     }
 
+    public function randomProduct($limit)
+    {
+        $this->db->select('p.*, c.title AS cattitle, i.path');
+        $this->db->from('product_categories pc');
+        $this->db->join('category c', 'c.id=pc.categories_id', 'left');
+        $this->db->join('products p', 'p.id=pc.products_id', 'left');
+        $this->db->join('images i', 'p.id=i.product_id', 'left');
+        $this->db->where('p.status', 1);
+        $this->db->where('i.main', 1);
+        $this->db->order_by('p.id', 'RANDOM');
+        $this->db->limit($limit);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
     public function selectLastProduct($category_id,$limit)
     {
         $this->db->select('p.*, c.title AS cattitle, i.path');
@@ -69,6 +85,24 @@ class Product_categories_model extends CI_Model
         $this->db->where('p.status', 1);
         $this->db->where('i.main', 1);
         $this->db->order_by('p.id', 'DESC');
+        $this->db->limit($limit);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function selectOrderBy($category_id, $limit, $orderBy)
+    {
+        $this->db->select('p.*, c.title AS cattitle, i.path AS mainImage');
+        $this->db->from('product_categories pc');
+        $this->db->join('category c', 'c.id=pc.categories_id', 'left');
+        $this->db->join('products p', 'p.id=pc.products_id', 'left');
+        $this->db->join('images i', 'p.id=i.product_id', 'left');
+        $this->db->where('pc.categories_id', $category_id);
+        $this->db->where('p.status', 1);
+        $this->db->where('i.main', 1);
+        $this->db->order_by('p.'.$orderBy, 'DESC');
+        $this->db->order_by('p.id', 'ASC');
         $this->db->limit($limit);
         $query = $this->db->get();
 

@@ -7,7 +7,7 @@
                                                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                                                             data-src="<?= base_url($value->image); ?>"
                                                                             alt="<?= $value->title ?>"
-                                                                            style="height: 180px; "></a>
+                                                                            style="height: 180px; width: 100%"></a>
 
         </div>
     <?php endforeach; ?>

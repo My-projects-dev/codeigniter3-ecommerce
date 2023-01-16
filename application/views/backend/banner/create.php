@@ -34,6 +34,15 @@
                             <?php echo form_error('description', '<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
+                            <label for="location">Location</label>
+                            <br>
+                            <select class="custom-select form-control" id="location" name="location">
+                                <?php foreach ($locations as $key=>$value):?>
+                                <option value="<?=$value->id?>"><?=$value->title?></option>
+                                <?php endforeach;?>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="Status">Status</label>
                             <br>
                             <select class="custom-select form-control" id="Status" name="status">

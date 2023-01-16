@@ -7,7 +7,6 @@ class Category_model extends CI_Model
 
     public function insert($data)
     {
-
         $this->db->insert($this->table, $data);
 
         return $this->db->insert_id();
@@ -23,14 +22,35 @@ class Category_model extends CI_Model
         return $query;
     }
 
+    public function lastCategory()
+    {
+        $this->db->select('id');
+        $this->db->where('status', 1);
+        $this->db->order_by('id', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get($this->table);
+
+        return $query->row();
+    }
+
     public function selectLimit($limit)
     {
         $this->db->select('id');
         $this->db->where('status', 1);
         $this->db->limit($limit);
-        $query = $this->db->get($this->table)->result();
+        $query = $this->db->get($this->table);
 
-        return $query;
+        return $query->result_array();
+    }
+
+    public function orderBYRandom($limit)
+    {
+        $this->db->where('status', 1);
+        $this->db->order_by('id', 'RANDOM');
+        $this->db->limit($limit);
+        $query = $this->db->get($this->table);
+
+        return $query->result();
     }
 
     public function parentId($id)

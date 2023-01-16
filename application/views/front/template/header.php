@@ -983,42 +983,30 @@
 
                                                             <?php foreach ($categories as $key => $value): ?>
 
-                                                            <li class="item-vertical css-menu with-sub-menu hover">
-                                                                <p class="close-menu"></p>
-                                                                <a href="<?= base_url('category/' . $value['id']); ?>"
-                                                                   class="clearfix">
-                                                                    <strong>
-                                                                        <span><?= $value['title'] ?></span>
-                                                                        <?php if (!empty($value['childs'])): ?>
-                                                                            <b class="fa fa-angle-right"></b>
-                                                                        <?php endif; ?>
-                                                                    </strong>
-                                                                </a>
-                                                                <?php if (!empty($value['childs'])):?>
-                                                                <div class="sub-menu" data-subwidth="30"
-                                                                     style="width: 270px; display: none; right: 0px;">
-                                                                    <div class="content" style="display: none;">
-                                                                        <div class="row">
-                                                                            <div class="col-sm-12">
-                                                                                <div class="categories ">
-                                                                                    <div class="row">
-                                                                                        <div class="col-sm-12 hover-menu">
-                                                                                            <div class="menu">
-                                                                                                <ul>
-
-                                                                                                    <?php foreach ($value['childs'] as $key => $value): ?>
-                                                                                                        <li>
-                                                                                                        <a href="<?= base_url('category/' . $value['id']); ?>"
-                                                                                                           class="main-menu"><?= $value['title'] ?>
-                                                                                                            <?php if (!empty($value['childs'])): ?>
-                                                                                                                <b class="fa fa-angle-right"></b>
-                                                                                                            <?php endif; ?>
-                                                                                                        </a>
-
+                                                                <li class="item-vertical css-menu with-sub-menu hover">
+                                                                    <p class="close-menu"></p>
+                                                                    <a href="<?= base_url('category/' . $value['id']); ?>"
+                                                                       class="clearfix">
+                                                                        <strong>
+                                                                            <span><?= $value['title'] ?></span>
+                                                                            <?php if (!empty($value['childs'])): ?>
+                                                                                <b class="fa fa-angle-right"></b>
+                                                                            <?php endif; ?>
+                                                                        </strong>
+                                                                    </a>
+                                                                    <?php if (!empty($value['childs'])): ?>
+                                                                        <div class="sub-menu" data-subwidth="30"
+                                                                             style="width: 270px; display: none; right: 0px;">
+                                                                            <div class="content" style="display: none;">
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-12">
+                                                                                        <div class="categories ">
+                                                                                            <div class="row">
+                                                                                                <div class="col-sm-12 hover-menu">
+                                                                                                    <div class="menu">
                                                                                                         <ul>
-                                                                                                        <?php
-                                                                                                        if (!empty($value['childs'])):
-                                                                                                            foreach ($value['childs'] as $key => $value): ?>
+
+                                                                                                            <?php foreach ($value['childs'] as $key => $value): ?>
                                                                                                                 <li>
                                                                                                                     <a href="<?= base_url('category/' . $value['id']); ?>"
                                                                                                                        class="main-menu"><?= $value['title'] ?>
@@ -1026,26 +1014,33 @@
                                                                                                                             <b class="fa fa-angle-right"></b>
                                                                                                                         <?php endif; ?>
                                                                                                                     </a>
+                                                                                                                    <?php if (!empty($value['childs'])): ?>
+                                                                                                                        <ul>
+                                                                                                                            <?php foreach ($value['childs'] as $key => $value): ?>
+                                                                                                                                <li>
+                                                                                                                                    <a href="<?= base_url('category/' . $value['id']); ?>"
+                                                                                                                                       class="main-menu"><?= $value['title'] ?>
+                                                                                                                                        <?php if (!empty($value['childs'])): ?>
+                                                                                                                                            <b class="fa fa-angle-right"></b>
+                                                                                                                                        <?php endif; ?>
+                                                                                                                                    </a>
+                                                                                                                                </li>
+                                                                                                                            <?php endforeach; ?>
+                                                                                                                        </ul>
+                                                                                                                    <?php endif; ?>
                                                                                                                 </li>
-                                                                                                                <?php
-                                                                                                                endforeach;
-                                                                                                                endif; ?>
-                                                                                                            </ul>
-                                                                                                            </li>
-                                                                                                        <?php
-                                                                                                    endforeach;
-                                                                                                    ?>
-                                                                                                </ul>
+                                                                                                            <?php endforeach;?>
+                                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                                <?php endif;?>
-                                                            </li>
+                                                                    <?php endif; ?>
+                                                                </li>
                                                             <?php endforeach; ?>
                                                         </ul>
 

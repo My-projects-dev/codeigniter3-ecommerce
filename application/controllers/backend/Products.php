@@ -27,6 +27,13 @@ class Products extends CI_Controller
         $this->load->admin('products/index', $data);
     }
 
+//    function clean_postcode($str)
+//    {
+//        $str = str_replace(" ", "-", $str);
+//        return $str;
+//    }
+
+
     public function create()
     {
 
@@ -34,6 +41,7 @@ class Products extends CI_Controller
             $this->load->library('form_validation');
 
             $this->form_validation->set_rules('title', 'Title', 'required');
+            //$this->form_validation->set_rules('slug', 'Slug', 'required|is_unique[products.slug]');
             $this->form_validation->set_rules('description', 'Description', 'required');
             $this->form_validation->set_rules('quantity', 'Quantity', 'required|numeric');
             $this->form_validation->set_rules('price', 'Price', 'required|numeric');

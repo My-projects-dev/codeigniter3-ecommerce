@@ -9,7 +9,7 @@ class Login extends CI_Controller
         parent::__construct();
 
         $this->load->model('Users_model', 'users_md');
-
+        $this->load->model('Category_model', 'category_md');
     }
 
     public function index()
@@ -47,6 +47,7 @@ class Login extends CI_Controller
         }
 
         $data['title'] = 'Login';
+        $data['categories'] = category_tree($this->category_md->select_all());
 
         $this->load->front('login', $data);
     }

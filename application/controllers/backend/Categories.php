@@ -40,7 +40,7 @@ class Categories extends CI_Controller
                 $item = $this->categories_md->selectActiveDataById($parentcategory);
 
                 if (empty($item)) {
-                    $parentcategory = null;
+                    $parentcategory = 0;
                 }
 
                 $request_data = [
@@ -85,7 +85,7 @@ class Categories extends CI_Controller
                 $ids = $parentcategory;
                 $a = true;
 
-                while ($ids != null) {
+                while ($ids != 0) {
 
                     $parentId = $this->categories_md->parentId($ids);
 
@@ -101,7 +101,7 @@ class Categories extends CI_Controller
                     $item = $this->categories_md->selectActiveDataById($parentcategory);
 
                     if (empty($item)) {
-                        $parentcategory = null;
+                        $parentcategory = 0;
                     }
 
                     $request_data = [
@@ -144,7 +144,7 @@ class Categories extends CI_Controller
         foreach ($lists as $list){
             $ids = $list->id;
             $b = true;
-            while ($ids != null) {
+            while ($ids != 0) {
                 $parentId = $this->categories_md->parentId($ids);
 
                 if ($parentId->parent_id == $id) {

@@ -29,6 +29,10 @@ class Migration_Add_banner extends CI_Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
+            'location_id' => array(
+                'type' => 'INT',
+                'constraint' => 5,
+            ),
             'status' => array(
                 'type' => 'INT',
                 'constraint' => '3',

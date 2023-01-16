@@ -28,6 +28,12 @@ class Slider extends CI_Controller
 
             $this->form_validation->set_rules('title', 'Title', 'required');
             $this->form_validation->set_rules('description', 'Description', 'required');
+            if (empty($_FILES["image"]["tmp_name"])) {
+                $this->form_validation->set_rules('image', 'Image', 'required');
+            }
+            if (empty($_FILES["background"]["tmp_name"])) {
+                $this->form_validation->set_rules('background', 'Background', 'required');
+            }
 
             $this->form_validation->set_message('required', 'Boş keçilə bilməz');
 

@@ -22,7 +22,7 @@ class Category_product extends CI_Controller
         $ids = $id;
         $parentCat = array();
 
-        while ($ids != null) {
+        while ($ids != 0) {
             $parent = $this->categories_md->parentId($ids);
             if (!$parent->parent_id) {
                 break;
@@ -59,7 +59,7 @@ class Category_product extends CI_Controller
         $ids = $id;
 
         $subCat = array();
-        while ($ids != null) {
+        while ($ids != 0) {
             $parent = $this->categories_md->parentId($ids);
             if (!$parent->parent_id) {
                 break;
