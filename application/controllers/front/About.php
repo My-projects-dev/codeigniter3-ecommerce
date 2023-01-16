@@ -8,7 +8,7 @@ class About extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('Admins_model', 'admins_md');
+       $this->load->model('Category_model', 'categories_md');
 
     }
 
@@ -16,7 +16,7 @@ class About extends CI_Controller
     {
         $data['title'] = 'About';
 
-        $data['lists'] = $this->admins_md->select_all();
+        $data['categories'] = category_tree($this->categories_md->select_all());
 
         $this->load->front('include/information/about', $data);
     }

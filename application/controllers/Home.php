@@ -88,9 +88,6 @@ class Home extends CI_Controller
         $data['products'] = $products;
         $data['title'] = 'Home';
 
-        //echo '<pre>';
-        //print_r($data['products']);
-
         $this->load->main([
             'include/home/slider',
             'include/home/banner',
