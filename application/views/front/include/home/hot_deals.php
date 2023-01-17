@@ -16,7 +16,7 @@
                                             <div class="product-image-container">
                                                 <div class="image">
                                                     <span class="label label-sale">Sale</span>
-                                                    <a class="lt-image" href="<?=base_url('product/'.$value->id)?>" target="_self">
+                                                    <a class="lt-image" href="<?=base_url('product/'.$value->slug)?>" target="_self">
                                                         <img class="lazyload img-1 img-responsive" data-sizes="auto"
                                                              style="height: 170px; width: 100%"
                                                              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -50,7 +50,7 @@
                                                     <span class="fa fa-stack"><i
                                                                 class="fa fa-star fa-stack-2x"></i></span>
                                                 </div>
-                                                <h4><a href="<?=base_url('product/'.$value->id)?>" target="_self" title="<?=$value->title?>">Elivers
+                                                <h4><a href="<?=base_url('product/'.$value->slug)?>" target="_self" title="<?=$value->title?>">Elivers
                                                         chukalen..</a></h4>
                                                 <p class="price">
                                                     <span class="price-new"><?=$value->sales_prices?></span> <span class="price-old"><?=$value->price?></span>

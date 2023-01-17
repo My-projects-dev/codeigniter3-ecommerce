@@ -26,7 +26,7 @@
                                             <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
                                         </div>
                                     </div>
-                                    <h4><a href="<?= base_url('product/'.$value->id); ?>"><?= $value->title ?></a></h4>
+                                    <h4><a href="<?= base_url('product/'.$value->slug); ?>"><?= $value->title ?></a></h4>
                                     <div class="price">
                                         <span class="price-new"><?= $value->sales_prices ?></span>
                                         <span class="price-old"><?= $value->price ?></span>

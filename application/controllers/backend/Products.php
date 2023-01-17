@@ -27,21 +27,15 @@ class Products extends CI_Controller
         $this->load->admin('products/index', $data);
     }
 
-//    function clean_postcode($str)
-//    {
-//        $str = str_replace(" ", "-", $str);
-//        return $str;
-//    }
 
 
     public function create()
     {
-
         if ($this->input->post()) {
             $this->load->library('form_validation');
 
+            $this->form_validation->set_rules('slug', 'Slug', 'required');
             $this->form_validation->set_rules('title', 'Title', 'required');
-            //$this->form_validation->set_rules('slug', 'Slug', 'required|is_unique[products.slug]');
             $this->form_validation->set_rules('description', 'Description', 'required');
             $this->form_validation->set_rules('quantity', 'Quantity', 'required|numeric');
             $this->form_validation->set_rules('price', 'Price', 'required|numeric');
@@ -55,6 +49,19 @@ class Products extends CI_Controller
             $this->form_validation->set_message('numeric', 'Yalnızca rəqəm girilə bilər');
 
             if ($this->form_validation->run()) {
+
+                //---- Slug -----------------
+                $slug = $this->security->xss_clean($this->input->post('slug'));
+
+                $slug = slug($slug);
+
+                $selectSlug = $this->products_md->selectSlug($slug);
+
+                if (!empty($selectSlug)) {
+                    $this->session->set_flashdata('error_message', 'Slug mövcuddur. Başqa bir slug girin.');
+                    redirect('backend/products/create');
+                }
+                //------- End Slug -------------------------------------
 
                 $brand = $this->security->xss_clean($this->input->post('brand'));
                 $item = $this->brands_md->selectActiveDataById($brand);
@@ -80,6 +87,7 @@ class Products extends CI_Controller
                     'price' => abs($this->security->xss_clean($this->input->post('price'))),
                     'sales_prices' => abs($this->security->xss_clean($this->input->post('sales_prices'))),
                     'brand_id' => $brand,
+                    'slug' => $slug,
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 
@@ -204,6 +212,7 @@ class Products extends CI_Controller
 
             $this->load->library('form_validation');
 
+            $this->form_validation->set_rules('slug', 'Slug', 'required');
             $this->form_validation->set_rules('title', 'Title', 'required');
             $this->form_validation->set_rules('description', 'Description', 'required');
             $this->form_validation->set_rules('quantity', 'Quantity', 'required|numeric');
@@ -214,6 +223,21 @@ class Products extends CI_Controller
             $this->form_validation->set_message('numeric', 'Yalnızca rəqəm girilə bilər');
 
             if ($this->form_validation->run()) {
+
+                //--------- Slug ---------------------------------------------
+
+                $slug = $this->security->xss_clean($this->input->post('slug'));
+
+                $slug = slug($slug);
+
+                $selectSlug = $this->products_md->selectSlugNotId($slug, $id);
+
+                if ($selectSlug > 0) {
+                    $this->session->set_flashdata('error_message', 'Slug mövcuddur. Başqa bir slug girin.');
+                    redirect('backend/products/edit/' . $id);
+                }
+
+                //------ End Slug -----------------------------------------------------------------------
 
                 $brand = $this->security->xss_clean($this->input->post('brand'));
                 $item = $this->brands_md->selectActiveDataById($brand);
@@ -238,6 +262,7 @@ class Products extends CI_Controller
                     'price' => abs($this->security->xss_clean($this->input->post('price'))),
                     'sales_prices' => abs($this->security->xss_clean($this->input->post('sales_prices'))),
                     'brand_id' => $brand,
+                    'slug' => $slug,
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
 

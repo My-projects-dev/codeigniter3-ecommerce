@@ -304,7 +304,7 @@
 
                                                                 <li class="item-vertical css-menu with-sub-menu hover">
                                                                     <p class="close-menu"></p>
-                                                                    <a href="<?= base_url('category/' . $value['id']); ?>"
+                                                                    <a href="<?= base_url('category/' . $value['url']); ?>"
                                                                        class="clearfix">
                                                                         <strong>
                                                                             <span><?= $value['title'] ?></span>
@@ -327,7 +327,7 @@
 
                                                                                                             <?php foreach ($value['childs'] as $key => $value): ?>
                                                                                                                 <li>
-                                                                                                                    <a href="<?= base_url('category/' . $value['id']); ?>"
+                                                                                                                    <a href="<?= base_url('category/' . $value['url']); ?>"
                                                                                                                        class="main-menu"><?= $value['title'] ?>
                                                                                                                         <?php if (!empty($value['childs'])): ?>
                                                                                                                             <b class="fa fa-angle-right"></b>
@@ -337,7 +337,7 @@
                                                                                                                         <ul>
                                                                                                                             <?php foreach ($value['childs'] as $key => $value): ?>
                                                                                                                                 <li>
-                                                                                                                                    <a href="<?= base_url('category/' . $value['id']); ?>"
+                                                                                                                                    <a href="<?= base_url('category/' . $value['url']); ?>"
                                                                                                                                        class="main-menu"><?= $value['title'] ?>
                                                                                                                                         <?php if (!empty($value['childs'])): ?>
                                                                                                                                             <b class="fa fa-angle-right"></b>

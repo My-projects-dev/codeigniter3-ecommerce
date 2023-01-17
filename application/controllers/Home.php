@@ -23,7 +23,7 @@ class Home extends CI_Controller
         //Best sellers
         $bestSeller = $this->product_category_md->randomProduct(8);
         foreach ($bestSeller as $key => $value) {
-            $value->image = $this->images_md->selectOnePassive($value->id)->path;
+            $value->image = $this->images_md->selectOnePassive($value->id)->path ?? $bestSeller[$key]->path;
         }
         // end best sellers
 
@@ -32,7 +32,7 @@ class Home extends CI_Controller
         $lastId = $this->category_md->lastCategory(3);
         $prod = $this->product_category_md->selectLastProduct($lastId->id, 7);
         foreach ($prod as $key => $value) {
-            $value->image = $this->images_md->selectOnePassive($value->id)->path;
+            $value->image = $this->images_md->selectOnePassive($value->id)->path ?? $prod[$key]->path;
         }
         // end last category product
 
@@ -55,16 +55,16 @@ class Home extends CI_Controller
                 $sl = $this->product_category_md->selectOrderBy($valuee, $limit, 'sales_prices');
 
                 foreach ($pr as $key => $value) {
-                    $value->image = $this->images_md->selectOnePassive($value->id)->path;
+                    $value->image = $this->images_md->selectOnePassive($value->id)->path ?? $pr[$key]->mainImage;
                 }
                 foreach ($qu as $key => $value) {
-                    $value->image = $this->images_md->selectOnePassive($value->id)->path;
+                    $value->image = $this->images_md->selectOnePassive($value->id)->path ?? $qu[$key]->mainImage;
                 }
                 foreach ($dt as $key => $value) {
-                    $value->image = $this->images_md->selectOnePassive($value->id)->path;
+                    $value->image = $this->images_md->selectOnePassive($value->id)->path ?? $dt[$key]->mainImage;
                 }
                 foreach ($sl as $key => $value) {
-                    $value->image = $this->images_md->selectOnePassive($value->id)->path;
+                    $value->image = $this->images_md->selectOnePassive($value->id)->path ?? $sl[$key]->mainImage;
                 }
 
                 $product['sale'] = $sl;

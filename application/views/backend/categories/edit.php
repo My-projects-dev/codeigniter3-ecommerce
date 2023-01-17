@@ -19,6 +19,11 @@
                             <?php echo form_error('title','<span class =text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
+                            <label for="slug">Slug</label>
+                            <input type="text" name="slug" class="form-control" value="<?= $item->slug; ?>" placeholder="Enter slug">
+                            <?php echo form_error('slug','<span class =text-danger >','</span>'); ?>
+                        </div>
+                        <div class="form-group">
                             <label for="parentcategory">Parent category</label>
                             <br>
                             <select class="custom-select form-control" id="parentcategory" name="parentcategory">

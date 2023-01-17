@@ -58,7 +58,7 @@
                             if ($key > 5):?>
                                 <div class="product-layout ">
                                     <div class="product-thumb transition">
-                                        <div class="image"><a href="<?=base_url('product/'.$value->id)?>"><img
+                                        <div class="image"><a href="<?=base_url('product/'.$value->slug)?>"><img
                                                         class="lazyload img-1 img-responsive" data-sizes="auto"
                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                                         style="height: 46px"
@@ -72,7 +72,7 @@
                                                 <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
                                                 <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
                                             </div>
-                                            <h4><a href="<?=base_url('product/'.$value->id)?>"><?=$value->title?></a></h4>
+                                            <h4><a href="<?=base_url('product/'.$value->slug)?>"><?=$value->title?></a></h4>
 
                                             <p class="price">
                                                 <span class="price-new"> <?=$value->sales_prices?></span>

@@ -11,7 +11,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="<?= base_url('front/register'); ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url('backend/blog/create'); ?>" method="post" enctype="multipart/form-data">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="title">Title</label>
@@ -19,14 +19,19 @@
                             <?php echo form_error('title', '<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" name="description" class="form-control">
-                            <?php echo form_error('description', '<span class = text-danger >','</span>'); ?>
+                            <label for="slug">Slug</label>
+                            <input type="text" name="slug" class="form-control">
+                            <?php echo form_error('slug', '<span class =text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="image">Image</label>
                             <input type="file" name="image" class="form-control">
                             <?php echo form_error('image','<span class = text-danger >','</span>'); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" cols="30" rows="3"  class="form-control"></textarea>
+                            <?php echo form_error('description', '<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="Status">Status</label>

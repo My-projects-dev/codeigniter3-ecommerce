@@ -14,9 +14,15 @@ class Category_product extends CI_Controller
         $this->load->model('Images_model', 'images_md');
     }
 
-    public function index($id)
+    public function index($url)
     {
-        $id = $this->security->xss_clean($id);
+        $slug = $this->security->xss_clean($url);
+
+        $id = $this->categories_md->selectSlug($slug)->id;
+
+        if ($id==null) {
+            redirect('/');
+        }
 
         // Category way
         $ids = $id;

@@ -4,25 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="header menu">
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="slug">
+      <change afterPath="$PROJECT_DIR$/application/helpers/slug_helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1065089535185815.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1065089535185816.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1065089535185817.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1065089535185818.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1065089535185819.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1_1598452306_resim17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1_1598452306_resim18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/1_1598452306_resim19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/download16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/download17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/download18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/download19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/images14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/images15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Product_images/images16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/banner/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/blog_image/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/blog_image/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/blog_image/310-3108747_samsung-galaxy-s3-wallpaper-3d-landscape.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Banner_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Banner_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/banner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Category_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Category_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/002_add_blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/002_add_blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/005_add_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/005_add_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Blog_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Blog_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Products_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Products_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/blog/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/blog/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/blog/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/blog/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/categories/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/categories/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/categories/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/categories/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/products/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/products/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/products/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/products/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/best_sellers.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/best_sellers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/front/include/home/first_three_category_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/first_three_category_products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/frontend/image/demo/banner/t21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/frontend/image/demo/banner/t22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/frontend/image/demo/banner/t23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/0-2836_nature-wallpaper-with-flowers-image-good-morning-photo5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/106508953518581.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/106508953518582.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/1_1598452306_resim2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/download2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/download5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/images2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banner/images3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/hot_deals.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/hot_deals.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/media.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/media.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/product/product_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/product/product_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/product/related_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/product/related_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +305,10 @@
       <workItem from="1673622516155" duration="6757000" />
       <workItem from="1673690188384" duration="27783000" />
       <workItem from="1673773338198" duration="54689000" />
-      <workItem from="1673866171492" duration="3784000" />
+      <workItem from="1673866171492" duration="4005000" />
+      <workItem from="1673878941783" duration="8860000" />
+      <workItem from="1673888956341" duration="502000" />
+      <workItem from="1673970630352" duration="17134000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -431,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673840086410</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="banner">
+      <created>1673870164554</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673870164554</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +507,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="te" />
     <MESSAGE value="tefhf" />
     <MESSAGE value="admin delete" />
     <MESSAGE value="Brands, settings, categories, pages" />
@@ -484,6 +530,8 @@
     <MESSAGE value="slider, banner, brands" />
     <MESSAGE value="home" />
     <MESSAGE value="header menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="header menu" />
+    <MESSAGE value="banner" />
+    <MESSAGE value="slug" />
+    <option name="LAST_COMMIT_MESSAGE" value="slug" />
   </component>
 </project>

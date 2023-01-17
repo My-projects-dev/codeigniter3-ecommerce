@@ -44,6 +44,24 @@ class Products_model extends CI_Model {
         return $query->row();
     }
 
+    public function selectSlug($slug)
+    {
+        $this->db->select('id');
+        $this->db->where('slug', $slug);
+        $query = $this->db->get($this->table);
+
+        return $query->row();
+    }
+
+    public function selectSlugNotId($slug, $id)
+    {
+        $this->db->select('id');
+        $this->db->where('slug', $slug);
+        $this->db->where('id!=', $id);
+        $query = $this->db->get($this->table);
+
+        return $query->num_rows();
+    }
 
     public function update($id,$data){
         $this->db->where('id', $id);

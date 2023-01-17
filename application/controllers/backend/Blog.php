@@ -29,12 +29,27 @@ class Blog extends CI_Controller
         if ($this->input->post()) {
             $this->load->library('form_validation');
 
+            $this->form_validation->set_rules('slug', 'Slug', 'required');
             $this->form_validation->set_rules('title', 'Title', 'required');
             $this->form_validation->set_rules('description', 'Description', 'required');
 
             $this->form_validation->set_message('required', 'Boş keçilə bilməz');
 
             if ($this->form_validation->run()) {
+
+                //---- Slug -----------------
+                $slug = $this->security->xss_clean($this->input->post('slug'));
+
+                $slug = slug($slug);
+
+                $selectSlug = $this->blog_md->selectSlug($slug);
+
+                if (!empty($selectSlug)){
+                    $this->session->set_flashdata('error_message', 'Slug mövcuddur. Başqa bir slug girin.');
+                    redirect('backend/blog/create');
+                }
+                //------- End Slug -------------------------------------
+
 
                 $path = 'uploads/blog_image/';
 
@@ -62,9 +77,11 @@ class Blog extends CI_Controller
 
                         $file_data = $this->upload->data();
                         $request_data = [
+                            'slug' => $slug,
                             'title' => $this->security->xss_clean($this->input->post('title')),
                             'description' => $this->security->xss_clean($this->input->post('description')),
                             'status' => ($this->input->post('status') == 1) ? 1 : 0,
+
                             'image' => $path . $file_data['file_name']
                         ];
 
@@ -101,6 +118,7 @@ class Blog extends CI_Controller
 
             $this->load->library('form_validation');
 
+            $this->form_validation->set_rules('slug', 'Slug', 'required');
             $this->form_validation->set_rules('title', 'Title', 'required');
             $this->form_validation->set_rules('description', 'Description', 'required');
 
@@ -108,8 +126,23 @@ class Blog extends CI_Controller
 
             if ($this->form_validation->run()) {
 
+                //--------- Slug ---------------------------------------------
+
+                $slug = $this->security->xss_clean($this->input->post('slug'));
+
+                $slug = slug($slug);
+
+                $selectSlug = $this->blog_md->selectSlugNotId($slug, $id);
+
+                if ($selectSlug > 0){
+                    $this->session->set_flashdata('error_message', 'Slug mövcuddur. Başqa bir slug girin.');
+                    redirect('backend/blog/edit/'.$id);
+                }
+
+                //------ End Slug -----------------------------------------------------------------------
 
                 $request_data = [
+                    'slug' => $slug,
                     'title' => $this->security->xss_clean($this->input->post('title')),
                     'description' => $this->security->xss_clean($this->input->post('description')),
                     'status' => ($this->input->post('status') == 1) ? 1 : 0

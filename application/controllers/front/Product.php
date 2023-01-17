@@ -11,11 +11,18 @@ class Product extends CI_Controller
         $this->load->model('Product_categories_model', 'product_category_md');
         $this->load->model('Category_model', 'category_md');
         $this->load->model('Images_model', 'images_md');
+        $this->load->model('Products_model', 'product_md');
     }
 
-    public function index($id)
+    public function index($url)
     {
-        $id = $this->security->xss_clean($id);
+        $slug = $this->security->xss_clean($url);
+
+        $id = $this->product_md->selectSlug($slug)->id;
+
+        if ($id==null) {
+            redirect('/');
+        }
 
         $catId = $this->product_category_md->getCategoryId($id)->categories_id;
         $ids = $catId;

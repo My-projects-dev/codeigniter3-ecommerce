@@ -13,6 +13,11 @@ class Migration_Add_blog extends CI_Migration {
                 'unsigned' => FALSE,
                 'auto_increment' => TRUE
             ),
+            'slug' => array(
+                'type' => 'VARCHAR',
+                'constraint' => 250,
+                'unique' => TRUE,
+            ),
             'title' => array(
                 'type' => 'VARCHAR',
                 'constraint' => 100,

@@ -22,6 +22,25 @@ class Category_model extends CI_Model
         return $query;
     }
 
+    public function selectSlug($slug)
+    {
+        $this->db->select('id');
+        $this->db->where('slug', $slug);
+        $query = $this->db->get($this->table);
+
+        return $query->row();
+    }
+
+    public function selectSlugNotId($slug, $id)
+    {
+        $this->db->select('id');
+        $this->db->where('slug', $slug);
+        $this->db->where('id!=', $id);
+        $query = $this->db->get($this->table);
+
+        return $query->num_rows();
+    }
+
     public function lastCategory()
     {
         $this->db->select('id');

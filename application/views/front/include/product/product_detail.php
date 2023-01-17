@@ -3,7 +3,7 @@
 			<ul class="breadcrumb">
 				<li><a href="<?= base_url('home/'); ?>"><i class="fa fa-home"></i></a></li>
                 <?php foreach ($category as $key=>$value):?>
-				<li><a href="<?= base_url('category/'.$value->id); ?>"><?=$value->title?></a></li>
+				<li><a href="<?= base_url('category/'.$value->slug); ?>"><?=$value->title?></a></li>
                 <?php endforeach; ?>
 			</ul>
 

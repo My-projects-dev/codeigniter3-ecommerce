@@ -78,7 +78,7 @@
                                                     <div class="item-inner">
                                                         <div class="cat_slider_title">
 
-                                                            <a href="<?= base_url('category/' . $valuee->id) ?>"
+                                                            <a href="<?= base_url('category/' . $valuee->slug) ?>"
                                                                title="Tange manue" target="_self">
                                                                 <i class="fa fa-caret-right"></i> <?= $valuee->title ?>
                                                             </a>
@@ -120,7 +120,7 @@
                                                             <div class="product-image-container">
                                                                 <div class="image">
                                                                     <a class="lt-image"
-                                                                       href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                       href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        target="_self"
                                                                        title="Verty nolen max..">
                                                                         <img class="lazyload img-1 img-responsive"
@@ -155,7 +155,7 @@
                                                                                 class="fa fa-star fa-stack-2x"></i></span>
                                                                 </div>
                                                                 <h4>
-                                                                    <a href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                    <a href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        title="<?= $valuee->title ?>"
                                                                        target="_self">
                                                                         <?= $valuee->title ?> </a>
@@ -206,7 +206,7 @@
                                                             <div class="product-image-container">
                                                                 <div class="image">
                                                                     <a class="lt-image"
-                                                                       href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                       href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        target="_self"
                                                                        title="Verty nolen max..">
                                                                         <img class="lazyload img-1 img-responsive"
@@ -241,7 +241,7 @@
                                                                                 class="fa fa-star fa-stack-2x"></i></span>
                                                                 </div>
                                                                 <h4>
-                                                                    <a href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                    <a href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        title="<?= $valuee->title ?>"
                                                                        target="_self">
                                                                         <?= $valuee->title ?> </a>
@@ -292,7 +292,7 @@
                                                             <div class="product-image-container">
                                                                 <div class="image">
                                                                     <a class="lt-image"
-                                                                       href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                       href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        target="_self"
                                                                        title="Verty nolen max..">
                                                                         <img class="lazyload img-1 img-responsive"
@@ -327,7 +327,7 @@
                                                                                 class="fa fa-star fa-stack-2x"></i></span>
                                                                 </div>
                                                                 <h4>
-                                                                    <a href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                    <a href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        title="<?= $valuee->title ?>"
                                                                        target="_self">
                                                                         <?= $valuee->title ?> </a>
@@ -378,7 +378,7 @@
                                                             <div class="product-image-container">
                                                                 <div class="image">
                                                                     <a class="lt-image"
-                                                                       href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                       href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        target="_self"
                                                                        title="Verty nolen max..">
                                                                         <img class="lazyload img-1 img-responsive"
@@ -413,7 +413,7 @@
                                                                                 class="fa fa-star fa-stack-2x"></i></span>
                                                                 </div>
                                                                 <h4>
-                                                                    <a href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                    <a href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        title="<?= $valuee->title ?>"
                                                                        target="_self">
                                                                         <?= $valuee->title ?> </a>
@@ -464,7 +464,7 @@
                                                             <div class="product-image-container">
                                                                 <div class="image">
                                                                     <a class="lt-image"
-                                                                       href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                       href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        target="_self"
                                                                        title="Verty nolen max..">
                                                                         <img class="lazyload img-1 img-responsive"
@@ -499,7 +499,7 @@
                                                                                 class="fa fa-star fa-stack-2x"></i></span>
                                                                 </div>
                                                                 <h4>
-                                                                    <a href="<?= base_url('product/' . $valuee->id) ?>"
+                                                                    <a href="<?= base_url('product/' . $valuee->slug) ?>"
                                                                        title="<?= $valuee->title ?>"
                                                                        target="_self">
                                                                         <?= $valuee->title ?> </a>

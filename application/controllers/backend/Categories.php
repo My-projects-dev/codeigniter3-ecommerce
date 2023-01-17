@@ -30,10 +30,25 @@ class Categories extends CI_Controller
             $this->load->library('form_validation');
 
             $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('slug', 'Slug', 'required');
 
             $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
 
             if ($this->form_validation->run()) {
+
+                //---- Slug ---------------------------------------------------
+                $slug = $this->security->xss_clean($this->input->post('slug'));
+
+                $slug = slug($slug);
+
+                $selectSlug = $this->categories_md->selectSlug($slug);
+
+                if (!empty($selectSlug)) {
+                    $this->session->set_flashdata('error_message', 'Slug mövcuddur. Başqa bir slug girin.');
+                    redirect('backend/categories/create');
+                }
+
+                //--------- End Slug --------------------------------------------------------------------
 
                 $parentcategory = $this->security->xss_clean($this->input->post('parentcategory'));
 
@@ -45,6 +60,7 @@ class Categories extends CI_Controller
 
                 $request_data = [
                     'title' => $this->security->xss_clean($this->input->post('title')),
+                    'slug' => $slug,
                     'parent_id' => $parentcategory,
                     'status' => ($this->input->post('status') == 1) ? 1 : 0
                 ];
@@ -75,10 +91,25 @@ class Categories extends CI_Controller
             $this->load->library('form_validation');
 
             $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('slug', 'Slug', 'required');
 
             $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
 
             if ($this->form_validation->run()) {
+
+                //--------- Slug
+                $slug = $this->security->xss_clean($this->input->post('slug'));
+
+                $slug = slug($slug);
+
+                $selectSlug = $this->categories_md->selectSlugNotId($slug, $id);
+
+                if ($selectSlug > 0) {
+                    $this->session->set_flashdata('error_message', 'Slug mövcuddur. Başqa bir slug girin.');
+                    redirect('backend/categories/edit/' . $id);
+                }
+
+                //--------- End Slug --------------------------------------------------------------------
 
                 $parentcategory = $this->security->xss_clean($this->input->post('parentcategory'));
 
@@ -107,6 +138,7 @@ class Categories extends CI_Controller
                     $request_data = [
                         'title' => $this->security->xss_clean($this->input->post('title')),
                         'parent_id' => $parentcategory,
+                        'slug' => $slug,
                         'status' => ($this->input->post('status') == 1) ? 1 : 0
                     ];
 
@@ -141,7 +173,7 @@ class Categories extends CI_Controller
         $lists = $this->categories_md->selectActive_isNotId($id);
         $listler = [];
 
-        foreach ($lists as $list){
+        foreach ($lists as $list) {
             $ids = $list->id;
             $b = true;
             while ($ids != 0) {
@@ -154,7 +186,7 @@ class Categories extends CI_Controller
                 $ids = $parentId->parent_id;
             }
 
-            if ($b){
+            if ($b) {
                 array_push($listler, $list);
             }
         }

@@ -18,6 +18,11 @@
                             <input type="text" name="title" class="form-control">
                             <?php echo form_error('title', '<span class =text-danger >','</span>'); ?>
                         </div>
+                        <div class="form-group">
+                            <label for="slug">Slug</label>
+                            <input type="text" name="slug" class="form-control">
+                            <?php echo form_error('slug', '<span class =text-danger >','</span>'); ?>
+                        </div>
                          <div class="form-group">
                             <label for="parentcategory">Parent category</label>
                             <br>

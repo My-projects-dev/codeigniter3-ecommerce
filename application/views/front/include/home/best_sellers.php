@@ -11,7 +11,7 @@
                                 <div class="media-left">
                                     <div class="item-image">
                                         <div class="item-img-info">
-                                            <a href="<?=base_url('product/'.$value->id)?>" class="lt-image" target="_self"
+                                            <a href="<?=base_url('product/'.$value->slug)?>" class="lt-image" target="_self"
                                                title="Bikum masen dumas">
                                                 <img class="lazyload img-1 img-responsive" data-sizes="auto"
                                                      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -37,7 +37,7 @@
                                             <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
                                         </div>
                                         <div class="item-title">
-                                            <a href="<?=base_url('product/'.$value->id)?>" target="_self" title="<?=$value->title?>">
+                                            <a href="<?=base_url('product/'.$value->slug)?>" target="_self" title="<?=$value->title?>">
                                                 <?=$value->title?> </a>
                                         </div>
                                         <!-- Begin item-content -->
@@ -63,7 +63,7 @@
                                 <div class="media-left">
                                     <div class="item-image">
                                         <div class="item-img-info">
-                                            <a href="<?=base_url('product/'.$value->id)?>" class="lt-image" target="_self"
+                                            <a href="<?=base_url('product/'.$value->slug)?>" class="lt-image" target="_self"
                                                title="Bikum masen dumas">
                                                 <img class="lazyload img-1 img-responsive" data-sizes="auto"
                                                      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -89,7 +89,7 @@
                                             <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
                                         </div>
                                         <div class="item-title">
-                                            <a href="<?=base_url('product/'.$value->id)?>" target="_self" title="<?=$value->title?>">
+                                            <a href="<?=base_url('product/'.$value->slug)?>" target="_self" title="<?=$value->title?>">
                                                 <?=$value->title?> </a>
                                         </div>
                                         <!-- Begin item-content -->

@@ -19,9 +19,9 @@
                             <?php echo form_error('title', '<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" name="description" class="form-control">
-                            <?php echo form_error('description','<span class = text-danger >','</span>'); ?>
+                            <label for="slug">Slug</label>
+                            <input type="text" name="slug" class="form-control">
+                            <?php echo form_error('slug', '<span class =text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="quantity">Quantity</label>
@@ -63,6 +63,11 @@
                             <label for="images">Images</label>
                             <input type="file" multiple name="images[]" class="form-control">
                             <?php echo form_error('images','<span class = text-danger >','</span>'); ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" cols="30" rows="3"  class="form-control"></textarea>
+                            <?php echo form_error('description','<span class = text-danger >','</span>'); ?>
                         </div>
                         <div class="form-group">
                             <label for="Status">Status</label>

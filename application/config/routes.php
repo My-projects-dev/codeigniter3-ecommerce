@@ -159,10 +159,10 @@ $route['my_account'] = 'front/My_account/index';
 $route['order_history'] = 'front/Order_history/index';
 $route['order_information'] = 'front/Order_information/index';
 
-$route['category/(:num)'] = 'front/Category_product/index/$1';
-$route['category/(:num)/(:num)'] = 'front/Category_product/index/$1/$2';
+$route['category/(:any)'] = 'front/Category_product/index/$1';
+$route['category/(:any)/(:num)'] = 'front/Category_product/index/$1/$2';
 
-$route['product/(:num)'] = 'front/Product/index/$1';
+$route['product/(:any)'] = 'front/Product/index/$1';
 
 $route['blog'] = 'front/Blogs/index';
 
