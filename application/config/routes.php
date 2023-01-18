@@ -165,6 +165,7 @@ $route['category/(:any)/(:num)'] = 'front/Category_product/index/$1/$2';
 $route['product/(:any)'] = 'front/Product/index/$1';
 
 $route['blog'] = 'front/Blogs/index';
+$route['blog/(:any)'] = 'front/Blog_detail/index/$1';
 
 $route['about'] = 'front/About/index';
 $route['faq'] = 'front/Faq/index';

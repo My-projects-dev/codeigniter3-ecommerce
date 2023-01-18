@@ -8,20 +8,30 @@ class Blog_detail extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('Admins_model', 'admins_md');
+        $this->load->model('Blog_model', 'blog_md');
+        $this->load->model('Products_model', 'product_md');
+        $this->load->model('Category_model', 'category_md');
 
     }
 
-    public function index()
+    public function index($url)
     {
-        $data['title'] = 'Blog_detail';
+        $slug = $this->security->xss_clean($url);
 
-        $data['lists'] = $this->admins_md->select_all();
+        $id = $this->blog_md->selectSlug($slug)->id;
+
+        if ($id==null) {
+            redirect('blog/');
+        }
+
+        $data['title'] = 'Blog_detail';
+        $data['blog'] = $this->blog_md->selectDataById($id);
+        $data['latestProduct'] = $this->product_md->product_mainImage(4);
+        $data['categories'] = category_tree($this->category_md->select_all());
 
         $this->load->main([
-            'include/blog/blog_category',
             'include/blog/latest_product',
-            'include/blog/blog_detail',
+            'include/blog/blog_detail'
         ], $data);
     }
 }

@@ -8,15 +8,14 @@ class Checkout extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('Admins_model', 'admins_md');
 
+        $this->load->model('Category_model', 'category_md');
     }
 
     public function index()
     {
         $data['title'] = 'Checkout';
-
-        $data['lists'] = $this->admins_md->select_all();
+        $data['categories'] = category_tree($this->category_md->select_all());
 
         $this->load->front('include/shopping/checkout', $data);
     }

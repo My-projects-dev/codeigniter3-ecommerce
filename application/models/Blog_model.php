@@ -17,6 +17,13 @@ class Blog_model extends CI_Model {
         return $query->result();
     }
 
+    public function selectActive(){
+        $this->db->where('status', 1);
+        $query = $this->db->get($this->table);
+
+        return $query->result();
+    }
+
     public function selectDataById($id){
         $this->db->where('id',$id);
         $query = $this->db->get($this->table);
