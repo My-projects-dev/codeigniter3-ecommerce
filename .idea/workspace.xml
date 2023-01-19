@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="slug">
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="blog">
+      <change afterPath="$PROJECT_DIR$/application/controllers/front/Categories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/front/include/categories/categories.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Blog_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Blog_detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Blogs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/Blog_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Blog_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/include/blog/blog_category.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/include/blog/blog_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/blog/blog_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/front/include/blog/blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/blog/blogs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/include/blog/latest_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/blog/latest_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/media.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/media.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +264,9 @@
       <workItem from="1673878941783" duration="8860000" />
       <workItem from="1673888956341" duration="502000" />
       <workItem from="1673970630352" duration="17295000" />
-      <workItem from="1674041212883" duration="6251000" />
+      <workItem from="1674041212883" duration="6464000" />
+      <workItem from="1674054797432" duration="5991000" />
+      <workItem from="1674131728266" duration="7320000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -442,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673993957664</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="blog">
+      <created>1674047685939</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1674047685939</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +484,6 @@
     <MESSAGE value="Brands, settings, categories, pages" />
     <MESSAGE value="users" />
     <MESSAGE value="Payment_methods" />
-    <MESSAGE value="blog" />
     <MESSAGE value="orders" />
     <MESSAGE value="product image" />
     <MESSAGE value="product" />
@@ -496,6 +503,7 @@
     <MESSAGE value="header menu" />
     <MESSAGE value="banner" />
     <MESSAGE value="slug" />
-    <option name="LAST_COMMIT_MESSAGE" value="slug" />
+    <MESSAGE value="blog" />
+    <option name="LAST_COMMIT_MESSAGE" value="blog" />
   </component>
 </project>

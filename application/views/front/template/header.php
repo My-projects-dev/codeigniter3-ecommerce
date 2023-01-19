@@ -224,7 +224,13 @@
                                                             <span class="label"></span>
                                                         </a>
                                                     </li>
-
+                                                    <li class="">
+                                                        <p class="close-menu"></p>
+                                                        <a href="<?= base_url('categories/') ?>" class="clearfix">
+                                                            <strong>Categories</strong>
+                                                            <span class="label"></span>
+                                                        </a>
+                                                    </li>
                                                     <li class="">
                                                         <p class="close-menu"></p>
                                                         <a href="<?= base_url('about/') ?>" class="clearfix">
@@ -348,7 +354,7 @@
                                                                                                                         </ul>
                                                                                                                     <?php endif; ?>
                                                                                                                 </li>
-                                                                                                            <?php endforeach;?>
+                                                                                                            <?php endforeach; ?>
                                                                                                         </ul>
                                                                                                     </div>
                                                                                                 </div>

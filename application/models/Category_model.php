@@ -22,6 +22,12 @@ class Category_model extends CI_Model
         return $query;
     }
 
+    public function selectAll()
+    {
+        $query = $this->db->get($this->table);
+        return $query->result();;
+    }
+
     public function selectSlug($slug)
     {
         $this->db->select('id');

@@ -24,6 +24,16 @@ class Blog_model extends CI_Model {
         return $query->result();
     }
 
+    public function selectActiveLimit($limit){
+
+        $this->db->where('status', 1);
+        $this->db->limit($limit);
+        $this->db->order_by('created_at', 'DESC');
+        $query = $this->db->get($this->table);
+
+        return $query->result();
+    }
+
     public function selectDataById($id){
         $this->db->where('id',$id);
         $query = $this->db->get($this->table);

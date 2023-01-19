@@ -8,11 +8,12 @@ class Home extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('Settings_model', 'setting_md');
+        $this->load->model('Blog_model', 'blog_md');
         $this->load->model('Brands_model', 'brand_md');
         $this->load->model('Slider_model', 'slider_md');
         $this->load->model('Banner_model', 'banner_md');
         $this->load->model('Images_model', 'images_md');
+        $this->load->model('Settings_model', 'setting_md');
         $this->load->model('Category_model', 'category_md');
         $this->load->model('Product_categories_model', 'product_category_md');
 
@@ -83,6 +84,7 @@ class Home extends CI_Controller
         $data['categories'] = category_tree($this->category_md->select_all());
         $data['sliders'] = $this->slider_md->selectActive();
         $data['brands'] = $this->brand_md->select_all_active();
+        $data['lastBlogs'] = $this->blog_md->selectActiveLimit(2);
         $data['bestSeller'] = $bestSeller;
         $data['bestSeller2'] = $bestSeller;
         $data['hotDeals'] = $prod;

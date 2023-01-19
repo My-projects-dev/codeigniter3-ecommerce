@@ -24,7 +24,8 @@
                     <div class="article-sub-title">
 								<span class="article-date">
 									<i class="fa fa-calendar"></i>
-                                    <?= $value->created_at ?>
+
+                                    <?=substr($value->created_at, 0, 10); ?>
 								</span>
                     </div>
                     <div class="article-description"><?= substr($value->description, 0, 300) ?>...</div>
