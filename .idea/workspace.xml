@@ -4,17 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="blog">
-      <change afterPath="$PROJECT_DIR$/application/controllers/front/Categories.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/front/include/categories/categories.php" afterDir="false" />
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="category">
+      <change afterPath="$PROJECT_DIR$/application/controllers/backend/AboutUs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/backend/Faq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/migrations/024_add_about_us.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/migrations/025_add_faq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/AboutUS_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Faq_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/about/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/faq/create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/faq/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/backend/faq/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/migration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Blog_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Blog_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Category_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/include/blog/blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/blog/blogs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/media.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/media.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Slider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/About.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/About.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/front/Faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Faq.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/information/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/information/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/information/faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/information/faq.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,33 +127,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/ecommerce/application/views/backend/banner&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/xampp/htdocs/ecommerce/application/views/backend/faq",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\faq" />
+      <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\about" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\banner" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\slider" />
       <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\region" />
-      <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\Country" />
-      <recent name="C:\xampp\htdocs\ecommerce\application\views\backend\order_products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ecommerce\application\views\front\include\shopping" />
@@ -266,7 +274,7 @@
       <workItem from="1673970630352" duration="17295000" />
       <workItem from="1674041212883" duration="6464000" />
       <workItem from="1674054797432" duration="5991000" />
-      <workItem from="1674131728266" duration="7320000" />
+      <workItem from="1674131728266" duration="19146000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -450,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674047685939</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="category">
+      <created>1674141161897</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1674141161897</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tefhf" />
     <MESSAGE value="admin delete" />
     <MESSAGE value="Brands, settings, categories, pages" />
     <MESSAGE value="users" />
@@ -504,6 +518,7 @@
     <MESSAGE value="banner" />
     <MESSAGE value="slug" />
     <MESSAGE value="blog" />
-    <option name="LAST_COMMIT_MESSAGE" value="blog" />
+    <MESSAGE value="category" />
+    <option name="LAST_COMMIT_MESSAGE" value="category" />
   </component>
 </project>
