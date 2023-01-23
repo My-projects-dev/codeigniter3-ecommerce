@@ -73,6 +73,15 @@ class Images_model extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function updateMain($id, $data, $productId)
+    {
+        $this->db->where('id!=', $id);
+        $this->db->where('product_id', $productId);
+        $this->db->update($this->table, $data);
+
+        return $this->db->affected_rows();
+    }
+
     public function delete($id){
         $this->db->where('id', $id);
         $this->db->delete($this->table);

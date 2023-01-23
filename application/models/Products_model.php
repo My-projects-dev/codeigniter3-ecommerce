@@ -37,6 +37,40 @@ class Products_model extends CI_Model {
         return $query->result();
     }
 
+    public function brandImageProduct($id=array())
+    {
+        $this->db->select('p.*, i.path, b.title AS brand');
+        $this->db->from($this->table.' p');
+        $this->db->join('images i', 'p.id=i.product_id', 'left');
+        $this->db->join('brands b', 'b.id=p.brand_id', 'left');
+        $this->db->or_where_in('p.id', $id);
+        $this->db->where('i.main', 1);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function select_by_brand_id($brandİd)
+    {
+        $this->db->select('p.*, i.path, b.title AS brand');
+        $this->db->from($this->table.' p');
+        $this->db->join('images i', 'p.id=i.product_id', 'left');
+        $this->db->join('brands b', 'b.id=p.brand_id', 'left');
+        $this->db->where('b.id', $brandİd);
+        $this->db->where('i.main', 1);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    public function getBrandId($productId){
+        $this->db->select('brand_id');
+        $this->db->where('id',$productId);
+        $query = $this->db->get($this->table);
+
+        return $query->row();
+    }
+
     public function selectDataById($id){
         $this->db->where('id',$id);
         $query = $this->db->get($this->table);

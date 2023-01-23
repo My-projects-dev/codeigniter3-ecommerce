@@ -5,11 +5,11 @@
 							<div class="product-latest-item">
 								<div class="media">
 								   <div class="media-left">
-									  <a href="<?= base_url('product/'.$value->id); ?>"><img src="<?= base_url($value->path); ?>" alt="<?= $value->sales_prices?>" title="<?= $value->sales_prices?>" class="img-responsive" style="width: 90px; height: 90px;"></a>
+									  <a href="<?= base_url('product/'.$value->slug); ?>"><img src="<?= base_url($value->path); ?>" alt="<?= $value->sales_prices?>" title="<?= $value->sales_prices?>" class="img-responsive" style="width: 90px; height: 90px;"></a>
 								   </div>
 								   <div class="media-body">
 									  <div class="caption">
-										 <h4><a href="<?= base_url('product/'.$value->id); ?>"><?= $value->title?></a></h4>
+										 <h4><a href="<?= base_url('product/'.$value->slug); ?>"><?= $value->title?></a></h4>
 
 										 <div class="price">
 											<span class="price-new"><?= $value->sales_prices?></span>

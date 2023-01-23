@@ -14,7 +14,7 @@ class Migration_Add_cart extends CI_Migration
                 'unsigned' => FALSE,
                 'auto_increment' => TRUE
             ),
-            'user' => array(
+            'user_id' => array(
                 'type' => 'INT',
                 'constraint' => 7,
             ),

@@ -136,7 +136,7 @@
                                     </ul>
                                 </li>
                                 <li class="wishlist "><a href="<?= base_url('wishlist/') ?>" id="wishlist-total"
-                                                         class="top-link-wishlist" title="Wish List (2)"><span>Wish List (2)</span></a>
+                                                         class="top-link-wishlist" title="Wish List (2)"><span>Wish List <?='('.$count.')';?></span></a>
                                 </li>
                                 <li class="checkout hidden"><a href="checkout.html" class="top-link-checkout"
                                                                title="Checkout"><span>Checkout</span></a></li>
@@ -249,7 +249,7 @@
 
                                                     <li class="hidden-md color-buy">
                                                         <p class="close-menu"></p>
-                                                        <a href="#" class="clearfix">
+                                                        <a href="<?= base_url('contact/') ?>" class="clearfix">
                                                             <strong>CONTACT</strong>
 
                                                         </a>

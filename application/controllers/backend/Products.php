@@ -307,13 +307,15 @@ class Products extends CI_Controller
 
 
                     if ($main == $i) {
+
+
                         $main = 1;
-
                         $radio['main'] = $main;
-
                         $rows = $this->images_md->update2($imgId, $radio, $id);
 
                         if ($rows > 0) {
+                            $radio['main'] = 0;
+                            $this->images_md->updateMain($imgId, $radio, $id);
                             $this->session->set_flashdata('success_message', 'Məlumat uğurlu şəkildə dəyişdirildi.');
                         } else {
                             $this->session->set_flashdata('error_message', 'Uğursuz işləm');

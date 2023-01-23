@@ -62,7 +62,6 @@ $route['backend/aboutus'] = 'backend/AboutUs/index';
 $route['backend/login'] = 'backend/Login';
 $route['backend/logout'] = 'backend/Login/logout';
 
-
 $route['backend/admins'] = 'backend/Admins/index';
 $route['backend/admins/create'] = 'backend/Admins/create';
 $route['backend/admins/edit/(:num)'] = 'backend/Admins/edit/$1';
@@ -154,6 +153,8 @@ $route['logout'] = 'front/Login/logout';
 $route['register'] = 'front/Register/index';
 
 $route['wishlist'] = 'front/Wishlist/index';
+$route['wishlist/delete'] = 'front/Wishlist/delete';
+$route['wishlist/add_to_wish_list'] = 'front/Wishlist/add_to_wish_list';
 
 $route['return'] = 'front/Product_return/index';
 
@@ -172,12 +173,18 @@ $route['product/(:any)'] = 'front/Product/index/$1';
 $route['blog'] = 'front/Blogs/index';
 $route['blog/(:any)'] = 'front/Blog_detail/index/$1';
 
-$route['about'] = 'front/About/index';
 $route['faq'] = 'front/Faq/index';
+$route['about'] = 'front/About/index';
 
 $route['cart'] = 'front/Cart/index';
-$route['checkout'] = 'front/Checkout/index';
+$route['cart/add_to_cart'] = 'front/Cart/add_to_cart';
+$route['cart/delete/(:num)'] = 'front/Cart/delete/$1';
+$route['cart/update/(:num)'] = 'front/Cart/update_quantity/$1';
+$route['cart/add_cart/(:num)'] = 'front/Cart/add_cart/$1';
+
 $route['compare'] = 'front/Compare/index';
+$route['checkout'] = 'front/Checkout/index';
 
 $route['gift_voucher'] = 'front/GiftVoucher/index';
 
+$route['contact'] = 'front/Contact/index';

@@ -274,5 +274,41 @@
 	<script type="text/javascript" src="<?= base_url(); ?>assets/frontend/js/themejs/so_megamenu.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>assets/frontend/js/themejs/addtocart.js"></script>
 	<script type="text/javascript" src="<?= base_url(); ?>assets/frontend/js/themejs/cpanel.js"></script>
+
+    <!-- Add to cart
+	============================================ -->
+    <script>
+        $("#button-cart").click(function (){
+            let id = $(this).data("id");
+            let quantity = $("#quantity").val();
+            $.ajax({
+                url: "<?=base_url('cart/add_to_cart');?>",
+                data: {
+                    'id' : id,
+                    'quantity': quantity
+                },
+                type: 'post',
+                success: function (result){
+                    console.log(result);
+                }
+            });
+        });
+    </script>
+
+    <!-- Add to wishlist
+	============================================ -->
+    <script>
+        $(".button-wishlist").click(function (){
+            let id = $(this).data("id");
+            $.ajax({
+                url: "<?=base_url('wishlist/add_to_wish_list');?>",
+                data: {'id' : id},
+                type: 'post',
+                success: function (result){
+                    console.log(result);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

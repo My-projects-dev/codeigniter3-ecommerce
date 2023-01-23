@@ -9,13 +9,28 @@ class Product extends CI_Controller
         parent::__construct();
 
         $this->load->model('Product_categories_model', 'product_category_md');
+        $this->load->model('Wishlist_model', 'wishlist_md');
         $this->load->model('Category_model', 'category_md');
-        $this->load->model('Images_model', 'images_md');
         $this->load->model('Products_model', 'product_md');
+        $this->load->model('Images_model', 'images_md');
+
     }
 
     public function index($url)
     {
+        // ---------- Count Wishlist --------------------
+        if ($this->session->has_userdata('userloggedin')) {
+
+            $userId = $this->session->userdata("user")->id;
+            $data['count'] = $this->wishlist_md->wishlistCount($userId);
+
+        } elseif (!empty(get_cookie('cart_products'))) {
+            $cart_products = explode(',', get_cookie('cart_products'));
+            $data['count'] = count($cart_products);
+        } else {$data['count'] = '0';}
+        // ---------- End Count Wishlist --------------------
+
+
         $slug = $this->security->xss_clean($url);
 
         $id = $this->product_md->selectSlug($slug)->id;
@@ -44,11 +59,20 @@ class Product extends CI_Controller
         $data['related'] = $this->product_category_md->selectLastProduct($catId,4);
         // Related Product
 
+        // Upsel Product
+        $brandId = $this->product_md->getBrandId($id)->brand_id;
+        $upsell = $this->product_md->select_by_brand_id($brandId);
+        foreach ($upsell as $key => $value) {
+            $value->image = $this->images_md->selectOnePassive($value->id)->path ?? $upsell[$key]->path;
+        }
+        // Upsel Product
+
         $data['category'] = $this->category_md->selectDataByIds($subCat);
         $data['product'] = $this->product_category_md->selectById($id);
         $data['images'] = $this->images_md->selectDataByProductId($id);
 
         $data['title'] = 'Product';
+        $data['upsell'] = $upsell;
         $data['categories'] = category_tree($this->category_md->select_all());
 
         $this->load->main([
@@ -58,4 +82,6 @@ class Product extends CI_Controller
             'include/product/upsell_products',
         ], $data);
     }
+
+
 }

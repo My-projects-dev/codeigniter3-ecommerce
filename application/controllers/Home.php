@@ -15,18 +15,34 @@ class Home extends CI_Controller
         $this->load->model('Images_model', 'images_md');
         $this->load->model('Settings_model', 'setting_md');
         $this->load->model('Category_model', 'category_md');
+        $this->load->model('Wishlist_model', 'wishlist_md');
         $this->load->model('Product_categories_model', 'product_category_md');
 
     }
 
     public function index()
     {
+        // ---------- Count Wishlist --------------------
+        if ($this->session->has_userdata('userloggedin')) {
+
+            $userId = $this->session->userdata("user")->id;
+            $data['count'] = $this->wishlist_md->wishlistCount($userId);
+
+        } elseif (!empty(get_cookie('cart_products'))) {
+            $cart_products = explode(',', get_cookie('cart_products'));
+            $data['count'] = count($cart_products);
+            print_r($data['count']);
+        } else {
+            $data['count'] = '0';
+        }
+        // ---------- End Count Wishlist --------------------
+
         //Best sellers
         $bestSeller = $this->product_category_md->randomProduct(8);
         foreach ($bestSeller as $key => $value) {
             $value->image = $this->images_md->selectOnePassive($value->id)->path ?? $bestSeller[$key]->path;
         }
-        // end best sellers
+        // end bestsellers
 
 
         // last category product

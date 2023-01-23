@@ -166,6 +166,22 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('backend/aboutus'); ?>" class="nav-link">
+                        <i class="nav-icon fa fa-info-circle" aria-hidden="true"></i>
+                        <p>
+                            About Us
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('backend/faq'); ?>" class="nav-link">
+                        <i class="nav-icon fa fa-question-circle"></i>
+                        <p>
+                            Faq
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

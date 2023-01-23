@@ -2,12 +2,13 @@
 								<div class="related upsell titleLine products-list grid module ">
 									<h3 class="modtitle"><span>Upsell Products</span></h3>
 									<div class="upsell-products ">
+                                        <?php foreach ($upsell as $key=>$value):?>
 										<div class="product-layout">
 											<div class="product-item-container">
 												<div class="left-block">
 													<div class="product-image-container second_img ">
-														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/e11.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
-														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/e12.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
+														<img  src="<?=base_url($value->path)?>"  title="<?=$value->title?>" class="img-1 img-responsive" style="height: 170px;"/>
+														<img  src="<?=base_url($value->image)?>"  title="<?=$value->title?>" class="img-2 img-responsive" style="height: 170px;"/>
 													</div>
 													<!--Sale Label-->
 													<span class="label label-sale">Sale</span>
@@ -22,7 +23,7 @@
 
 												<div class="right-block">
 													<div class="caption">
-														<h4><a href="product.html">Apple Cinema 30&quot;</a></h4>
+														<h4><a href="product.html"><?=$value->title?></a></h4>
 														<div class="ratings">
 															<div class="rating-box">
 																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
@@ -34,151 +35,19 @@
 														</div>
 
 														<div class="price">
-															<span class="price-new">$74.00</span>
-															<span class="price-old">$122.00</span>
-															<span class="label label-percent">-40%</span>
+															<span class="price-new"><?=$value->sales_prices?></span>
+															<span class="price-old"><?=$value->price?></span>
+															<span class="label label-percent"><?= round(($value->sales_prices * 100 / $value->price) - 100) ?>%</span>
 														</div>
 														<div class="description item-desc hidden">
-															<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l..</p>
+															<p><?=substr($value->price, 0, 100)?>...</p>
 														</div>
 													</div>
 												</div><!-- right block -->
 
 											</div>
 										</div>
-										<div class="product-layout ">
-											<div class="product-item-container">
-												<div class="left-block">
-													<div class="product-image-container second_img ">
-														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/11.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
-														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/10.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
-
-													</div>
-													<!--Sale Label-->
-													<span class="label label-sale">Sale</span>
-
-												</div>
-												<div class="button-group">
-													<button class="wishlist btn-button" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
-													<button class="addToCart" type="button" data-toggle="tooltip" title="Add to Cart" onclick="cart.add('42', '1');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs"></span></button>
-													<button class="compare" type="button" data-toggle="tooltip" title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
-													<a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="quickview.html" data-original-title="Quickview"> <i class="fa fa-search"></i> </a>
-												</div>
-
-												<div class="right-block">
-													<div class="caption">
-														<h4><a href="product.html">Apple Cinema 30&quot;</a></h4>
-														<div class="ratings">
-															<div class="rating-box">
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-															</div>
-														</div>
-
-														<div class="price">
-															<span class="price-new">$74.00</span>
-															<span class="price-old">$122.00</span>
-															<span class="label label-percent">-40%</span>
-														</div>
-														<div class="description item-desc hidden">
-															<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l..</p>
-														</div>
-													</div>
-												</div><!-- right block -->
-
-											</div>
-										</div>
-										<div class="product-layout ">
-											<div class="product-item-container">
-												<div class="left-block">
-													<div class="product-image-container second_img ">
-														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/35.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
-														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/34.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
-													</div>
-													<!--Sale Label-->
-													<span class="label label-sale">Sale</span>
-												</div>
-												<div class="button-group">
-													<button class="wishlist btn-button" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
-													<button class="addToCart" type="button" data-toggle="tooltip" title="Add to Cart" onclick="cart.add('42', '1');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs"></span></button>
-													<button class="compare" type="button" data-toggle="tooltip" title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
-													<a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="quickview.html" data-original-title="Quickview"> <i class="fa fa-search"></i> </a>
-												</div>
-
-												<div class="right-block">
-													<div class="caption">
-														<h4><a href="product.html">Apple Cinema 30&quot;</a></h4>
-														<div class="ratings">
-															<div class="rating-box">
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-															</div>
-														</div>
-
-														<div class="price">
-															<span class="price-new">$74.00</span>
-															<span class="price-old">$122.00</span>
-															<span class="label label-percent">-40%</span>
-														</div>
-														<div class="description item-desc hidden">
-															<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l..</p>
-														</div>
-													</div>
-												</div><!-- right block -->
-
-											</div>
-										</div>
-										<div class="product-layout ">
-											<div class="product-item-container">
-												<div class="left-block">
-													<div class="product-image-container second_img ">
-														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/14.jpg"  title="Apple Cinema 30&quot;" class="img-1 img-responsive" />
-														<img  src="<?=base_url()?>assets/frontend/image/demo/shop/product/15.jpg"  title="Apple Cinema 30&quot;" class="img-2 img-responsive" />
-													</div>
-													<!--Sale Label-->
-													<span class="label label-sale">Sale</span>
-
-												</div>
-
-												<div class="button-group">
-													<button class="wishlist btn-button" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
-													<button class="addToCart" type="button" data-toggle="tooltip" title="Add to Cart" onclick="cart.add('42', '1');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs"></span></button>
-													<button class="compare" type="button" data-toggle="tooltip" title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
-													<a class="quickview iframe-link visible-lg btn-button" data-toggle="tooltip" title="" data-fancybox-type="iframe" href="quickview.html" data-original-title="Quickview"> <i class="fa fa-search"></i> </a>
-												</div>
-												<div class="right-block">
-													<div class="caption">
-														<h4><a href="product.html">Apple Cinema 30&quot;</a></h4>
-														<div class="ratings">
-															<div class="rating-box">
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-															</div>
-														</div>
-
-														<div class="price">
-															<span class="price-new">$74.00</span>
-															<span class="price-old">$122.00</span>
-															<span class="label label-percent">-40%</span>
-														</div>
-														<div class="description item-desc hidden">
-															<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l..</p>
-														</div>
-													</div>
-
-												</div><!-- right block -->
-
-											</div>
-										</div>
+                                        <?php endforeach;?>
 									</div>
 								</div>
 							</div>

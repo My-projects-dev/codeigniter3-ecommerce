@@ -117,20 +117,21 @@
 												<div class="input-group quantity-control" unselectable="on" style="-webkit-user-select: none;">
 													<label>Qty</label>
 													<input class="form-control" type="text" name="quantity"
-													value="1">
+													value="1" id="quantity">
 													<input type="hidden" name="product_id" value="50">
 													<span class="input-group-addon product_quantity_down">−</span>
 													<span class="input-group-addon product_quantity_up">+</span>
 												</div>
 											</div>
 											<div class="cart">
-												<input type="button" data-toggle="tooltip" title="" value="Add to Cart" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" onclick="cart.add('42', '1');" data-original-title="Add to Cart">
+												<input type="button" data-toggle="tooltip" title=""  onclick="cart.add('42');" value="Add to Cart" data-loading-text="Loading..." id="button-cart" data-id="<?=$product->id?>" class="btn btn-mega btn-lg"  data-original-title="Add to Cart">
 											</div>
 											<div class="add-to-links wish_comp">
 												<ul class="blank list-inline">
 													<li class="wishlist">
-														<a class="icon" data-toggle="tooltip" title=""
-														onclick="wishlist.add('50');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i>
+														<a class="icon button-wishlist" data-id="<?=$product->id?>" data-toggle="tooltip" title=""
+                                                           onclick="wishlist.add('42');"
+														  data-original-title="Add to Wish List"><i class="fa fa-heart" <?php ?>style="color:red"></i>
 														</a>
 													</li>
 													<li class="compare">

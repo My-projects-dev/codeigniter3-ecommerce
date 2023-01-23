@@ -9,6 +9,7 @@ class Category_product extends CI_Controller
         parent::__construct();
 
         $this->load->model('Product_categories_model', 'product_cat_md');
+        $this->load->model('Wishlist_model', 'wishlist_md');
         $this->load->model('Products_model', 'product_md');
         $this->load->model('Category_model', 'categories_md');
         $this->load->model('Images_model', 'images_md');
@@ -16,6 +17,19 @@ class Category_product extends CI_Controller
 
     public function index($url)
     {
+        // ---------- Count Wishlist --------------------
+        if ($this->session->has_userdata('userloggedin')) {
+
+            $userId = $this->session->userdata("user")->id;
+            $data['count'] = $this->wishlist_md->wishlistCount($userId);
+
+        } elseif (!empty(get_cookie('cart_products'))) {
+            $cart_products = explode(',', get_cookie('cart_products'));
+            $data['count'] = count($cart_products);
+        } else {$data['count'] = '0';}
+        // ---------- End Count Wishlist --------------------
+
+
         $slug = $this->security->xss_clean($url);
 
         $id = $this->categories_md->selectSlug($slug)->id;
