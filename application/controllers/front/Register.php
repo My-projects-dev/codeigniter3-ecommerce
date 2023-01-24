@@ -24,8 +24,8 @@ class Register extends CI_Controller
             $userId = $this->session->userdata("user")->id;
             $data['count'] = $this->wishlist_md->wishlistCount($userId);
 
-        } elseif (!empty(get_cookie('cart_products'))) {
-            $cart_products = explode(',', get_cookie('cart_products'));
+        } elseif (!empty(get_cookie('wishlist_products'))) {
+            $cart_products = explode(',', get_cookie('wishlist_products'));
             $data['count'] = count($cart_products);
         } else {$data['count'] = '0';}
         // ---------- End Count Wishlist --------------------

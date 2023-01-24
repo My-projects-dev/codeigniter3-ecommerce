@@ -24,12 +24,24 @@ class Product extends CI_Controller
             $userId = $this->session->userdata("user")->id;
             $data['count'] = $this->wishlist_md->wishlistCount($userId);
 
-        } elseif (!empty(get_cookie('cart_products'))) {
-            $cart_products = explode(',', get_cookie('cart_products'));
+        } elseif (!empty(get_cookie('wishlist_products'))) {
+            $cart_products = explode(',', get_cookie('wishlist_products'));
             $data['count'] = count($cart_products);
         } else {$data['count'] = '0';}
         // ---------- End Count Wishlist --------------------
+        // ---------- Has wishlist ----------------------------------
+        if ($this->session->has_userdata('userloggedin')) {
 
+            $userId = $this->session->userdata("user")->id;
+
+            $wishlist = $this->wishlist_md->selectProductId($userId);
+            $data['wishlist_product_id'] = array_column($wishlist, 'product_id');
+
+        } elseif (!empty(get_cookie('wishlist_products'))) {
+            $data['wishlist-product_id'] = explode(',', get_cookie('wishlist_products'));
+            print_r($data['wishlist-product_id']);
+        }
+        // ---------- End WishList ----------------------------------
 
         $slug = $this->security->xss_clean($url);
 

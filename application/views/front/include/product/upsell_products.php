@@ -23,7 +23,7 @@
 
 												<div class="right-block">
 													<div class="caption">
-														<h4><a href="product.html"><?=$value->title?></a></h4>
+														<h4><a href="<?=base_url('product/'.$value->slug)?>"><?=$value->title?></a></h4>
 														<div class="ratings">
 															<div class="rating-box">
 																<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
