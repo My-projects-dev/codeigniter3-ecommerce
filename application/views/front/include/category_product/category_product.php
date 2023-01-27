@@ -110,7 +110,7 @@
 
                         </div><!-- right block -->
                         <div class="button-group">
-                            <button class="wishlist btn-button" type="button" data-toggle="tooltip" title=""
+                            <button class="wishlist btn-button button-wishlist" type="button"  data-id="<?=$value->id?>" data-toggle="tooltip" title=""
                                     onclick="wishlist.add('42');" data-original-title="Add to Wish List"><i
                                         class="fa fa-heart"></i></button>
                             <button class="addToCart" type="button" data-toggle="tooltip" title=""

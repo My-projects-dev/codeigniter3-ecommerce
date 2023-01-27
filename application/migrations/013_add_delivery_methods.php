@@ -21,7 +21,7 @@ class Migration_Add_delivery_methods extends CI_Migration
             ),
             'order' => array(
                 'type' => 'INT',
-                'constraint' => 255,
+                'constraint' => 7,
             ),
             'status' => array(
                 'type' => 'INT',

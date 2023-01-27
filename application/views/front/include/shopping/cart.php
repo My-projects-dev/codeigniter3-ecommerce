@@ -37,22 +37,20 @@
                                     <small>Reward Points: 1000</small></td>
                                 <td class="text-left"><?= $value->brand ?></td>
                                 <td class="text-left" width="200px">
-                                    <form action="<?= base_url('front/cart/update_quantity/' . $value->id) ?>" method="post">
                                     <div class="input-group btn-block quantity">
-
-
-                                            <input type="text" name="quantity" value="<?= $value->amount ?>" size="1" class="form-control"/>
-                                            <?php echo form_error('quantity', '<span class = text-danger >', '</span>'); ?>
-                                            <span class="input-group-btn">
-
-                        <button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary" $><i
+                                        <input type="text" name="quantity" value="<?= $value->amount ?>" size="1"
+                                               id="checkout-quantity"
+                                               class="form-control"/>
+                                        <span class="input-group-btn">
+                        <button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary" data-id="<?=$value->id?>"
+                                id="update-quantity"><i
                                     class="fa fa-refresh"></i></button>
-
                                         <a href="<?= base_url('front/cart/delete/' . $value->id) ?>" type="button"
                                            data-toggle="tooltip"
                                            title="Remove" class="btn btn-danger" onClick=""><i
                                                     class="fa fa-times-circle"></i></a>
-                                        </span></div></form>
+                                        </span>
+                                    </div>
                                 </td>
                                 <td class="text-right"><?= $value->sales_prices ?></td>
                                 <td class="text-right"><?= $value->sales_prices * $value->amount ?></td>
@@ -64,21 +62,21 @@
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-8">
                         <table class="table table-bordered">
-<!--                            <tr>-->
-<!--                                <td class="text-right"><strong>Sub-Total:</strong></td>-->
-<!--                                <td class="text-right">$940.00</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td class="text-right"><strong>Eco Tax (-2.00):</strong></td>-->
-<!--                                <td class="text-right">$4.00</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td class="text-right"><strong>VAT (20%):</strong></td>-->
-<!--                                <td class="text-right">$188.00</td>-->
-<!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <td class="text-right"><strong>Sub-Total:</strong></td>-->
+                            <!--                                <td class="text-right">$940.00</td>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <td class="text-right"><strong>Eco Tax (-2.00):</strong></td>-->
+                            <!--                                <td class="text-right">$4.00</td>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <td class="text-right"><strong>VAT (20%):</strong></td>-->
+                            <!--                                <td class="text-right">$188.00</td>-->
+                            <!--                            </tr>-->
                             <tr>
                                 <td class="text-right"><strong>Total:</strong></td>
-                                <td class="text-right"><?=$total?></td>
+                                <td class="text-right"><?= $total ?></td>
                             </tr>
                         </table>
                     </div>

@@ -51,7 +51,7 @@
                                        title="" data-toggle="tooltip"
                                        onclick="cart.add('48');"
                                        type="button" data-original-title="Add to Cart"
-                                       href="<?= base_url('front/cart/add_cart/' . $value->id) ?>"><i
+                                       href="<?= base_url('front/cart/add_cart_from_wishlist/' . $value->id) ?>"><i
                                                 class="fa fa-shopping-cart"></i>
                                     </a>
                                     <a class="btn btn-danger" title="" data-toggle="tooltip"

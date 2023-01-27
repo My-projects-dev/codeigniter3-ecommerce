@@ -17,7 +17,6 @@ class Users extends CI_Controller
     public function index()
     {
         $data['title'] = 'Users List';
-
         $data['lists'] = $this->user_md->select_all();
 
         $this->load->admin('users/index', $data);

@@ -48,7 +48,9 @@ class Wishlist extends CI_Controller
         } elseif (!empty(get_cookie('wishlist_products'))) {
             $cart_products = explode(',', get_cookie('wishlist_products'));
             $data['count'] = count($cart_products);
-        } else {$data['count'] = '0';}
+        } else {
+            $data['count'] = '0';
+        }
         // ---------- End Count Wishlist --------------------
 
 
@@ -98,7 +100,33 @@ class Wishlist extends CI_Controller
     }
 
 
-        public function delete($productId)
+//    public function hasWishlist($id)
+//    {
+//        if ($this->input->is_ajax_request()) {
+//            $id = $this->security->xss_clean($this->input->post('id'));
+//
+//            if ($this->session->has_userdata('userloggedin')) {
+//
+//                $user = $this->session->userdata("user");
+//                $hasProduct = $this->wishlist_md->hasProduct($user->id, $id);
+//
+//                if (empty($hasProduct)) {
+//                    echo json_encode('false');
+//                } else {
+//                    echo json_encode('true');
+//                }
+//
+//            } elseif (!empty(get_cookie('wishlist_products'))) {
+//                $wishlist_products = explode(',', get_cookie('wishlist_products'));
+//                if (in_array($wishlist_products, $id)){
+//                    echo json_encode('true');
+//                } else {echo json_encode('false');}
+//            } else { echo json_encode('false');}
+//        }
+//    }
+
+
+    public function delete($productId)
     {
         $productId = $this->security->xss_clean($productId);
 

@@ -35,11 +35,10 @@ class Product extends CI_Controller
             $userId = $this->session->userdata("user")->id;
 
             $wishlist = $this->wishlist_md->selectProductId($userId);
-            $data['wishlist_product_id'] = array_column($wishlist, 'product_id');
+            $data['wishID'] = array_column($wishlist, 'product_id');
 
         } elseif (!empty(get_cookie('wishlist_products'))) {
-            $data['wishlist-product_id'] = explode(',', get_cookie('wishlist_products'));
-            print_r($data['wishlist-product_id']);
+            $data['wishID'] = explode(',', get_cookie('wishlist_products'));
         }
         // ---------- End WishList ----------------------------------
 

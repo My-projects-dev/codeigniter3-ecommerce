@@ -4,31 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="cart, wishlist">
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="wishlist count">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/About.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/About.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Blog_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Blog_detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Blogs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/backend/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/backend/Users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/front/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Categories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Category_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Category_product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/front/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Compare.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Compare.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Faq.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/GiftVoucher.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/GiftVoucher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/My_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/My_account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Order_history.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Order_history.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Order_information.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Order_information.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/front/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Product_return.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Product_return.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/front/Wishlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Wishlist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/012_add_payment_methods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/012_add_payment_methods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/migrations/013_add_delivery_methods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/migrations/013_add_delivery_methods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Cart_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Cart_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Order_products_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Order_products_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Region_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Region_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Users_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Users_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/category_product/category_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/category_product/category_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/home/first_three_category_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/home/first_three_category_products.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/front/include/product/product_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/product/product_detail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/front/include/product/upsell_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/product/upsell_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/shopping/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/shopping/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/shopping/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/shopping/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/include/shopping/wishlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/shopping/wishlist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/front/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/footer.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +285,11 @@
       <workItem from="1674464828610" duration="10823000" />
       <workItem from="1674479008430" duration="251000" />
       <workItem from="1674486173764" duration="8678000" />
-      <workItem from="1674555986284" duration="2351000" />
+      <workItem from="1674555986284" duration="11674000" />
+      <workItem from="1674630877212" duration="11640000" />
+      <workItem from="1674657044713" duration="9358000" />
+      <workItem from="1674738103072" duration="35505000" />
+      <workItem from="1674808611617" duration="612000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -493,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674488511533</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="wishlist count">
+      <created>1674558707867</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1674558707867</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Brands, settings, categories, pages" />
     <MESSAGE value="users" />
     <MESSAGE value="Payment_methods" />
     <MESSAGE value="orders" />
@@ -547,6 +554,7 @@
     <MESSAGE value="blog" />
     <MESSAGE value="category" />
     <MESSAGE value="cart, wishlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart, wishlist" />
+    <MESSAGE value="wishlist count" />
+    <option name="LAST_COMMIT_MESSAGE" value="wishlist count" />
   </component>
 </project>

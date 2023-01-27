@@ -3,7 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Cart extends CI_Controller
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -17,7 +16,6 @@ class Cart extends CI_Controller
     public function index()
     {
         $data['cart'] = [];
-        $product = [];
 
         if ($this->session->has_userdata('userloggedin')) {
 
@@ -42,6 +40,8 @@ class Cart extends CI_Controller
 
             $data['total'] = array_sum($total_amount);
         }
+
+
         // ---------- Count Wishlist --------------------
         if ($this->session->has_userdata('userloggedin')) {
 
@@ -56,6 +56,7 @@ class Cart extends CI_Controller
         }
         // ---------- End Count Wishlist --------------------
 
+
         $data['title'] = 'Cart';
         $data['categories'] = category_tree($this->category_md->select_all());
 
@@ -63,54 +64,58 @@ class Cart extends CI_Controller
     }
 
 
-    public function update_quantity($id)
+    public function update_quantity()
     {
-        if ($this->input->post()) {
-            $id = $this->security->xss_clean($id);
-            $userId = $this->session->userdata("user")->id;
+        $page = $_SERVER['HTTP_REFERER'];
 
-            $this->load->library('form_validation');
+         if ($this->input->is_ajax_request()) {
+            $id = $this->security->xss_clean($this->input->post('id'));
+            $quantity = $this->security->xss_clean($this->input->post('quantity'));
 
-            $this->form_validation->set_rules('quantity', 'Quantity', 'trim|required|numeric|integer|greater_than[0]');
-
-            $this->form_validation->set_message('required', 'Boş buraxıla bilməz');
-            $this->form_validation->set_message('integer', 'Yalnızca tam ədəd girilə bilər');
-            $this->form_validation->set_message('greater_than', 'Sıfırdan böyük ədəd girin');
-
-            if ($this->form_validation->run()) {
-                $quantity = $this->security->xss_clean($this->input->post('quantity'));
+            $product = $this->product_md->selectDataById($id);
+            if (!empty($product)) {
                 if ($this->session->has_userdata('userloggedin')) {
-                    $request_data = ['quantity' => $quantity];
-                    $affected_rows = $this->cart_md->update_quantity($userId, $id, $request_data);
+                    $userId = $this->session->userdata("user")->id;
+                    $hasProduct = $this->cart_md->hasProduct($userId, $id);
 
-                    if ($affected_rows > 0) {
-                        //$this->session->set_flashdata('success_message', 'Məlumat uğurla dəyişdi');
-                        redirect('cart');
+                    if (!empty($hasProduct)) {
+                        $data = ['quantity' => $quantity];
+
+                        $this->cart_md->update_quantity($userId, $id, $data);
                     } else {
-                        $this->session->set_flashdata('error_message', 'Dəyişmə uğursuz oldu');
-                        redirect('cart');
+                        $this->session->set_flashdata('error_message', 'Məhsul tapılmadı');
+                        header("Location: $page");
                     }
                 } elseif (!empty(get_cookie('cart_products')) and !empty(get_cookie('cart_quantities'))) {
 
                     $cart_products = explode(',', get_cookie('cart_products'));
                     $cart_quantities = explode(',', get_cookie('cart_quantities'));
+
                     $combine = array_combine($cart_products, $cart_quantities);
+
                     if (array_key_exists($id, $combine)) {
                         $combine[$id] = $quantity;
                         $cart_products = array_keys($combine);
                         $cart_quantities = array_values($combine);
-                        $cart_product = implode(',', $cart_products);
-                        $cart_quantity = implode(',', $cart_quantities);
-                        set_cookie('cart_products', $cart_product, 86400);
-                        set_cookie('cart_quantities', $cart_quantity, 86400);
+                    } else {
+                        $this->session->set_flashdata('error_message', 'Məhsul tapılmadı');
+                        header("Location: $page");
                     }
+
+                    $cart_product = implode(',', $cart_products);
+                    $cart_quantity = implode(',', $cart_quantities);
+
+                    set_cookie('cart_products', $cart_product, 86400);
+                    set_cookie('cart_quantities', $cart_quantity, 86400);
                 }
+                echo json_encode(['quantities' => get_cookie('cart_quantities')]);
             }
         }
-        redirect('cart');
+        header("Location: $page");
     }
 
-    public function add_cart($productId)
+
+    public function add_cart_from_wishlist($productId)
     {
         $productId = $this->security->xss_clean($productId);
         $product = $this->product_md->selectDataById($productId);
@@ -128,6 +133,7 @@ class Cart extends CI_Controller
 
                     $insertId = $this->cart_md->insert($data);
                     if ($insertId > 0) {
+                        $this->wishlist_md->delete($productId, $userId);
                         $this->session->set_flashdata('success_message', 'Karta əlavə edildi');
                     } else {
                         $this->session->set_flashdata('error_message', 'Karta əlavə etmək mümkün olmadı');
@@ -159,6 +165,13 @@ class Cart extends CI_Controller
                 $cart_quantity = implode(',', $cart_quantities);
                 set_cookie('cart_products', $cart_product, 86400);
                 set_cookie('cart_quantities', $cart_quantity, 86400);
+
+                $wishlist_products = explode(',', get_cookie('wishlist_products'));
+                if (in_array($productId, $wishlist_products)) {
+                    $wishlist_products = array_diff($wishlist_products, [$productId]);
+                    $wishlist_product = implode(',', $wishlist_products);
+                    set_cookie('wishlist_products', $wishlist_product, 86400);
+                }
             }
             redirect('cart');
         } else {
@@ -168,8 +181,7 @@ class Cart extends CI_Controller
     }
 
 
-    public
-    function add_to_cart()
+    public function add_to_cart()
     {
         if ($this->input->is_ajax_request()) {
             $id = $this->security->xss_clean($this->input->post('id'));
@@ -230,9 +242,9 @@ class Cart extends CI_Controller
         }
     }
 
-    public
-    function delete($productId)
+    public function delete($productId)
     {
+        $page = $_SERVER['HTTP_REFERER'];
         $productId = $this->security->xss_clean($productId);
 
         if ($this->session->has_userdata('userloggedin')) {
@@ -261,6 +273,6 @@ class Cart extends CI_Controller
                 set_cookie('cart_quantities', $cart_quantity, 86400);
             }
         }
-        redirect('cart');
+        header("Location: $page");
     }
 }

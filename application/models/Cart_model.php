@@ -7,12 +7,19 @@ class Cart_model extends CI_Model
 
     public function insert($data)
     {
-
         $this->db->insert($this->table, $data);
-
         return $this->db->insert_id();
     }
 
+
+    public function countCart($userId)
+    {
+        $this->db->select('id');
+        $this->db->from($this->table);
+        $this->db->where('user_id', $userId);
+        $count = $this->db->count_all_results();
+        return $count;
+    }
 
     public function selectProductId($userId)
     {
@@ -74,6 +81,15 @@ class Cart_model extends CI_Model
     {
         $this->db->where('user_id', $userId);
         $this->db->where('product_id', $productId);
+        $this->db->delete($this->table);
+
+        return $this->db->affected_rows();
+    }
+
+
+    public function delete_user_products($userId)
+    {
+        $this->db->where('user_id', $userId);
         $this->db->delete($this->table);
 
         return $this->db->affected_rows();

@@ -168,12 +168,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="button-group">
-                                                            <button class="wishlist btn-button" type="button"
+                                                            <button class="wishlist btn-button button-wishlist" type="button"
+                                                                    data-id="<?=$valuee->id?>"
                                                                     data-toggle="tooltip" title="Add to Wish List"
                                                                     onclick="wishlist.add('42');"><i
                                                                         class="fa fa-heart"></i>
                                                             </button>
-                                                            <button class="addToCart" type="button"
+                                                            <button class="addToCart button-cart" data-id="<?=$valuee->id?>" type="button"
                                                                     data-toggle="tooltip"
                                                                     title="Add to Cart" onclick="cart.add('42', '1');">
                                                                 <i
@@ -254,12 +255,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="button-group">
-                                                            <button class="wishlist btn-button" type="button"
+                                                            <button class="wishlist btn-button button-wishlist" type="button"
+                                                                    data-id="<?=$valuee->id?>"
                                                                     data-toggle="tooltip" title="Add to Wish List"
                                                                     onclick="wishlist.add('42');"><i
                                                                         class="fa fa-heart"></i>
                                                             </button>
-                                                            <button class="addToCart" type="button"
+                                                            <button class="addToCart button-cart" data-id="<?=$valuee->id?>" type="button"
                                                                     data-toggle="tooltip"
                                                                     title="Add to Cart" onclick="cart.add('42', '1');">
                                                                 <i
@@ -340,12 +342,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="button-group">
-                                                            <button class="wishlist btn-button" type="button"
+                                                            <button class="wishlist btn-button button-wishlist" type="button"
+                                                                    data-id="<?=$valuee->id?>"
                                                                     data-toggle="tooltip" title="Add to Wish List"
                                                                     onclick="wishlist.add('42');"><i
                                                                         class="fa fa-heart"></i>
                                                             </button>
-                                                            <button class="addToCart" type="button"
+                                                            <button class="addToCart button-cart" data-id="<?=$valuee->id?>" type="button"
                                                                     data-toggle="tooltip"
                                                                     title="Add to Cart" onclick="cart.add('42', '1');">
                                                                 <i
@@ -426,12 +429,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="button-group">
-                                                            <button class="wishlist btn-button" type="button"
+                                                            <button class="wishlist btn-button button-wishlist" type="button"
+                                                                    data-id="<?=$valuee->id?>"
                                                                     data-toggle="tooltip" title="Add to Wish List"
                                                                     onclick="wishlist.add('42');"><i
                                                                         class="fa fa-heart"></i>
                                                             </button>
-                                                            <button class="addToCart" type="button"
+                                                            <button class="addToCart button-cart" data-id="<?=$valuee->id?>" type="button"
                                                                     data-toggle="tooltip"
                                                                     title="Add to Cart" onclick="cart.add('42', '1');">
                                                                 <i
@@ -512,12 +516,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="button-group">
-                                                            <button class="wishlist btn-button" type="button"
+                                                            <button class="wishlist btn-button button-wishlist" type="button"
+                                                                    data-id="<?=$valuee->id?>"
                                                                     data-toggle="tooltip" title="Add to Wish List"
                                                                     onclick="wishlist.add('42');"><i
                                                                         class="fa fa-heart"></i>
                                                             </button>
-                                                            <button class="addToCart" type="button"
+                                                            <button class="addToCart button-cart" data-id="<?=$valuee->id?>" type="button"
                                                                     data-toggle="tooltip"
                                                                     title="Add to Cart" onclick="cart.add('42', '1');">
                                                                 <i

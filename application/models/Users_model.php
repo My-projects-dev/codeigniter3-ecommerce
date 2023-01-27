@@ -7,9 +7,7 @@ class Users_model extends CI_Model
 
     public function insert($data)
     {
-
         $this->db->insert($this->table, $data);
-
         return $this->db->insert_id();
     }
 
@@ -17,7 +15,6 @@ class Users_model extends CI_Model
     {
         $this->db->order_by("id", "desc");
         $query = $this->db->get($this->table);
-
         return $query->result();
     }
 
@@ -25,7 +22,13 @@ class Users_model extends CI_Model
     {
         $this->db->where('id', $id);
         $query = $this->db->get($this->table);
+        return $query->row();
+    }
 
+    public function hasEmail($email)
+    {
+        $this->db->where('email', $email);
+        $query = $this->db->get($this->table);
         return $query->row();
     }
 

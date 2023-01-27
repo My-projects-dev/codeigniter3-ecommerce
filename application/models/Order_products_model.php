@@ -13,6 +13,13 @@ class Order_products_model extends CI_Model
         return $this->db->insert_id();
     }
 
+    public function insertArray($data)
+    {
+        $this->db->insert_batch($this->table, $data);
+        return $this->db->affected_rows();
+    }
+
+
     public function select_all()
     {
         $this->db->select('o.*,  p.title AS title, op.*');

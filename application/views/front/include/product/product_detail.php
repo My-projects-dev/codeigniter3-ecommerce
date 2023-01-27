@@ -124,15 +124,16 @@
 												</div>
 											</div>
 											<div class="cart">
-												<input type="button" data-toggle="tooltip" title=""  onclick="cart.add('42');" value="Add to Cart" data-loading-text="Loading..." id="button-cart" data-id="<?=$product->id?>" class="btn btn-mega btn-lg"  data-original-title="Add to Cart">
+												<input type="button" data-toggle="tooltip" title=""  onclick="cart.add('42');" value="Add to Cart" data-loading-text="Loading..." data-id="<?=$product->id?>" class="btn btn-mega btn-lg button-cart"  data-original-title="Add to Cart">
 											</div>
-                                            <?php (in_array($product->id, $wishlist_product_id)==true) ? $hasWishlist=true : $hasWishlist=false ?>
+<!--                                            --><?php //=($hasWishlist==true) ? "style=color:red" : ''?>
+<!--                                            --><?php //(in_array($product->id, $wishID)==true) ? $hasWishlist=true : $hasWishlist=false ?>
 											<div class="add-to-links wish_comp">
 												<ul class="blank list-inline">
 													<li class="wishlist">
-														<a class="icon button-wishlist" data-id="<?=$product->id?>" data-toggle="tooltip" title=""
+														<a class="icon button-wishlist" data-id="<?=$product->id?>"  data-toggle="tooltip" title=""
                                                            onclick="wishlist.add('42');"
-														  data-original-title="Add to Wish List"><i class="fa fa-heart" <?=($hasWishlist==true) ? "style=color:red" : ''?>></i>
+														  data-original-title="Add to Wish List"><i class="fa fa-heart" ></i>
 														</a>
 													</li>
 													<li class="compare">
