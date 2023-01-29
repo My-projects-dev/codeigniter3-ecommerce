@@ -90,6 +90,7 @@ class Checkout extends CI_Controller
 
     public function insert()
     {
+
         if ($this->session->has_userdata('userloggedin')) {
             $userId = $this->session->userdata("user")->id;
             $countCart = $this->cart_md->countCart($userId);
@@ -142,7 +143,14 @@ class Checkout extends CI_Controller
 
                 $affected_rows = $this->order_product_md->insertArray($order_product);
                 if ($affected_rows > 0) {
-                    $this->cart_md->delete_user_products($userId);
+                    //$this->cart_md->delete_user_products($userId);
+                    if ($payment_method==2){
+
+                        $this->load->library('Payriff');
+                        $payriff = $this->payriff->create_order($data);
+                        redirect($payriff['payment_url']);
+                    }
+
                     $this->session->set_flashdata('success_message', 'Sifariş qeydə alındı');
                 } else {
                     $this->session->set_flashdata('error_message', 'Sifariş qeydə alına bilmədi');
@@ -196,6 +204,7 @@ class Checkout extends CI_Controller
                                 'address1' => $this->security->xss_clean($this->input->post('address_1')),
                                 'address2' => $this->security->xss_clean($this->input->post('address_2')),
                                 'city' => $this->security->xss_clean($this->input->post('city')),
+                                'post_code' => $this->security->xss_clean($this->input->post('postcode')),
                                 'company' => $this->security->xss_clean($this->input->post('company')),
                                 'country_id' => $country_id,
                                 'region_id' => $region_id,

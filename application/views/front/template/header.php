@@ -120,6 +120,10 @@
                                                 class="fa fa-angle-down"></span></a>
                                     <ul class="dropdown-menu ">
                                         <?php if ($this->session->has_userdata('userloggedin')) { ?>
+                                            <li><a href="<?= base_url('my_account/'); ?>">
+                                                    <i class=""></i>
+                                                    My Account</a>
+                                            </li>
                                             <li><a href="<?= base_url('logout/'); ?>">
                                                     <i class="fas fa-sign-out-alt"></i>
                                                     Logout</a>
@@ -136,7 +140,8 @@
                                     </ul>
                                 </li>
                                 <li class="wishlist "><a href="<?= base_url('wishlist/') ?>" id="wishlist-total"
-                                                         class="top-link-wishlist" title="Wish List (2)"><span>Wish List <?='('.$count.')';?></span></a>
+                                                         class="top-link-wishlist"
+                                                         title="Wish List (2)"><span>Wish List <?= '(' . $count . ')'; ?></span></a>
                                 </li>
                                 <li class="checkout hidden"><a href="checkout.html" class="top-link-checkout"
                                                                title="Checkout"><span>Checkout</span></a></li>

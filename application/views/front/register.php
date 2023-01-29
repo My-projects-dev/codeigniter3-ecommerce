@@ -110,7 +110,7 @@
                     <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-country">Country</label>
                         <div class="col-sm-10">
-                            <select name="country_id" id="input-country" class="form-control">
+                            <select name="country_id" id="input-payment-country" class="form-control">
                                 <option value=""> --- Please Select ---</option>
                                 <?php foreach ($country as $key => $value): ?>
                                     <option value="<?=$value->id; ?>"><?=$value->country_name; ?></option>
@@ -121,11 +121,9 @@
                     <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-zone">Region / State</label>
                         <div class="col-sm-10">
-                            <select name="zone_id" id="input-zone" class="form-control">
+                            <select name="zone_id" id="input-payment-zone" class="form-control">
                                 <option value=""> --- Please Select ---</option>
-                                <?php foreach ($region as $key => $value): ?>
                                     <option value="<?=$value->id; ?>"><?=$value->region_name; ?></option>
-                                <?php endforeach; ?>
                             </select>
                         </div>
                     </div>

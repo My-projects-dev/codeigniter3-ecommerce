@@ -154,7 +154,6 @@ $route['register'] = 'front/Register/index';
 
 $route['wishlist'] = 'front/Wishlist/index';
 $route['wishlist/delete'] = 'front/Wishlist/delete';
-//$route['wishlist/has_wishlist'] = 'front/Wishlist/hasWishlist';
 $route['wishlist/add_to_wish_list'] = 'front/Wishlist/add_to_wish_list';
 
 $route['return'] = 'front/Product_return/index';
@@ -183,8 +182,6 @@ $route['cart/delete/(:num)'] = 'front/Cart/delete/$1';
 $route['cart/add_cart/(:num)'] = 'front/Cart/add_cart/$1';
 $route['cart/update/'] = 'front/Cart/update_quantity/$1';
 $route['cart/update'] = 'front/Cart/update_quantity';
-
-
 
 $route['compare'] = 'front/Compare/index';
 $route['checkout'] = 'front/Checkout/index';

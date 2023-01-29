@@ -18,6 +18,9 @@ class Register extends CI_Controller
 
     public function index()
     {
+        no_user_logged();
+
+
         // ---------- Count Wishlist --------------------
         if ($this->session->has_userdata('userloggedin')) {
 
@@ -73,11 +76,13 @@ class Register extends CI_Controller
                         'address1' => $this->security->xss_clean($this->input->post('address_1')),
                         'address2' => $this->security->xss_clean($this->input->post('address_2')),
                         'city' => $this->security->xss_clean($this->input->post('city')),
+                        'post_code' => $this->security->xss_clean($this->input->post('postcode')),
                         'company' => $this->security->xss_clean($this->input->post('company')),
                         'country_id' => $country_id,
                         'region_id' => $region_id,
                         'password' => md5($this->input->post('confirm')),
-                        'newsletter' => ($this->input->post('newsletter') == 1) ? 1 : 0
+                        'newsletter' => ($this->input->post('newsletter') == 1) ? 1 : 0,
+                        'status' => 1
                     ];
 
                     $insert_id = $this->users_md->insert($request_data);

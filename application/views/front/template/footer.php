@@ -441,12 +441,13 @@
             success: function (result) {
                 console.log(result);
                 let obj = JSON.parse(result);
+                $('#input-payment-zone').html("");
                 $.each(obj, function (key, value) {
                     $('#input-payment-zone')
                         .append($("<option></option>")
                             .attr("value", value.id)
                             .text(value.region_name));
-                    $(":reset");
+
                 });
             }
         });
