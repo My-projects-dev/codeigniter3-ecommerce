@@ -561,83 +561,83 @@
                                         </a>
                                         <ul class="tab-content content dropdown-menu pull-right shoppingcart-box"
                                             role="menu">
-                                            <li>
-                                                <table class="table table-striped">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td class="text-center" style="width:70px">
-                                                            <a href="product.html"> <img class="lazyload preview"
-                                                                                         data-sizes="auto"
-                                                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                                         data-src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/35.jpg"
-                                                                                         style="width:70px"
-                                                                                         alt="Filet Mign"
-                                                                                         title="Filet Mign"> </a>
-                                                        </td>
-                                                        <td class="text-left"><a class="cart_product_name"
-                                                                                 href="product.html">Filet Mign</a></td>
-                                                        <td class="text-center"> x1</td>
-                                                        <td class="text-center"> $1,202.00</td>
-                                                        <td class="text-right">
-                                                            <a href="product.html" class="fa fa-edit"></a>
-                                                        </td>
-                                                        <td class="text-right">
-                                                            <a onclick="cart.remove('2');"
-                                                               class="fa fa-times fa-delete"></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-center" style="width:70px">
-                                                            <a href="product.html"> <img class="lazyload preview"
-                                                                                         data-sizes="auto"
-                                                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                                         data-src="<?= base_url(); ?>assets/frontend/image/demo/shop/product/141.jpg"
-                                                                                         style="width:70px"
-                                                                                         alt="Canon EOS 5D"
-                                                                                         title="Canon EOS 5D"> </a>
-                                                        </td>
-                                                        <td class="text-left"><a class="cart_product_name"
-                                                                                 href="product.html">Canon EOS 5D</a>
-                                                        </td>
-                                                        <td class="text-center"> x1</td>
-                                                        <td class="text-center"> $60.00</td>
-                                                        <td class="text-right">
-                                                            <a href="product.html" class="fa fa-edit"></a>
-                                                        </td>
-                                                        <td class="text-right">
-                                                            <a onclick="cart.remove('1');"
-                                                               class="fa fa-times fa-delete"></a>
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </li>
+<!--                                            <li>-->
+<!--                                                <table class="table table-striped">-->
+<!--                                                    <tbody>-->
+<!--                                                    <tr>-->
+<!--                                                        <td class="text-center" style="width:70px">-->
+<!--                                                            <a href="product.html"> <img class="lazyload preview"-->
+<!--                                                                                         data-sizes="auto"-->
+<!--                                                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="-->
+<!--                                                                                         data-src="--><?php //= base_url(); ?><!--assets/frontend/image/demo/shop/product/35.jpg"-->
+<!--                                                                                         style="width:70px"-->
+<!--                                                                                         alt="Filet Mign"-->
+<!--                                                                                         title="Filet Mign"> </a>-->
+<!--                                                        </td>-->
+<!--                                                        <td class="text-left"><a class="cart_product_name"-->
+<!--                                                                                 href="product.html">Filet Mign</a></td>-->
+<!--                                                        <td class="text-center"> x1</td>-->
+<!--                                                        <td class="text-center"> $1,202.00</td>-->
+<!--                                                        <td class="text-right">-->
+<!--                                                            <a href="product.html" class="fa fa-edit"></a>-->
+<!--                                                        </td>-->
+<!--                                                        <td class="text-right">-->
+<!--                                                            <a onclick="cart.remove('2');"-->
+<!--                                                               class="fa fa-times fa-delete"></a>-->
+<!--                                                        </td>-->
+<!--                                                    </tr>-->
+<!--                                                    <tr>-->
+<!--                                                        <td class="text-center" style="width:70px">-->
+<!--                                                            <a href="product.html"> <img class="lazyload preview"-->
+<!--                                                                                         data-sizes="auto"-->
+<!--                                                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="-->
+<!--                                                                                         data-src="--><?php //= base_url(); ?><!--assets/frontend/image/demo/shop/product/141.jpg"-->
+<!--                                                                                         style="width:70px"-->
+<!--                                                                                         alt="Canon EOS 5D"-->
+<!--                                                                                         title="Canon EOS 5D"> </a>-->
+<!--                                                        </td>-->
+<!--                                                        <td class="text-left"><a class="cart_product_name"-->
+<!--                                                                                 href="product.html">Canon EOS 5D</a>-->
+<!--                                                        </td>-->
+<!--                                                        <td class="text-center"> x1</td>-->
+<!--                                                        <td class="text-center"> $60.00</td>-->
+<!--                                                        <td class="text-right">-->
+<!--                                                            <a href="product.html" class="fa fa-edit"></a>-->
+<!--                                                        </td>-->
+<!--                                                        <td class="text-right">-->
+<!--                                                            <a onclick="cart.remove('1');"-->
+<!--                                                               class="fa fa-times fa-delete"></a>-->
+<!--                                                        </td>-->
+<!--                                                    </tr>-->
+<!--                                                    </tbody>-->
+<!--                                                </table>-->
+<!--                                            </li>-->
                                             <li>
                                                 <div>
-                                                    <table class="table table-bordered">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="text-left"><strong>Sub-Total</strong>
-                                                            </td>
-                                                            <td class="text-right">$1,060.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-left"><strong>Eco Tax (-2.00)</strong>
-                                                            </td>
-                                                            <td class="text-right">$2.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-left"><strong>VAT (20%)</strong>
-                                                            </td>
-                                                            <td class="text-right">$200.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-left"><strong>Total</strong>
-                                                            </td>
-                                                            <td class="text-right">$1,262.00</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
+<!--                                                    <table class="table table-bordered">-->
+<!--                                                        <tbody>-->
+<!--                                                        <tr>-->
+<!--                                                            <td class="text-left"><strong>Sub-Total</strong>-->
+<!--                                                            </td>-->
+<!--                                                            <td class="text-right">$1,060.00</td>-->
+<!--                                                        </tr>-->
+<!--                                                        <tr>-->
+<!--                                                            <td class="text-left"><strong>Eco Tax (-2.00)</strong>-->
+<!--                                                            </td>-->
+<!--                                                            <td class="text-right">$2.00</td>-->
+<!--                                                        </tr>-->
+<!--                                                        <tr>-->
+<!--                                                            <td class="text-left"><strong>VAT (20%)</strong>-->
+<!--                                                            </td>-->
+<!--                                                            <td class="text-right">$200.00</td>-->
+<!--                                                        </tr>-->
+<!--                                                        <tr>-->
+<!--                                                            <td class="text-left"><strong>Total</strong>-->
+<!--                                                            </td>-->
+<!--                                                            <td class="text-right">$1,262.00</td>-->
+<!--                                                        </tr>-->
+<!--                                                        </tbody>-->
+<!--                                                    </table>-->
                                                     <p class="text-center"><a class="btn view-cart"
                                                                               href="<?= base_url('cart/') ?>"><i
                                                                     class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp;

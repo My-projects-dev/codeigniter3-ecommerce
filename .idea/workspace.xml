@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="wishlist count">
+    <list default="true" id="e68ecfeb-1b90-404d-b446-c796adbcb0ec" name="Changes" comment="payriff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/front/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Checkout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/front/My_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/My_account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/front/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/front/Register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/libraries/Payriff.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/libraries/Payriff.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/front/include/myaccount/my_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/include/myaccount/my_account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/front/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/front/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/front/template/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -280,7 +276,7 @@
       <workItem from="1674738103072" duration="35505000" />
       <workItem from="1674808611617" duration="720000" />
       <workItem from="1674831937201" duration="6443000" />
-      <workItem from="1675016805310" duration="6604000" />
+      <workItem from="1675016805310" duration="17223000" />
     </task>
     <task id="LOCAL-00001" summary="Brands, settings, categories, pages">
       <created>1671023016859</created>
@@ -499,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674812402743</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="payriff">
+      <created>1675031356773</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1675031356773</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +531,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="users" />
     <MESSAGE value="Payment_methods" />
     <MESSAGE value="orders" />
     <MESSAGE value="product image" />
@@ -553,6 +555,7 @@
     <MESSAGE value="category" />
     <MESSAGE value="cart, wishlist" />
     <MESSAGE value="wishlist count" />
-    <option name="LAST_COMMIT_MESSAGE" value="wishlist count" />
+    <MESSAGE value="payriff" />
+    <option name="LAST_COMMIT_MESSAGE" value="payriff" />
   </component>
 </project>

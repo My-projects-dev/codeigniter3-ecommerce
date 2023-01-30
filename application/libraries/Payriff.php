@@ -15,9 +15,9 @@ class Payriff
 	private $terminal = "ES1090341";
 	private $key = "51DD7E24058F4A7F89945982E6C8A546";
 	private $currency = "AZN";
-	private $approve_url = "http://localhost/ecommerce/checkout/callback";
-	private $decline_url = "http://localhost/ecommerce/checkout/callback";
-	private $cancel_url = "http://localhost/ecommerce/checkout/callback";
+	private $approve_url = "http://localhost/ecommerce/front/checkout/approve";
+	private $decline_url = "http://localhost/ecommerce/front/checkout/decline";
+	private $cancel_url = "http://localhost/ecommerce/front/checkout/cancel";
 	
 
 	public function create_order($order_data){

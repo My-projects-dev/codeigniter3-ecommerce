@@ -143,15 +143,13 @@ class Checkout extends CI_Controller
 
                 $affected_rows = $this->order_product_md->insertArray($order_product);
                 if ($affected_rows > 0) {
-                    //$this->cart_md->delete_user_products($userId);
-                    if ($payment_method==2){
-
+                    if ($payment_method == 2) {
+                        set_cookie('order_id', $order_id, '86400');
                         $this->load->library('Payriff');
                         $payriff = $this->payriff->create_order($data);
+
                         redirect($payriff['payment_url']);
                     }
-
-                    $this->session->set_flashdata('success_message', 'Sifariş qeydə alındı');
                 } else {
                     $this->session->set_flashdata('error_message', 'Sifariş qeydə alına bilmədi');
                 }
@@ -267,16 +265,17 @@ class Checkout extends CI_Controller
 
                     $affected_rows = $this->order_product_md->insertArray($order_product);
                     if ($affected_rows > 0) {
-                        $this->cart_md->delete_user_products($userId);
-                        delete_cookie('cart_products');
-                        delete_cookie('cart_quantities');
-                        $this->session->set_flashdata('success_message', 'Sifariş qeydə alındı');
+                        if ($payment_method == 2) {
+                            set_cookie('order_id', $order_id, '86400');
+                            $this->load->library('Payriff');
+                            $payriff = $this->payriff->create_order($data);
+
+                            redirect($payriff['payment_url']);
+                        }
                     } else {
                         $this->session->set_flashdata('error_message', 'Sifariş qeydə alına bilmədi');
                     }
                 }
-
-
             }
             redirect('checkout');
         } else {
@@ -297,5 +296,77 @@ class Checkout extends CI_Controller
                 echo json_encode($region);
             }
         }
+    }
+
+
+    public function approve()
+    {
+        $data = ['status_id' => 2];
+
+        if ($this->session->has_userdata('userloggedin')) {
+
+            $userId = $this->session->userdata("user")->id;
+            $this->cart_md->delete_user_products($userId);
+            $order_id = get_cookie('order_id');
+            $this->order_md->update($order_id, $data);
+            delete_cookie('order_id');
+            $this->session->set_flashdata('success_message', 'Sifariş qeydə alındı');
+
+        } elseif (!empty(get_cookie('cart_products')) and !empty(get_cookie('cart_quantities'))) {
+
+            $order_id = get_cookie('order_id');
+            $this->order_md->update($order_id, $data);
+
+            delete_cookie('order_id');
+            delete_cookie('cart_products');
+            delete_cookie('cart_quantities');
+            $this->session->set_flashdata('success_message', 'Sifariş qeydə alındı');
+        }
+
+        redirect('checkout');
+    }
+
+
+    public function decline()
+    {
+        $data = ['status_id' => 3];
+        if ($this->session->has_userdata('userloggedin')) {
+
+            $order_id = get_cookie('order_id');
+            $this->order_md->update($order_id, $data);
+            delete_cookie('order_id');
+            $this->session->set_flashdata('error_message', 'Ödəmə mümkün olmadı');
+
+        } elseif (!empty(get_cookie('cart_products'))) {
+
+            $order_id = get_cookie('order_id');
+            $this->order_md->update($order_id, $data);
+
+            $this->session->set_flashdata('error_message', 'Ödəmə mümkün olmadı');
+        }
+
+        redirect('checkout');
+    }
+
+
+    public function cancel()
+    {
+        $data = ['status_id' => 4];
+        if ($this->session->has_userdata('userloggedin')) {
+
+            $order_id = get_cookie('order_id');
+            $this->order_md->update($order_id, $data);
+            delete_cookie('order_id');
+            $this->session->set_flashdata('error_message', 'Ödəmə ləğv edildi');
+
+        } elseif (!empty(get_cookie('cart_products'))) {
+
+            $order_id = get_cookie('order_id');
+            $this->order_md->update($order_id, $data);
+
+            $this->session->set_flashdata('error_message', 'Ödəmə ləğv edildi');
+        }
+
+        redirect('checkout');
     }
 }

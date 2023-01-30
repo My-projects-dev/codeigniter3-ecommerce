@@ -12,7 +12,7 @@
             <h2 class="title">My Account</h2>
             <p class="lead">Hello, <strong><?= $account->surname . ' ' . $account->name ?></strong> - To update your
                 account information.</p>
-            <form>
+            <form action="<?=base_url('my_account/')?>" method="post">
                 <div class="row">
                     <?php
             errorAlert();
@@ -32,12 +32,6 @@
                                 <input type="text" class="form-control" id="input-lastname" placeholder="Last Name"
                                        value="<?= $account->surname ?>" name="lastname">
                                 <?php echo form_error('lastname', '<span class = text-danger >', '</span>'); ?>
-                            </div>
-                            <div class="form-group required">
-                                <label for="input-email" class="control-label">E-Mail</label>
-                                <input type="email" class="form-control" id="input-email" placeholder="E-Mail"
-                                       value="<?= $account->email ?>" name="email">
-                                <?php echo form_error('email', '<span class = text-danger >', '</span>'); ?>
                             </div>
                             <div class="form-group required">
                                 <label for="input-telephone" class="control-label">Telephone</label>
@@ -107,6 +101,12 @@
                                 <input type="text" class="form-control" id="input-address-1" placeholder="Address 1"
                                        value="<?= $account->address1 ?>" name="address_1">
                                 <?php echo form_error('address_1', '<span class = text-danger >', '</span>'); ?>
+                            </div>
+                            <div class="form-group required">
+                                <label for="input-address-1" class="control-label">Address 2</label>
+                                <input type="text" class="form-control" id="input-address-1" placeholder="Address 1"
+                                       value="<?= $account->address2 ?>" name="address_2">
+                                <?php echo form_error('address_2', '<span class = text-danger >', '</span>'); ?>
                             </div>
                             <div class="form-group required">
                                 <label for="input-city" class="control-label">City</label>
